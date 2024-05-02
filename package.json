@@ -1,0 +1,46 @@
+{
+  "name": "homalert",
+  "version": "1.0.0",
+  "description": "A Smart Home Emergency Alert System",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChrysKoum/HomAlert.git"
+  },
+  "keywords": [
+    "home",
+    "alert",
+    "emergency",
+    "smart",
+    "home"
+  ],
+  "author": "Chrysostomos Koumides",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "bootstrap": "^5.3.1",
+    "connect-flash": "^0.1.1",
+    "dotenv": "^16.3.1",
+    "ejs": "^3.1.9",
+    "ejs-mate": "^4.0.0",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "firebase": "^10.7.1",
+    "firebase-admin": "^11.10.1",
+    "helmet": "^7.0.0",
+    "jquery": "^3.7.0",
+    "method-override": "^3.0.0",
+    "nodemailer": "^6.9.11"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "bugs": {
+    "url": "https://github.com/ChrysKoum/HomAlert/issues"
+  },
+  "homepage": "https://github.com/ChrysKoum/HomAlert#readme"
+}
