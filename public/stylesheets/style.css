@@ -1,0 +1,93 @@
+/* ===========================================
+   Main Stylesheet for Frontend
+   ===========================================
+   This file contains the main CSS styles for the web dashboard.
+   Key actions:
+   1. Ensure a responsive design that adapts to different screen sizes and devices.
+   2. Style UI components (e.g., buttons, forms, alerts) to provide a user-friendly interface.
+   3. Implement consistent design language throughout the dashboard, including color schemes, fonts, and layouts.
+   4. Optimize for accessibility and usability to enhance the user experience.
+   ===========================================
+*/
+
+/* Design Language */
+/* Consistent color schemes, fonts, and layouts */
+:root {
+  /* Color Variables */
+  --primary-color: #FFFFFF; /* White */
+  --secondary-color: #000000; /* Black */
+  --accent-color: #3170FD; /* Accent color */
+
+  /* Font Variables */
+  --font-primary: 'Roboto', sans-serif;
+  --font-secondary: 'Nunito', sans-serif;
+
+  /* Font Size Variables */
+  --font-size-h1: 2.5rem; /* Example size, adjust as needed */
+  --font-size-h2: 2rem;
+  --font-size-h3: 1.75rem;
+  --font-size-h4: 1.5rem;
+  --font-size-h5: 1.25rem;
+  --font-size-h6: 1rem;
+  --font-size-body: 1rem;
+}
+
+/* Responsive Design */
+/* Ensure elements adapt to different screen sizes */
+body {
+  font-family: var(--font-primary);
+  color: var(--secondary-color);
+  background-color: var(--primary-color);
+}
+
+/* Typography */
+h1 {
+  font-family: var(--font-secondary);
+  font-size: var(--font-size-h1);
+}
+
+h2 {
+  font-family: var(--font-secondary);
+  font-size: var(--font-size-h2);
+}
+
+h3 {
+  font-family: var(--font-secondary);
+  font-size: var(--font-size-h3);
+}
+
+h4 {
+  font-family: var(--font-secondary);
+  font-size: var(--font-size-h4);
+}
+
+h5 {
+  font-family: var(--font-secondary);
+  font-size: var(--font-size-h5);
+}
+
+h6 {
+  font-family: var(--font-secondary);
+  font-size: var(--font-size-h6);
+}
+
+p {
+  font-family: var(--font-primary);
+  font-size: var(--font-size-body);
+}
+
+/* UI Components */
+/* Style for buttons */
+button {
+  font-family: var(--font-primary);
+  background-color: var(--accent-color);
+  color: var(--primary-color);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: darken(var(--accent-color), 10%);
+}

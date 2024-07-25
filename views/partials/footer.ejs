@@ -1,0 +1,31 @@
+<!-- ===========================================
+     Footer Partial
+     ===========================================
+     This file contains the footer for the web dashboard.
+     Key actions:
+     1. Include relevant footer content such as links and copyright information.
+     2. Ensure the footer is styled consistently with the overall design.
+     3. Make sure the footer remains at the bottom of the page.
+     ===========================================
+-->
+<!-- Footer -->
+<footer>
+    <div class="container text-center">
+        <span id="dateDisplay"></span>
+    </div>
+</footer>
+<!-- End Footer -->
+
+<script>
+    (function () {
+        const today = new Date();
+        const year = today.getFullYear(); // Get the full year
+        const yearStr = year.toString();
+
+        // Construct the text with the dynamic year
+        const copyrightText = `&copy; ${yearStr} HomeAlert, All Rights Reserved.`;
+
+        // Update the textContent of the element with id 'dateDisplay'
+        document.getElementById('dateDisplay').textContent = copyrightText;
+    })();
+</script>
