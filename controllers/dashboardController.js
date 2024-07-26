@@ -9,11 +9,18 @@
 const { getSensorData } = require("../utils/firebaseUtils");
 
 const dashboardController = {
+  // Handles displaying the dashboard
+  // req: The request object represents the HTTP request and contains properties for the request query string, parameters, body, headers, etc.
+  // res: The response object represents the HTTP response that an Express app sends when it gets an HTTP request.
+  // next: A function that is called to pass control to the next middleware function. (Not used directly in this example but useful for error handling middleware.)
   showDashboard: async (req, res) => {
     try {
+      // Asynchronously fetch sensor data
       const data = await getSensorData();
+      // Render the dashboard view with the fetched data
       res.render("dashboard", { title: "Dashboard", data });
     } catch (error) {
+      // Handle any errors that occur during data fetching
       res.status(500).send("Error fetching sensor data");
     }
   },

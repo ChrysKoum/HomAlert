@@ -17,51 +17,63 @@ const {
   updateDoc,
   deleteDoc,
 } = require("firebase/firestore");
-const { initializeApp } = require("firebase/app");
-const firebaseConfig = require("./firebaseConfig");
+const { firebaseApp } = require("./firebaseSetup"); // Use the singleton
+const logger = require("../middleware/logger");
 
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
+const db = getFirestore(firebaseApp);
 
+// Asynchronously add a new user to Firestore
 const addUser = async (userId, userData) => {
   try {
     await setDoc(doc(db, "users", userId), userData);
+    logger.info(`User added: ${userId}`);
   } catch (error) {
-    console.error("Error adding user: ", error);
+    logger.error(`Error adding user: ${error.message}`);
+    throw error;
   }
 };
 
+// Asynchronously get a user's data from Firestore
 const getUser = async (userId) => {
   try {
     const docRef = doc(db, "users", userId);
     const docSnap = await getDoc(docRef);
     if (docSnap.exists()) {
+      logger.info(`User retrieved: ${userId}`);
       return docSnap.data();
     } else {
-      console.log("No such document!");
+      logger.warn(`No such document: ${userId}`);
     }
   } catch (error) {
-    console.error("Error getting user: ", error);
+    logger.error(`Error getting user: ${error.message}`);
+    throw error;
   }
 };
 
+// Asynchronously update a user's data in Firestore
 const updateUser = async (userId, userData) => {
   try {
     const docRef = doc(db, "users", userId);
     await updateDoc(docRef, userData);
+    logger.info(`User updated: ${userId}`);
   } catch (error) {
-    console.error("Error updating user: ", error);
+    logger.error(`Error updating user: ${error.message}`);
+    throw error;
   }
 };
 
+// Asynchronously delete a user from Firestore
 const deleteUser = async (userId) => {
   try {
     await deleteDoc(doc(db, "users", userId));
+    logger.info(`User deleted: ${userId}`);
   } catch (error) {
-    console.error("Error deleting user: ", error);
+    logger.error(`Error deleting user: ${error.message}`);
+    throw error;
   }
 };
 
+// Export the CRUD functions for use in other parts of the application
 module.exports = {
   addUser,
   getUser,

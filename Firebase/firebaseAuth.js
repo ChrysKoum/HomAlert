@@ -14,12 +14,12 @@ const {
   signInWithEmailAndPassword,
   signOut,
 } = require("firebase/auth");
-const { initializeApp } = require("firebase/app");
-const firebaseConfig = require("./firebaseConfig");
+const { firebaseApp } = require("./firebaseSetup"); // Use the singleton
+const logger = require("../middleware/logger");
 
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
+const auth = getAuth(firebaseApp);
 
+// Asynchronously sign up a user with email and password
 const signUpUser = async (email, password) => {
   try {
     const userCredential = await createUserWithEmailAndPassword(
@@ -27,12 +27,15 @@ const signUpUser = async (email, password) => {
       email,
       password
     );
+    logger.info(`User signed up: ${email}`);
     return userCredential.user;
   } catch (error) {
-    console.error("Error signing up: ", error);
+    logger.error(`Error signing up: ${error.message}`);
+    throw error;
   }
 };
 
+// Asynchronously sign in a user with email and password
 const signInUser = async (email, password) => {
   try {
     const userCredential = await signInWithEmailAndPassword(
@@ -40,17 +43,22 @@ const signInUser = async (email, password) => {
       email,
       password
     );
+    logger.info(`User signed in: ${email}`);
     return userCredential.user;
   } catch (error) {
-    console.error("Error signing in: ", error);
+    logger.error(`Error signing in: ${error.message}`);
+    throw error;
   }
 };
 
+// Asynchronously sign out the current user
 const signOutUser = async () => {
   try {
     await signOut(auth);
+    logger.info("User signed out");
   } catch (error) {
-    console.error("Error signing out: ", error);
+    logger.error(`Error signing out: ${error.message}`);
+    throw error;
   }
 };
 

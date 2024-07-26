@@ -77,9 +77,8 @@ npm start
 |   |-- dashboardController.js
 |-- Firebase
 |   |-- firebaseAuth.js
-|   |-- firebaseConfig.js
+|   |-- firebaseSetup.js
 |   |-- firebaseFirestore.js
-|   |-- firebaseUtils.js
 |-- middleware
 |   |-- auth.js
 |   |-- errorHandler.js
@@ -141,7 +140,7 @@ npm start
   - `dashboardController.js`: Manages dashboard-related logic.
 - **Firebase/**: Manages Firebase configurations and utilities.
   - `firebaseAuth.js`: Sets up Firebase Authentication.
-  - `firebaseConfig.js`: Contains Firebase configuration setup.
+  - `firebaseSetup.js`: Contains Firebase configuration setup.
   - `firebaseFirestore.js`: Manages Firestore interactions.
   - `firebaseUtils.js`: Contains utility functions for Firebase operations.
 - **middleware/**: Contains middleware functions for request handling.
