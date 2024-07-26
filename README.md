@@ -507,4 +507,4 @@ only error logs.
 
 ---
 
-By following this guide, you will have a comprehensive understanding of the HomAlert project and be able to work with it effectively. If you have any questions or need further clarification, don't hesitate to ask!
+By following this guide, you will have a comprehensive understanding of the HomAlert project and be able to work with it effectively. If you have any questions or need further clarification, don't hesitate to ask!!
