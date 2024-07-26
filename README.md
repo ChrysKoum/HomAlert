@@ -1,10 +1,29 @@
 # HomAlert - Smart Home Emergency Alert System
 
-## Overview
+## Table of Contents
+
+1. Overview
+2. Getting Started
+3. Project Structure
+4. Key Technologies and Packages
+5. Running the Project
+6. Working with the Codebase
+7. Error Handling
+8. Logging
+9. Version Control with Git
+10. Best Practices
+11. Debugging Tips
+12. Additional Resources
+
+---
+
+## 1. Overview
 
 HomAlert is an advanced Smart Home Emergency Notification System designed to safeguard households by detecting a wide array of potential emergencies, such as fires, floods, gas leaks, and unauthorized intrusions. The system integrates strategically placed sensors throughout the home, which are interconnected through a central processing unit. The system uses ESP32 due to its robust processing capabilities and built-in Wi-Fi/Bluetooth functionalities. Real-time monitoring and rapid dissemination of alerts are achieved via a user-friendly mobile app or web dashboard, providing early warnings and actionable advice to mitigate risks.
 
-## Getting Started
+---
+
+## 2. Getting Started
 
 ### Prerequisites
 
@@ -55,7 +74,7 @@ HomAlert is an advanced Smart Home Emergency Notification System designed to saf
    npm start
    ```
 
-   The application will start running on `http://localhost:3000`.
+   The application will start running on `http://localhost:3005`.
 
 ### Running the Application with Nodemon
 
@@ -65,71 +84,70 @@ Nodemon is used to automatically restart the server when changes are detected. T
 npm start
 ```
 
-## Project Structure
+---
+
+## 3. Project Structure
 
 ### Directory Structure
 
 ```
-|-- .vscode
-|   |-- settings.json
-|-- controllers
-|   |-- authController.js
-|   |-- dashboardController.js
-|-- Firebase
-|   |-- firebaseAuth.js
-|   |-- firebaseSetup.js
-|   |-- firebaseFirestore.js
-|-- middleware
-|   |-- auth.js
-|   |-- errorHandler.js
-|   |-- logger.js
-|-- public
-|   |-- assets
-|   |   |-- icons
-|   |   |   |-- sign_up_icon.png
-|   |   |-- logo
-|   |   |   |-- logo transparent without text.png
-|   |   |-- our team
-|   |       |-- ahmed-yameen.jpg
-|   |       |-- angelo-abear.jpg
-|   |       |-- ethan-rougon.jpg
-|   |       |-- jose-matute.jpg
-|   |       |-- unsplash-profile-1.jpg
-|   |       |-- unsplash-profile-2.jpg
-|   |       |-- unsplash-source-404.jpg
-|   |-- javascripts
-|   |   |-- main.js
-|   |   |-- index.js
-|   |-- stylesheets
-|   |   |-- style.css
-|-- routes
-|   |-- index.js
-|-- utils
-|   |-- validation.js
-|   |-- format.js
-|   |-- firebaseUtils.js
-|-- views
-|   |-- auth
-|   |   |-- forgot-password.ejs
-|   |   |-- sign-in.ejs
-|   |   |-- sign-up.ejs
-|   |-- layouts
-|   |   |-- boilerplate.ejs
-|   |-- partials
-|   |   |-- footer.ejs
-|   |   |-- navbar.ejs
-|   |-- about-us.ejs
-|   |-- contact-us.ejs
-|   |-- dashboard.ejs
-|   |-- faq.ejs
-|   |-- home.ejs
-|   |-- product.ejs
-|   |-- profile-page.ejs
-|-- .env-example
-|-- .gitignore
-|-- app.js
-|-- package.json
-|-- README.md
+HomAlert/
+├── .vscode/
+│   ├── settings.json
+├── controllers/
+│   ├── authController.js
+│   ├── dashboardController.js
+├── Firebase/
+│   ├── firebaseAuth.js
+│   ├── firebaseConfig.js
+│   ├── firebaseFirestore.js
+├── logs/
+│   ├── combined.log
+│   ├── error.log
+├── middleware/
+│   ├── auth.js
+│   ├── errorHandler.js
+│   ├── logger.js
+├── public/
+│   ├── assets/
+│   │   ├── icons/
+│   │   │   ├── sign_up_icon.png
+│   │   ├── logo/
+│   │   │   ├── logo_transparent_without_text.png
+│   │   ├── our_team/
+│   │       ├── team_member_1.jpg
+│   │       ├── team_member_2.jpg
+│   ├── javascripts/
+│   │   ├── main.js
+│   ├── stylesheets/
+│   │   ├── style.css
+├── routes/
+│   ├── index.js
+├── utils/
+│   ├── firebaseUtils.js
+│   ├── format.js
+│   ├── validation.js
+├── views/
+│   ├── auth/
+│   │   ├── forgot-password.ejs
+│   │   ├── sign-in.ejs
+│   │   ├── sign-up.ejs
+│   ├── layouts/
+│   │   ├── boilerplate.ejs
+│   ├── partials/
+│   │   ├── footer.ejs
+│   │   ├── navbar.ejs
+│   ├── errors/
+│   │   ├── 404.ejs
+│   │   ├── 500.ejs
+│   ├── home.ejs
+├── .env-example
+├── .gitignore
+├── app.js
+├── package-lock.json
+├── package.json
+├── README.md
+├── server.js
 ```
 
 ### Explanation of Key Directories and Files
@@ -140,7 +158,7 @@ npm start
   - `dashboardController.js`: Manages dashboard-related logic.
 - **Firebase/**: Manages Firebase configurations and utilities.
   - `firebaseAuth.js`: Sets up Firebase Authentication.
-  - `firebaseSetup.js`: Contains Firebase configuration setup.
+  - `firebaseConfig.js`: Contains Firebase configuration setup.
   - `firebaseFirestore.js`: Manages Firestore interactions.
   - `firebaseUtils.js`: Contains utility functions for Firebase operations.
 - **middleware/**: Contains middleware functions for request handling.
@@ -160,11 +178,132 @@ npm start
   - `partials/`: Reusable partial templates (e.g., navbar, footer).
   - Main pages (e.g., home.ejs, dashboard.ejs, contact-us.ejs).
 
-## Git Workflow Guide
+---
+
+## 4. Key Technologies and Packages
+
+### Node.js
+
+Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine. It is used to build scalable network applications.
+
+### Express
+
+Express is a fast, unopinionated, minimalist web framework for Node.js. It is used to create the server and handle routing.
+
+### EJS
+
+EJS (Embedded JavaScript) is a simple templating language that lets you generate HTML markup with plain JavaScript.
+
+### Firebase
+
+Firebase is a platform developed by Google for creating mobile and web applications. It provides a variety of tools and services to help you develop high-quality apps.
+
+- **firebase-admin**: This is the Firebase Admin SDK that enables access to Firebase services from privileged environments (like servers).
+- **firebase**: This is the client-side Firebase SDK.
+
+### Winston
+
+Winston is a logger for just about everything. It is a versatile logging library for Node.js applications.
+
+### Bootstrap
+
+Bootstrap is a popular framework for building responsive, mobile-first websites with CSS, JavaScript, and HTML.
+
+---
+
+## 5. Running the Project
+
+To run the project locally:
+
+1. **Start the server**
+
+   ```sh
+   npm start
+   ```
+
+2. **Open your browser**
+
+   Navigate to `http://localhost:3005` to see the application running.
+
+---
+
+## 6. Working with the Codebase
+
+### Controllers
+
+Controllers handle the logic for different routes.
+
+- **authController.js**: Handles authentication-related logic.
+- **dashboardController.js**: Manages dashboard-related logic.
+
+### Firebase
+
+Manages Firebase configurations and utilities.
+
+- **firebaseAuth.js**: Sets up Firebase Authentication.
+- **firebaseConfig.js**: Contains Firebase configuration setup.
+- **firebaseFirestore.js**: Manages Firestore interactions.
+
+### Middleware
+
+Middleware functions for request handling.
+
+- **auth.js**: Middleware for authentication checks.
+- **errorHandler.js**: Middleware for error handling.
+- **logger.js**: Middleware for logging requests.
+
+### Public
+
+Contains static assets like images, JavaScript files, and stylesheets.
+
+### Routes
+
+Defines the main application routes.
+
+- **index.js**: Main route definitions.
+
+### Utils
+
+Utility functions for validation, formatting, and Firebase operations.
+
+- **firebaseUtils.js**: Functions for Firebase operations.
+- **format.js**: Functions for formatting data.
+- **validation.js**: Functions for validating user inputs.
+
+### Views
+
+Contains EJS templates for rendering HTML pages.
+
+- **auth/**: Templates related to authentication (e.g., sign-in, sign-up).
+- **layouts/**: Layout templates.
+- **partials/**: Reusable partial templates (e.g., navbar, footer).
+- **errors/**: Error pages (404 and 500).
+- **home.ejs**: Home page template.
+
+---
+
+## 7. Error Handling
+
+Errors are handled using middleware. There are specific templates for 404 and 500 errors in the `views/errors` directory.
+
+---
+
+## 8. Logging
+
+Winston is used for logging. Logs are stored in the `logs` directory.
+
+- **combined.log**: Contains both request and error logs.
+- **error.log**: Contains
+
+only error logs.
+
+---
+
+## 9. Version Control with Git
 
 ### Basic Git Commands
 
-1. **Pull Latest Changes from Remote Repository First think after opeening Vs Code**
+1. **Pull Latest Changes from Remote Repository**
 
    ```sh
    git pull
@@ -194,28 +333,18 @@ npm start
    git push
    ```
 
-### Installing VS Code Extensions
+### Additional Resources
 
-1. **Open VS Code**
+- **Git Walkthrough**: [Watch Video](https://www.youtube.com/watch?v=cJTXh7g-uCM&ab_channel=AmitThinks)
+- **Why to Download Git**: [Watch Video](https://www.youtube.com/watch?v=2ReR1YJrNOM&ab_channel=ProgrammingwithMosh)
+- **How to Install and Configure VS Code**: [Watch Video](https://www.youtube.com/watch?v=DKxS3IkduWQ&ab_channel=WebDevSimplified)
+- **GitHub Extension for VS Code**: [Watch Video](https://www.youtube.com/watch?v=i_23KUAEtUM&ab_channel=VisualStudioCode)
 
-2. **Go to Extensions View**
+---
 
-   Click on the Extensions icon in the Activity Bar on the side of the window or press `Ctrl+Shift+X`.
+## 10. Best Practices
 
-3. **Search and Install Extensions**
-
-   - **Prettier - Code formatter**: Ensures consistent code formatting.
-   - **ESLint**: Identifies and fixes common coding issues.
-   - **GitLens**: Enhances Git capabilities within VS Code.
-   - **Live Server**: Launches a local development server with live reload.
-
-4. **Install an Extension**
-
-   Click the install button for the desired extension.
-
-### Best Practices
-
-#### Coding Standards
+### Coding Standards
 
 - **Consistent Naming Conventions**: Use camelCase for variables and functions, PascalCase for classes.
 
@@ -256,7 +385,7 @@ npm start
   }
   ```
 
-#### Security Practices
+### Security Practices
 
 - **Environment Variables**: Always use environment variables for sensitive data.
 
@@ -275,6 +404,7 @@ npm start
   ```
 
 - **Authentication and Authorization**: Ensure that routes are protected and only accessible to authenticated users.
+
   ```javascript
   const isAuthenticated = (req, res, next) => {
     if (req.isAuthenticated()) {
@@ -284,7 +414,7 @@ npm start
   };
   ```
 
-#### Performance Optimization
+### Performance Optimization
 
 - **Caching**: Use caching strategies to improve performance.
 
@@ -303,18 +433,78 @@ npm start
 
 - **Database Optimization**: Optimize queries and use indexing.
 
-```sql
- CREATE INDEX idx_user_id ON users(user_id);
-```
+  ```sql
+  CREATE INDEX idx_user_id ON users(user_id);
+  ```
 
-## Troubleshooting
+---
 
-### Common Issues
+## 11. Debugging Tips
 
-- **Installation Errors**: Ensure all dependencies are installed and environment variables are set correctly.
-- **Firebase Connectivity**: Check Firebase configuration and network connectivity.
+### Setting Up Debugging in VS Code
 
-### Debugging Tips
+1. **Create a `launch.json` File**
 
-- **Logs**: Check application logs for error messages.
-- **Breakpoints**: Use breakpoints to step through code and identify issues.
+   In VS Code, go to the Debug view (click the Debug icon or press `Ctrl+Shift+D`), then click the gear icon to configure the `launch.json` file. Use the following configuration:
+
+   ```json
+   {
+     "version": "0.2.0",
+     "configurations": [
+       {
+         "type": "node",
+         "request": "launch",
+         "name": "Launch Program",
+         "skipFiles": ["<node_internals>/**"],
+         "program": "${workspaceFolder}/app.js"
+       }
+     ]
+   }
+   ```
+
+2. **Add Breakpoints**
+
+   Set breakpoints in your JavaScript files by clicking in the gutter next to the line numbers.
+
+3. **Start Debugging**
+
+   Press `F5` or click the green play button in the Debug view to start debugging.
+
+### Debugging Resources
+
+- **How to Use Breakpoints**: [Watch Video](https://www.youtube.com/watch?v=vl32ue9xm2g&ab_channel=AwaisMirza)
+
+### Additional Debugging Tips
+
+- **Logs**: Check application logs for error messages. Logs can be found in the `logs` directory (e.g., `combined.log` and `error.log`). You can also use `console.log` statements for quick debugging.
+
+  ```javascript
+  console.log("Debugging message:", variable);
+  ```
+
+- **Breakpoints**: Use breakpoints to step through code and identify issues. In Visual Studio Code, you can set breakpoints in your JavaScript files and run the debugger to step through your code.
+
+- **Inspector**: Use the browser's developer tools to inspect and debug front-end issues. You can open the developer tools in most browsers with `F12` or `Ctrl+Shift+I`.
+
+- **Logger**: Use the configured logger (Winston) to log detailed information, warnings, and errors. This helps in maintaining a clean and consistent logging strategy.
+
+  ```javascript
+  const logger = require("./middleware/logger");
+
+  logger.info("This is an info message");
+  logger.warn("This is a warning message");
+  logger.error("This is an error message");
+  ```
+
+---
+
+## 12. Additional Resources
+
+- **Git Walkthrough**: [Watch Video](https://www.youtube.com/watch?v=cJTXh7g-uCM&ab_channel=AmitThinks)
+- **Why to Download Git**: [Watch Video](https://www.youtube.com/watch?v=2ReR1YJrNOM&ab_channel=ProgrammingwithMosh)
+- **How to Install and Configure VS Code**: [Watch Video](https://www.youtube.com/watch?v=DKxS3IkduWQ&ab_channel=WebDevSimplified)
+- **GitHub Extension for VS Code**: [Watch Video](https://www.youtube.com/watch?v=i_23KUAEtUM&ab_channel=VisualStudioCode)
+
+---
+
+By following this guide, you will have a comprehensive understanding of the HomAlert project and be able to work with it effectively. If you have any questions or need further clarification, don't hesitate to ask!
