@@ -88,3 +88,15 @@
 2024-07-26T11:39:01.653Z [info]: GET /path/to/your/image1.png
 2024-07-26T11:39:01.655Z [info]: GET /path/to/your/image2.png
 2024-07-26T11:39:01.666Z [info]: GET /path/to/your/image3.png
+2024-07-26T11:42:14.121Z [info]: GET /stylesheets/style.css
+2024-07-26T11:42:20.344Z [info]: GET /logout
+2024-07-26T11:42:20.350Z [info]: GET /auth/sign-in
+2024-07-26T11:42:20.503Z [info]: GET /auth/stylesheets/style.css
+2024-07-26T11:42:20.521Z [info]: GET /javascripts/main.js
+2024-07-26T11:42:22.445Z [info]: GET /
+2024-07-26T11:42:22.446Z [info]: Home route accessed
+2024-07-26T11:42:22.523Z [info]: GET /stylesheets/style.css
+2024-07-26T11:42:22.528Z [info]: GET /javascripts/main.js
+2024-07-26T11:42:22.531Z [info]: GET /path/to/your/image2.png
+2024-07-26T11:42:22.533Z [info]: GET /path/to/your/image1.png
+2024-07-26T11:42:22.545Z [info]: GET /path/to/your/image3.png
