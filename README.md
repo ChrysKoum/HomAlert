@@ -317,4 +317,4 @@ npm start
 ### Debugging Tips
 
 - **Logs**: Check application logs for error messages.
-- **Breakpoints**: Use breakpoints to step through code and identify issues.
+- **Breakpoints**: Use breakpoints to step through code and identify issues using console.log or logger.
