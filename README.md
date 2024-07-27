@@ -195,6 +195,7 @@ Express is a fast, unopinionated, minimalist web framework for Node.js. It is us
 ### EJS
 
 EJS (Embedded JavaScript) is a simple templating language that lets you generate HTML markup with plain JavaScript.
+Read more [Here](https://github.com/ChrysKoum/HomAlert/wiki/EJS-Documentation)
 
 ### Firebase
 
