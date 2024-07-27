@@ -15,7 +15,7 @@ const authMiddleware = require("../middleware/auth");
 const logger = require("../middleware/logger");
 
 // Home route
-// Renders the home pages
+// Renders the home page
 router.get("/", (req, res) => {
   logger.info("Home route accessed");
   res.render("home", { title: "Home" }); // Make sure there is a home.ejs in your views directory
