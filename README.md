@@ -303,9 +303,11 @@ only error logs.
 
 1. **Pull Latest Changes from Remote Repository**
 
-   ```sh
+   ````sh
    git pull
-   ```
+   ```f
+
+   ````
 
 2. **Add Changes to Staging**
 
