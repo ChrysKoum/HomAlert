@@ -1,7 +1,5 @@
 # HomAlert - Smart Home Emergency Alert System
 
-To make the Table of Contents work correctly in Markdown, you need to ensure that the anchor links correspond accurately with the section headers. Markdown automatically converts the headers into IDs by making them lowercase and replacing spaces with hyphens. Here are the necessary corrections:
-
 ## Table of Contents
 
 1. [Overview](#1-overview)
