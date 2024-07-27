@@ -1,19 +1,21 @@
 # HomAlert - Smart Home Emergency Alert System
 
+To make the Table of Contents work correctly in Markdown, you need to ensure that the anchor links correspond accurately with the section headers. Markdown automatically converts the headers into IDs by making them lowercase and replacing spaces with hyphens. Here are the necessary corrections:
+
 ## Table of Contents
 
-1. [Overview](#overview)
-2. [Getting Started](#getting-started)
-3. [Project Structure](#project-structure)
-4. [Key Technologies and Packages](#key-technologies-and-packages)
-5. [Running the Project](#running-the-project)
-6. [Working with the Codebase](#working-with-the-codebase)
-7. [Error Handling](#error-handling)
-8. [Logging](#logging)
-9. [Version Control with Git](#version-control-with-git)
-10. [Best Practices](#best-practices)
-11. [Debugging Tips](#debugging-tips)
-12. [Additional Resources](#additional-resources)
+1. [Overview](#1-overview)
+2. [Getting Started](#2-getting-started)
+3. [Project Structure](#3-project-structure)
+4. [Key Technologies and Packages](#4-key-technologies-and-packages)
+5. [Running the Project](#5-running-the-project)
+6. [Working with the Codebase](#6-working-with-the-codebase)
+7. [Error Handling](#7-error-handling)
+8. [Logging](#8-logging)
+9. [Version Control with Git](#9-version-control-with-git)
+10. [Best Practices](#10-best-practices)
+11. [Debugging Tips](#11-debugging-tips)
+12. [Additional Resources](#12-additional-resources)
 
 ## 1. Overview
 
