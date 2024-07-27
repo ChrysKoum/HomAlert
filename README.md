@@ -33,7 +33,7 @@ HomAlert is an advanced Smart Home Emergency Notification System designed to saf
 - Git
 
 **Check the [**Section 12**](#12-additional-resources) for help!**
-
+**Note: The Git commands can be executed using Git Bash, CMD, or PowerShell.**
 ### Installation
 
 1. **Clone the Repository**
@@ -304,6 +304,8 @@ only error logs.
 ## 9. Version Control
 
 ### 9a. Using the Git Terminal
+
+**Note: The Git commands can be executed using Git Bash, CMD, or PowerShell.**
 
 #### Basic Git Commands
 
