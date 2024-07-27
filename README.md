@@ -2,18 +2,20 @@
 
 ## Table of Contents
 
-1. [Overview](#overview)
-2. [Getting Started](#getting-started)
-3. [Project Structure](#project-structure)
-4. [Key Technologies and Packages](#key-technologies-and-packages)
-5. [Running the Project](#running-the-project)
-6. [Working with the Codebase](#working-with-the-codebase)
-7. [Error Handling](#error-handling)
-8. [Logging](#logging)
-9. [Version Control with Git](#version-control-with-git)
-10. [Best Practices](#best-practices)
-11. [Debugging Tips](#debugging-tips)
-12. [Additional Resources](#additional-resources)
+1. [Overview](#1-overview)
+2. [Getting Started](#2-getting-started)
+3. [Project Structure](#3-project-structure)
+4. [Key Technologies and Packages](#4-key-technologies-and-packages)
+5. [Running the Project](#5-running-the-project)
+6. [Working with the Codebase](#6-working-with-the-codebase)
+7. [Error Handling](#7-error-handling)
+8. [Logging](#8-logging)
+9. [Version Control with Git](#9-version-control)
+   - [Using the Git Terminal](#9a-using-the-git-terminal)
+   - [Using the GitHub Extension in VS-Code](#9b-using-the-github-extension-in-vs-code)
+10. [Best Practices](#10-best-practices)
+11. [Debugging Tips](#11-debugging-tips)
+12. [Additional Resources](#12-additional-resources)
 
 ## 1. Overview
 
@@ -25,11 +27,13 @@ HomAlert is an advanced Smart Home Emergency Notification System designed to saf
 
 ### Prerequisites
 
-- Node.js (version 14.x or later)
-- npm (version 6.x or later)
-- Firebase account with configured Firestore and Realtime Database
+- Vs Code
+- Node.js and npm
+- Firebase account with configured Firestore and Realtime Database(Optional if you are interested)
 - Git
 
+**Check the [**Section 12**](#12-additional-resources) for help!**
+**Note: The Git commands can be executed using Git Bash, CMD, or PowerShell.**
 ### Installation
 
 1. **Clone the Repository**
@@ -297,17 +301,19 @@ only error logs.
 
 ---
 
-## 9. Version Control with Git
+## 9. Version Control
 
-### Basic Git Commands
+### 9a. Using the Git Terminal
+
+**Note: The Git commands can be executed using Git Bash, CMD, or PowerShell.**
+
+#### Basic Git Commands
 
 1. **Pull Latest Changes from Remote Repository**
 
-   ````sh
+   ```sh
    git pull
    ```
-
-   ````
 
 2. **Add Changes to Staging**
 
@@ -333,7 +339,7 @@ only error logs.
    git push
    ```
 
-### Creating a New Branch
+#### Creating a New Branch
 
 1. **Create a New Branch**
 
@@ -353,7 +359,7 @@ only error logs.
    git push -u origin <your-name>
    ```
 
-### Getting Changes from Main
+#### Getting Changes from Main
 
 1. **Switch to the Main Branch**
 
@@ -380,7 +386,7 @@ only error logs.
    git merge main
    ```
 
-### Solving Conflicts
+#### Solving Conflicts
 
 1. **Identify Conflicts**
 
@@ -416,14 +422,85 @@ only error logs.
 
 By following these steps, you can effectively create new branches, stay up-to-date with changes from the main branch, and resolve any merge conflicts that arise. Make sure to replace `<your-name>` with your actual name when creating and managing your branches.
 
-### Additional Resources
+### 9b. Using the GitHub Extension in VS-Code
 
-- **Git Walkthrough**: [Watch Video](https://www.youtube.com/watch?v=cJTXh7g-uCM&ab_channel=AmitThinks)
-- **Why to Download Git**: [Watch Video](https://www.youtube.com/watch?v=2ReR1YJrNOM&ab_channel=ProgrammingwithMosh)
-- **How to Install and Configure VS Code**: [Watch Video](https://www.youtube.com/watch?v=DKxS3IkduWQ&ab_channel=WebDevSimplified)
-- **GitHub Extension for VS Code**: [Watch Video](https://www.youtube.com/watch?v=i_23KUAEtUM&ab_channel=VisualStudioCode)
+The GitHub extension in Visual Studio Code (VS Code) makes it easier to manage your GitHub repositories directly from the editor. Here's a guide on how to use it:
 
----
+#### 1. **Install the GitHub Extension**
+
+1. **Open VS Code Extensions View**:
+
+   - Click on the Extensions icon in the Activity Bar on the side of the window or press `Ctrl+Shift+X`.
+
+2. **Search for GitHub Extension**:
+
+   - Type `GitHub` in the search bar and look for the `GitHub Pull Requests and Issues` extension by Microsoft.
+
+3. **Install the Extension**:
+   - Click the `Install` button to add the extension to your VS Code.
+
+#### 2. **Sign In to GitHub**
+
+1. **Open the Command Palette**:
+
+   - Press `Ctrl+Shift+P` to open the Command Palette.
+
+2. **Sign In**:
+   - Type `GitHub: Sign In` and select the command. Follow the prompts to authenticate and authorize VS Code to access your GitHub account.
+
+#### 3. **Clone a Repository**
+
+1. **Open the Command Palette**:
+
+   - Press `Ctrl+Shift+P` to open the Command Palette.
+
+2. **Clone Repository**:
+   - Type `Git: Clone` and select the command. Enter the URL of the GitHub repository you want to clone. Choose a local directory where you want to save the repository.
+
+#### 4. **Create and Manage Branches**
+
+1. **Create a Branch**:
+
+   - Open the Source Control view by clicking the Source Control icon in the Activity Bar or pressing `Ctrl+Shift+G`.
+   - Click on the `...` menu and select `Branch: Create Branch`.
+   - Enter the new branch name and press `Enter`.
+
+2. **Switch Branches**:
+   - Click on the current branch name in the status bar at the bottom-left corner of VS Code.
+   - Select the branch you want to switch to from the list.
+
+#### 5. **Commit and Push Changes**
+
+1. **Stage Changes**:
+
+   - Open the Source Control view by clicking the Source Control icon or pressing `Ctrl+Shift+G`.
+   - You will see a list of changes. Click the `+` icon next to the files you want to stage or click `+` next to Changes to stage all changes.
+
+2. **Commit Changes**:
+
+   - Enter a commit message in the text box at the top of the Source Control view.
+   - Click the checkmark icon to commit the changes.
+
+3. **Push Changes**:
+   - Click the `...` menu and select `Push` to push your changes to the remote repository.
+
+#### 6. **Pull Requests and Issues**
+
+1. **View Pull Requests**:
+
+   - Click on the GitHub Pull Requests icon in the Activity Bar to view a list of pull requests in the current repository.
+   - You can click on a pull request to view its details and make comments.
+
+2. **Create a Pull Request**:
+
+   - Click the `+` icon next to the Pull Requests heading.
+   - Follow the prompts to create a new pull request from your current branch.
+
+3. **Manage Issues**:
+   - Click on the GitHub Issues icon in the Activity Bar to view and manage issues in the current repository.
+   - You can create new issues, comment on existing issues, and close issues directly from VS Code.
+
+By using the GitHub extension in VS Code, you can streamline your workflow, manage repositories more effectively, and collaborate with your team seamlessly.
 
 ## 10. Best Practices
 
@@ -583,8 +660,11 @@ By following these steps, you can effectively create new branches, stay up-to-da
 
 ## 12. Additional Resources
 
+- **How to Install npm and node.js W10**: [Watch Video](https://www.youtube.com/watch?v=X-FPCwZFU_8&ab_channel=TechMeSpot)
+- **How to Install npm and node.js W11**: [Watch Video](https://www.youtube.com/watch?v=EIzdQxMXcrc&ab_channel=CSCORNERSunitaRai)
 - **Git Walkthrough**: [Watch Video](https://www.youtube.com/watch?v=cJTXh7g-uCM&ab_channel=AmitThinks)
 - **Why to Download Git**: [Watch Video](https://www.youtube.com/watch?v=2ReR1YJrNOM&ab_channel=ProgrammingwithMosh)
+- **How to connect Git with vs-code**: [Watch Video](https://www.youtube.com/watch?v=3Tsaxxv9sls&ab_channel=TheCodeCity)
 - **How to Install and Configure VS Code**: [Watch Video](https://www.youtube.com/watch?v=DKxS3IkduWQ&ab_channel=WebDevSimplified)
 - **GitHub Extension for VS Code**: [Watch Video](https://www.youtube.com/watch?v=i_23KUAEtUM&ab_channel=VisualStudioCode)
 
