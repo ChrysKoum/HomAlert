@@ -331,6 +331,89 @@ only error logs.
    git push
    ```
 
+### Creating a New Branch
+
+1. **Create a New Branch**
+
+   To create a new branch, use the following command:
+
+   ```sh
+   git checkout -b <your-name>
+   ```
+
+   Replace `<your-name>` with your actual name to create a branch named `your-name` and switch to it.
+
+2. **Push the New Branch to Remote**
+
+   Once you have made your changes and committed them, push the new branch to the remote repository:
+
+   ```sh
+   git push -u origin <your-name>
+   ```
+
+### Getting Changes from Main
+
+1. **Switch to the Main Branch**
+
+   Ensure you are on the main branch before pulling the latest changes:
+
+   ```sh
+   git checkout main
+   ```
+
+2. **Pull the Latest Changes from Main**
+
+   Pull the latest changes from the remote main branch:
+
+   ```sh
+   git pull origin main
+   ```
+
+3. **Merge Main into Your Branch**
+
+   Switch back to your branch and merge the latest changes from main:
+
+   ```sh
+   git checkout <your-name>
+   git merge main
+   ```
+
+### Solving Conflicts
+
+1. **Identify Conflicts**
+
+   During the merge process, Git will notify you of any conflicts. Open the conflicting files to identify the conflict markers:
+
+   ```sh
+   <<<<<<< HEAD
+   Your changes
+   =======
+   Changes from main
+   >>>>>>> main
+   ```
+
+2. **Resolve Conflicts**
+
+   Edit the files to resolve the conflicts, choosing which changes to keep. Remove the conflict markers after resolving.
+
+3. **Mark Conflicts as Resolved**
+
+   After resolving the conflicts, add the resolved files to the staging area:
+
+   ```sh
+   git add <file_name>
+   ```
+
+4. **Complete the Merge**
+
+   Complete the merge process by committing the resolved changes:
+
+   ```sh
+   git commit
+   ```
+
+By following these steps, you can effectively create new branches, stay up-to-date with changes from the main branch, and resolve any merge conflicts that arise. Make sure to replace `<your-name>` with your actual name when creating and managing your branches.
+
 ### Additional Resources
 
 - **Git Walkthrough**: [Watch Video](https://www.youtube.com/watch?v=cJTXh7g-uCM&ab_channel=AmitThinks)
