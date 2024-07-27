@@ -5,7 +5,7 @@
 // Key actions:
 // 1. Validate email format.
 // 2. Validate password strength.
-// 3. Validate other form fields as necessary.
+// 3. Validate other form fields as necessary..
 
 // Validate the format of an email address
 // email: The email address to validate.
