@@ -667,7 +667,9 @@ By using the GitHub extension in VS Code, you can streamline your workflow, mana
 - **How to connect Git with vs-code**: [Watch Video](https://www.youtube.com/watch?v=3Tsaxxv9sls&ab_channel=TheCodeCity)
 - **How to Install and Configure VS Code**: [Watch Video](https://www.youtube.com/watch?v=DKxS3IkduWQ&ab_channel=WebDevSimplified)
 - **GitHub Extension for VS Code**: [Watch Video](https://www.youtube.com/watch?v=i_23KUAEtUM&ab_channel=VisualStudioCode)
-
+- **Learn a little More about Node.js**: [Watch Video](https://www.youtube.com/watch?v=ENrzD9HAZK4&ab_channel=Fireship)
 ---
+
+**Didnt find what you are looking for search the docs to see how it works, youtube tutorials or ask gpt to tell you step by step what is happening**
 
 By following this guide, you will have a comprehensive understanding of the HomAlert project and be able to work with it effectively. If you have any questions or need further clarification, don't hesitate to ask!!
