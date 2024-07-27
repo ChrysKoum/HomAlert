@@ -305,7 +305,7 @@ only error logs.
 
    ````sh
    git pull
-   ```f
+   ```
 
    ````
 
