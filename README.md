@@ -16,6 +16,7 @@
 10. [Best Practices](#10-best-practices)
 11. [Debugging Tips](#11-debugging-tips)
 12. [Additional Resources](#12-additional-resources)
+13. [Testing Firebase Directory](#13-Testing)
 
 ## 1. Overview
 
@@ -29,7 +30,7 @@ HomAlert is an advanced Smart Home Emergency Notification System designed to saf
 
 - Vs Code
 - Node.js and npm
-- Firebase account with configured Firestore and Realtime Database(Optional if you are interested)
+- Firebase account with configured Realtime Database(Optional if you are interested)
 - Git
 
 **Check the [**Section 12**](#12-additional-resources) for help!**
@@ -102,7 +103,6 @@ HomAlert/
 ├── Firebase/
 │   ├── firebaseAuth.js
 │   ├── firebaseConfig.js
-│   ├── firebaseFirestore.js
 ├── logs/
 │   ├── combined.log
 │   ├── error.log
@@ -160,8 +160,7 @@ HomAlert/
   - `dashboardController.js`: Manages dashboard-related logic.
 - **Firebase/**: Manages Firebase configurations and utilities.
   - `firebaseAuth.js`: Sets up Firebase Authentication.
-  - `firebaseConfig.js`: Contains Firebase configuration setup.
-  - `firebaseFirestore.js`: Manages Firestore interactions.
+  - `firebaseSetup.js`: Contains Firebase configuration setup.
   - `firebaseUtils.js`: Contains utility functions for Firebase operations.
 - **middleware/**: Contains middleware functions for request handling.
   - `auth.js`: Middleware for authentication checks.
@@ -201,7 +200,6 @@ Read more [Here](https://github.com/ChrysKoum/HomAlert/wiki/EJS-Documentation)
 
 Firebase is a platform developed by Google for creating mobile and web applications. It provides a variety of tools and services to help you develop high-quality apps.
 
-- **firebase-admin**: This is the Firebase Admin SDK that enables access to Firebase services from privileged environments (like servers).
 - **firebase**: This is the client-side Firebase SDK.
 
 ### Winston
@@ -670,6 +668,27 @@ By using the GitHub extension in VS Code, you can streamline your workflow, mana
 - **GitHub Extension for VS Code**: [Watch Video](https://www.youtube.com/watch?v=i_23KUAEtUM&ab_channel=VisualStudioCode)
 - **Learn a little More about Node.js**: [Watch Video](https://www.youtube.com/watch?v=ENrzD9HAZK4&ab_channel=Fireship)
 ---
+13. Testing
+
+A test endpoint to check the connection with the Firebase Realtime Database. This endpoint allows you to verify that your application can successfully connect and interact with the database.
+
+### How to Test
+
+1. **Go to `/test`**: Navigate to the `/test` endpoint in your browser.
+2. **Interactive Forms and Buttons**: You will find buttons and forms that allow you to:
+   - Register a user
+   - Login
+   - Logout
+   - Reset password
+   - Read user data
+   - Write user data
+   - Read device data
+   - Write device data
+   - Read sensor data
+3. **Demo Data**: There is a section with demo data that you can use to fill in the forms.
+
+By interacting with the forms and buttons on the `/test` page, you can easily test various functionalities and verify the connection with the Firebase Realtime Database.
+
 
 **Didnt find what you are looking for search the docs to see how it works, youtube tutorials or ask gpt to tell you step by step what is happening**
 
