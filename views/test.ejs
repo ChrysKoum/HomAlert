@@ -1,0 +1,374 @@
+<!-- ===========================================
+     Home View
+     ===========================================
+     This file serves as the home page of the web dashboard.
+     Key actions:
+     1. Include the necessary layout and partials.
+     2. Display real-time data and user interactions.
+     3. Ensure the page is styled consistently with the overall design.
+     ===========================================
+-->
+<!-- Use the boilerplate layout for consistent structure it will retrieve the layout of the boilerplate file -->
+<% layout('layouts/boilerplate') %>
+     <!DOCTYPE html>
+     <html lang="en">
+
+     <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>Home Alert</title>
+          <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+          <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+     </head>
+
+     <body>
+          <section class="vh-50 d-flex align-items-center">
+               <div class="container text-center">
+                    <h1 class="display-4">Stay Safe, Stay Alert</h1>
+                    <p class="lead">Protecting What Matters Most</p>
+                    <div id="message" class="alert alert-info" style="display: none;"></div>
+                    <div id="authButtons">
+                         <button id="registerButton" class="btn btn-primary btn-lg">Register</button>
+                         <button id="loginButton" class="btn btn-primary btn-lg">Login</button>
+                         <button id="logoutButton" class="btn btn-primary btn-lg" style="display: none;">Logout</button>
+                         <button id="resetPasswordButton" class="btn btn-primary btn-lg">Reset Password</button>
+                    </div>
+                    <div id="dataButtons" style="display: none;">
+                         <button id="readUserDataButton" class="btn btn-secondary btn-lg">Read User Data</button>
+                         <button id="readDeviceDataButton" class="btn btn-secondary btn-lg">Read Device Data</button>
+                         <button id="readSensorDataButton" class="btn btn-secondary btn-lg">Read Sensor Data</button>
+                    </div>
+               </div>
+          </section>
+
+          <section class="container mt-5">
+               <div class="card">
+                    <div class="card-header">
+                         Test Device Information for Read Operations
+                    </div>
+                    <div class="card-body">
+                         <h5 class="card-title">User and Device Details</h5>
+                         <p class="card-text"><strong>User ID:</strong> Lzqm0ZJ8VSd8GWPz7kiFH80Vrbs2</p>
+                         <p class="card-text"><strong>Device ID:</strong> Lzqm0ZJ8VSd8GWPz7kiFH8hssbs2</p>
+                         <p class="card-text"><strong>Email:</strong> test@test.com</p>
+                         <p class="card-text"><strong>Password:</strong> testtest</p>
+                    </div>
+               </div>
+          </section>
+
+          <section class="container mt-5">
+               <!-- Register Form -->
+               <form id="registerForm" style="display: none;">
+                    <div class="form-group">
+                         <label for="registerEmail"><strong>Email:</strong></label>
+                         <input type="email" class="form-control" id="registerEmail" placeholder="Enter email">
+                    </div>
+                    <div class="form-group">
+                         <label for="registerPassword"><strong>Password:</strong></label>
+                         <input type="password" class="form-control" id="registerPassword" placeholder="Enter password">
+                    </div>
+                    <div class="form-group">
+                         <label for="registerUsername"><strong>Username:</strong></label>
+                         <input type="text" class="form-control" id="registerUsername" placeholder="Enter username">
+                    </div>
+                    <div class="form-group">
+                         <label for="registerImageUrl"><strong>Image URL:</strong></label>
+                         <input type="text" class="form-control" id="registerImageUrl" placeholder="Enter image URL">
+                    </div>
+                    <button type="button" class="btn btn-primary" onclick="register()">Register</button>
+               </form>
+
+               <!-- Login Form -->
+               <form id="loginForm" style="display: none;">
+                    <div class="form-group">
+                         <label for="loginEmail"><strong>Email:</strong></label>
+                         <input type="email" class="form-control" id="loginEmail" placeholder="Enter email">
+                    </div>
+                    <div class="form-group">
+                         <label for="loginPassword"><strong>Password:</strong></label>
+                         <input type="password" class="form-control" id="loginPassword" placeholder="Enter password">
+                    </div>
+                    <button type="button" class="btn btn-primary" onclick="login()">Login</button>
+               </form>
+
+               <!-- Reset Password Form -->
+               <form id="resetPasswordForm" style="display: none;">
+                    <div class="form-group">
+                         <label for="resetPasswordEmail"><strong>Email:</strong></label>
+                         <input type="email" class="form-control" id="resetPasswordEmail" placeholder="Enter email">
+                    </div>
+                    <button type="button" class="btn btn-primary" onclick="resetPassword()">Reset Password</button>
+               </form>
+
+               <!-- Write User Data Form -->
+               <form id="writeUserDataForm" style="display: none;">
+                    <div class="form-group">
+                         <label for="writeUserId"><strong>User ID:</strong></label>
+                         <input type="text" class="form-control" id="writeUserId" placeholder="Enter user ID">
+                    </div>
+                    <div class="form-group">
+                         <label for="writeUsername"><strong>Username:</strong></label>
+                         <input type="text" class="form-control" id="writeUsername" placeholder="Enter username">
+                    </div>
+                    <div class="form-group">
+                         <label for="writeEmail"><strong>Email:</strong></label>
+                         <input type="email" class="form-control" id="writeEmail" placeholder="Enter email">
+                    </div>
+                    <div class="form-group">
+                         <label for="writeImageUrl"><strong>Image URL:</strong></label>
+                         <input type="text" class="form-control" id="writeImageUrl" placeholder="Enter image URL">
+                    </div>
+                    <button type="button" class="btn btn-primary" onclick="writeUserData()">Write User Data</button>
+               </form>
+
+               <!-- Write Device Data Form -->
+               <form id="writeDeviceDataForm" style="display: none;">
+                    <div class="form-group">
+                         <label for="writeDeviceUserId"><strong>User ID:</strong></label>
+                         <input type="text" class="form-control" id="writeDeviceUserId" placeholder="Enter user ID">
+                    </div>
+                    <div class="form-group">
+                         <label for="writeDeviceId"><strong>Device ID:</strong></label>
+                         <input type="text" class="form-control" id="writeDeviceId" placeholder="Enter device ID">
+                    </div>
+                    <div class="form-group">
+                         <label for="writeDeviceName"><strong>Device Name:</strong></label>
+                         <input type="text" class="form-control" id="writeDeviceName" placeholder="Enter device name">
+                    </div>
+                    <div class="form-group">
+                         <label for="writeDevicePlace"><strong>Place:</strong></label>
+                         <input type="text" class="form-control" id="writeDevicePlace"
+                              placeholder="Enter the place (e.g., Kitchen)">
+                    </div>
+                    <div class="form-group">
+                         <label for="writeSensorData"><strong>Sensor Data (JSON format):</strong></label>
+                         <textarea class="form-control" id="writeSensorData" rows="3"
+                              placeholder="Enter sensor data"></textarea>
+                    </div>
+                    <button type="button" class="btn btn-primary" onclick="writeDeviceData()">Write Device Data</button>
+               </form>
+
+               <!-- Read User Data Form -->
+               <form id="readUserDataForm" style="display: none;">
+                    <div class="form-group">
+                         <label for="readUserId"><strong>User ID:</strong></label>
+                         <input type="text" class="form-control" id="readUserId" placeholder="Enter user ID">
+                    </div>
+                    <button type="button" class="btn btn-primary" onclick="readUserData()">Read User Data</button>
+               </form>
+
+               <!-- Read Device Data Form -->
+               <form id="readDeviceDataForm" style="display: none;">
+                    <div class="form-group">
+                         <label for="readDeviceUserId"><strong>User ID:</strong></label>
+                         <input type="text" class="form-control" id="readDeviceUserId" placeholder="Enter user ID">
+                    </div>
+                    <div class="form-group">
+                         <label for="readDeviceId"><strong>Device ID:</strong></label>
+                         <input type="text" class="form-control" id="readDeviceId" placeholder="Enter device ID">
+                    </div>
+                    <button type="button" class="btn btn-primary" onclick="readDeviceData()">Read Device Data</button>
+               </form>
+
+               <!-- Read Sensor Data Form -->
+               <form id="readSensorDataForm" style="display: none;">
+                    <div class="form-group">
+                         <label for="readSensorUserId"><strong>User ID:</strong></label>
+                         <input type="text" class="form-control" id="readSensorUserId" placeholder="Enter user ID">
+                    </div>
+                    <div class="form-group">
+                         <label for="readSensorDeviceId"><strong>Device ID:</strong></label>
+                         <input type="text" class="form-control" id="readSensorDeviceId" placeholder="Enter device ID">
+                    </div>
+                    <button type="button" class="btn btn-primary" onclick="readSensorData()">Read Sensor Data</button>
+               </form>
+          </section>
+
+          <script>
+               $(document).ready(function () {
+                    const $messageDiv = $('#message');
+                    const $authButtonsDiv = $('#authButtons');
+                    const $dataButtonsDiv = $('#dataButtons');
+
+                    function showMessage(message, type = 'info') {
+                         $messageDiv.html(message)
+                              .removeClass()
+                              .addClass(`alert alert-${type}`)
+                              .show();
+                    }
+
+                    function hideMessage() {
+                         $messageDiv.hide();
+                    }
+
+                    function toggleAuthButtons(isLoggedIn) {
+                         if (isLoggedIn) {
+                              $('#registerButton, #loginButton').hide();
+                              $('#logoutButton').show();
+                              $dataButtonsDiv.show();
+                         } else {
+                              $('#registerButton, #loginButton').show();
+                              $('#logoutButton').hide();
+                              $dataButtonsDiv.hide();
+                         }
+                    }
+
+                    $('#registerButton').click(function () {
+                         $('#registerForm').show();
+                         $('#loginForm, #resetPasswordForm, #writeUserDataForm, #writeDeviceDataForm, #readUserDataForm, #readDeviceDataForm, #readSensorDataForm').hide();
+                    });
+
+                    $('#loginButton').click(function () {
+                         $('#loginForm').show();
+                         $('#registerForm, #resetPasswordForm, #writeUserDataForm, #writeDeviceDataForm, #readUserDataForm, #readDeviceDataForm, #readSensorDataForm').hide();
+                    });
+
+                    $('#logoutButton').click(function () {
+                         $.get('/test/logout')
+                              .done(function (data) {
+                                   showMessage(data, 'success');
+                                   toggleAuthButtons(false);
+                              })
+                              .fail(function (error) {
+                                   showMessage(`Error: ${error.responseText}`, 'danger');
+                              });
+                    });
+
+                    $('#resetPasswordButton').click(function () {
+                         $('#resetPasswordForm').show();
+                         $('#registerForm, #loginForm, #writeUserDataForm, #writeDeviceDataForm, #readUserDataForm, #readDeviceDataForm, #readSensorDataForm').hide();
+                    });
+
+                    $('#readUserDataButton').click(function () {
+                         $('#readUserDataForm').show();
+                         $('#registerForm, #loginForm, #resetPasswordForm, #writeUserDataForm, #writeDeviceDataForm, #readDeviceDataForm, #readSensorDataForm').hide();
+                    });
+
+                    $('#readDeviceDataButton').click(function () {
+                         $('#readDeviceDataForm').show();
+                         $('#registerForm, #loginForm, #resetPasswordForm, #writeUserDataForm, #writeDeviceDataForm, #readUserDataForm, #readSensorDataForm').hide();
+                    });
+
+                    $('#readSensorDataButton').click(function () {
+                         $('#readSensorDataForm').show();
+                         $('#registerForm, #loginForm, #resetPasswordForm, #writeUserDataForm, #writeDeviceDataForm, #readUserDataForm, #readDeviceDataForm').hide();
+                    });
+
+                    $('#registerForm button').click(function () {
+                         const email = $('#registerEmail').val();
+                         const password = $('#registerPassword').val();
+                         const username = $('#registerUsername').val();
+                         const imageUrl = $('#registerImageUrl').val();
+                         $.post('/test/register', { email, password, username, imageUrl })
+                              .done(function (data) {
+                                   showMessage(data, 'success');
+                              })
+                              .fail(function (error) {
+                                   showMessage(`Error: ${error.responseText}`, 'danger');
+                              });
+                    });
+
+                    $('#loginForm button').click(function () {
+                         const email = $('#loginEmail').val();
+                         const password = $('#loginPassword').val();
+                         $.post('/test/login', { email, password })
+                              .done(function (data) {
+                                   showMessage(data, 'success');
+                                   toggleAuthButtons(true);
+                              })
+                              .fail(function (error) {
+                                   showMessage(`Error: ${error.responseText}`, 'danger');
+                              });
+                    });
+
+                    $('#resetPasswordForm button').click(function () {
+                         const email = $('#resetPasswordEmail').val();
+                         $.post('/test/resetPassword', { email })
+                              .done(function (data) {
+                                   showMessage(data, 'success');
+                              })
+                              .fail(function (error) {
+                                   showMessage(`Error: ${error.responseText}`, 'danger');
+                              });
+                    });
+
+                    $('#writeUserDataForm button').click(function () {
+                         const userId = $('#writeUserId').val();
+                         const username = $('#writeUsername').val();
+                         const email = $('#writeEmail').val();
+                         const imageUrl = $('#writeImageUrl').val();
+                         $.post('/test/writeUserData', { userId, username, email, imageUrl })
+                              .done(function (data) {
+                                   showMessage(data, 'success');
+                              })
+                              .fail(function (error) {
+                                   showMessage(`Error: ${error.responseText}`, 'danger');
+                              });
+                    });
+
+                    $('#writeDeviceDataForm button').click(function () {
+                         const userId = $('#writeDeviceUserId').val();
+                         const deviceId = $('#writeDeviceId').val();
+                         const deviceName = $('#writeDeviceName').val();
+                         const place = $('#writeDevicePlace').val();
+                         const sensorData = $('#writeSensorData').val();
+
+                         if (!isValidJson(sensorData)) {
+                              showMessage('Invalid JSON format for sensor data', 'danger');
+                              return;
+                         }
+
+                         $.post('/test/writeDeviceData', { userId, deviceId, deviceName, place, sensorData: JSON.parse(sensorData) })
+                              .done(function (data) {
+                                   showMessage(data, 'success');
+                              })
+                              .fail(function (error) {
+                                   showMessage(`Error: ${error.responseText}`, 'danger');
+                              });
+                    });
+
+                    $('#readUserDataForm button').click(function () {
+                         const userId = $('#readUserId').val();
+                         $.get(`/test/readUserData/${userId}`)
+                              .done(function (data) {
+                                   showMessage(JSON.stringify(data, null, 2), 'success');
+                              })
+                              .fail(function (error) {
+                                   showMessage(`Error: ${error.responseText}`, 'danger');
+                              });
+                    });
+
+                    $('#readDeviceDataForm button').click(function () {
+                         const userId = $('#readDeviceUserId').val();
+                         const deviceId = $('#readDeviceId').val();
+                         $.get(`/test/readDeviceData/${userId}/${deviceId}`)
+                              .done(function (data) {
+                                   showMessage(JSON.stringify(data, null, 2), 'success');
+                              })
+                              .fail(function (error) {
+                                   showMessage(`Error: ${error.responseText}`, 'danger');
+                              });
+                    });
+
+                    $('#readSensorDataForm button').click(function () {
+                         const userId = $('#readSensorUserId').val();
+                         const deviceId = $('#readSensorDeviceId').val();
+                         $.get(`/test/readSensorData/${userId}/${deviceId}`)
+                              .done(function (data) {
+                                   showMessage(JSON.stringify(data, null, 2), 'success');
+                              })
+                              .fail(function (error) {
+                                   showMessage(`Error: ${error.responseText}`, 'danger');
+                              });
+                    });
+
+                    function isValidJson(str) {
+                         try {
+                              JSON.parse(str);
+                              return true;
+                         } catch (e) {
+                              return false;
+                         }
+                    }
+               });
+          </script>

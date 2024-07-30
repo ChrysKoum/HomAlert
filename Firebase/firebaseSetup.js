@@ -19,7 +19,8 @@
 // 5. Prepare to add Firebase Authentication and Firestore integration as needed.
 // Note: Ensure that the .env file contains the correct Firebase credentials.
 
-const { initializeApp, getApps } = require("firebase/app");
+const { initializeApp } = require("firebase/app");
+const { getAuth } = require("firebase/auth");
 const { getDatabase } = require("firebase/database");
 require("dotenv").config();
 const logger = require("../middleware/logger");
@@ -36,20 +37,11 @@ const firebaseConfig = {
   measurementId: process.env.FIREBASE_MEASUREMENT_ID,
 };
 
-let firebaseApp;
+const app = initializeApp(firebaseConfig);
 
-if (!getApps().length) {
-  // Initialize the Firebase app with the configuration object
-  firebaseApp = initializeApp(firebaseConfig);
-  logger.info("Firebase initialized with provided configuration");
-} else {
-  firebaseApp = getApps()[0];
-}
+const auth = getAuth(app);
+const database = getDatabase(app);
 
-// Get a reference to the Firebase Realtime Database
-const db = getDatabase(firebaseApp);
+logger.info("Firebase initialized successfully");
 
-logger.info("Database reference initialized");
-
-// Export the Firebase app and database reference for use in other parts of the application
-module.exports = { firebaseApp, db };
+module.exports = { auth, database };

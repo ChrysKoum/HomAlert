@@ -7,14 +7,21 @@
 // 2. Log the request method, URL, and timestamp.
 
 const { createLogger, format, transports } = require("winston");
-const { combine, timestamp, printf } = format;
+const { combine, printf } = format;
 
 const logFormat = printf(({ level, message, timestamp }) => {
   return `${timestamp} [${level}]: ${message}`;
 });
 
+const timestampWithOffset = format((info) => {
+  const currentDate = new Date();
+  currentDate.setHours(currentDate.getHours() + 3); // Adding 3 hours to the current time
+  info.timestamp = currentDate.toISOString();
+  return info;
+});
+
 const logger = createLogger({
-  format: combine(timestamp(), logFormat),
+  format: combine(timestampWithOffset(), logFormat),
   transports: [
     new transports.Console(),
     new transports.File({ filename: "logs/error.log", level: "error" }),
