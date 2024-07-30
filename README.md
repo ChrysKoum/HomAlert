@@ -668,6 +668,7 @@ By using the GitHub extension in VS Code, you can streamline your workflow, mana
 - **GitHub Extension for VS Code**: [Watch Video](https://www.youtube.com/watch?v=i_23KUAEtUM&ab_channel=VisualStudioCode)
 - **Learn a little More about Node.js**: [Watch Video](https://www.youtube.com/watch?v=ENrzD9HAZK4&ab_channel=Fireship)
 ---
+**Didnt find what you are looking for search the docs to see how it works, youtube tutorials or ask gpt to tell you step by step what is happening**
 ## 13. Testing
 
 A test endpoint to check the connection with the Firebase Realtime Database. This endpoint allows you to verify that your application can successfully connect and interact with the database.
@@ -690,6 +691,4 @@ A test endpoint to check the connection with the Firebase Realtime Database. Thi
 By interacting with the forms and buttons on the `/test` page, you can easily test various functionalities and verify the connection with the Firebase Realtime Database.
 
 
-**Didnt find what you are looking for search the docs to see how it works, youtube tutorials or ask gpt to tell you step by step what is happening**
-
-By following this guide, you will have a comprehensive understanding of the HomAlert project and be able to work with it effectively. If you have any questions or need further clarification, don't hesitate to ask!!
+**By following this guide, you will have a comprehensive understanding of the HomAlert project and be able to work with it effectively. If you have any questions or need further clarification, don't hesitate to ask!!**
