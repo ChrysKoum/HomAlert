@@ -9,15 +9,14 @@
 // 4. Ensure secure handling of user credentials and implement necessary error handling mechanisms.
 
 const {
-  getAuth,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   signOut,
+  sendPasswordResetEmail,
+  onAuthStateChanged,
 } = require("firebase/auth");
-const { firebaseApp } = require("./firebaseSetup"); // Use the singleton
+const { auth } = require("./firebaseSetup"); // Use the singleton
 const logger = require("../middleware/logger");
-
-const auth = getAuth(firebaseApp);
 
 // Asynchronously sign up a user with email and password
 const signUpUser = async (email, password) => {
@@ -62,8 +61,26 @@ const signOutUser = async () => {
   }
 };
 
+// Asynchronously send a password reset email
+const resetPassword = async (email) => {
+  try {
+    await sendPasswordResetEmail(auth, email);
+    logger.info(`Password reset email sent to: ${email}`);
+  } catch (error) {
+    logger.error(`Error sending password reset email: ${error.message}`);
+    throw error;
+  }
+};
+
+// Listen for authentication state changes
+const onAuthStateChangedListener = (callback) => {
+  return onAuthStateChanged(auth, callback);
+};
+
 module.exports = {
   signUpUser,
   signInUser,
   signOutUser,
+  resetPassword,
+  onAuthStateChangedListener,
 };

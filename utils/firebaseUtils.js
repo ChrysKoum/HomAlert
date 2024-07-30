@@ -1,46 +1,104 @@
-// ===========================================
-// Firebase Utils
-// ===========================================
-// This file contains utility functions for common Firebase operations.
-// Key actions:
-// 1. Get sensor data from Firebase Realtime Database.
-// 2. Get user data from Firebase Firestore.
-// 3. Get sensor data by user ID from Firebase Realtime Database.
+// utils/firebaseUtils.js
+const { ref, set, get, child, update, remove } = require("firebase/database");
+const { database } = require("../Firebase/firebaseSetup");
 
-const { db } = require("../Firebase/firebaseSetup");
-const { ref, get, child } = require("firebase/database");
-const { getFirestore, doc, getDoc } = require("firebase/firestore");
-
-// Asynchronously get all sensor data from Firebase Realtime Database
-const getSensorData = async () => {
-  // Reference to the 'Measurements' node in the database
-  const snapshot = await get(ref(db, "Measurements"));
-  // Return the data as a JavaScript object
-  return snapshot.val();
+// Function to read user data
+const readUserData = async (userId) => {
+  const dbRef = ref(database);
+  try {
+    const snapshot = await get(child(dbRef, `users/${userId}`));
+    if (snapshot.exists()) {
+      return snapshot.val();
+    } else {
+      console.log("No data available");
+      return null;
+    }
+  } catch (error) {
+    console.error(error);
+  }
 };
 
-// Asynchronously get user data from Firebase Firestore
-// userId: The unique identifier for the user.
-const getUserData = async (userId) => {
-  // Initialize Firestore
-  const firestore = getFirestore();
-  // Create a reference to the user document in the 'users' collection
-  const userDoc = await getDoc(doc(firestore, "users", userId));
-  // Check if the document exists and return the data
-  return userDoc.exists() ? userDoc.data() : null;
+// Function to update user data
+const updateUserData = (userId, updatedData) => {
+  update(ref(database, "users/" + userId), updatedData);
 };
 
-// Asynchronously get sensor data for a specific user from Firebase Realtime Database
-// userId: The unique identifier for the user.
-const getSensorDataByUserId = async (userId) => {
-  // Reference to the user's specific sensor data node in the database
-  const snapshot = await get(child(ref(db), `Users/${userId}/Measurements`));
-  // Return the data as a JavaScript object
-  return snapshot.val();
+// Function to delete user data
+const deleteUserData = (userId) => {
+  remove(ref(database, "users/" + userId));
+};
+
+// Function to write user data
+const writeUserData = (userId, name, email, imageUrl) => {
+  set(ref(database, "users/" + userId), {
+    username: name,
+    email: email,
+    profile_picture: imageUrl,
+  });
+};
+
+// Function to write device data
+const writeDeviceData = (userId, deviceId, deviceName, sensorData, place) => {
+  const deviceRef = ref(database, `devices/${userId}/${deviceId}`);
+  set(deviceRef, {
+    deviceName: deviceName,
+    place: place,
+    sensorData: sensorData,
+  });
+};
+
+// Function to update device data
+const updateDeviceData = (userId, deviceId, updatedData) => {
+  const deviceRef = ref(database, `devices/${userId}/${deviceId}`);
+  update(deviceRef, updatedData);
+};
+
+// Function to delete device data
+const deleteDeviceData = (userId, deviceId) => {
+  const deviceRef = ref(database, `devices/${userId}/${deviceId}`);
+  remove(deviceRef);
+};
+
+// Function to read device data
+const readDeviceData = async (userId, deviceId) => {
+  const dbRef = ref(database);
+  try {
+    const snapshot = await get(child(dbRef, `devices/${userId}/${deviceId}`));
+    if (snapshot.exists()) {
+      return snapshot.val();
+    } else {
+      console.log("No data available");
+      return null;
+    }
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+// Function to read sensor data
+const readSensorData = async (userId, deviceId) => {
+  const dbRef = ref(database, `devices/${userId}/${deviceId}/sensorData`);
+  try {
+    const snapshot = await get(dbRef);
+    if (snapshot.exists()) {
+      return snapshot.val();
+    } else {
+      console.log("No sensor data available");
+      return null;
+    }
+  } catch (error) {
+    console.error(error);
+  }
 };
 
 module.exports = {
-  getSensorData,
-  getUserData,
-  getSensorDataByUserId,
+  writeUserData,
+  readUserData,
+  updateUserData,
+  deleteUserData,
+  writeDeviceData,
+  updateDeviceData,
+  deleteDeviceData,
+  readDeviceData,
+  readSensorData,
 };

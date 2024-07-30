@@ -11,6 +11,7 @@ const express = require("express");
 const router = express.Router();
 const authController = require("../controllers/authController");
 const dashboardController = require("../controllers/dashboardController");
+const testController = require("../controllers/testController");
 const authMiddleware = require("../middleware/auth");
 const logger = require("../middleware/logger");
 
@@ -20,6 +21,28 @@ router.get("/", (req, res) => {
   logger.info("Home route accessed");
   res.render("home", { title: "Home" }); // Make sure there is a home.ejs in your views directory
 });
+
+// Test route
+// Renders the test page
+router.get("/test", testController.renderHome);
+
+// Test routes for Firebase functions
+
+router.post("/test/register", testController.testRegister);
+router.post("/test/login", testController.testLogin);
+router.get("/test/logout", testController.testLogout);
+router.post("/test/resetPassword", testController.testResetPassword);
+router.post("/test/writeUserData", testController.testWriteUserData);
+router.post("/test/writeDeviceData", testController.testWriteDeviceData);
+router.get("/test/readUserData/:userId", testController.testReadUserData);
+router.get(
+  "/test/readDeviceData/:userId/:deviceId",
+  testController.testReadDeviceData
+);
+router.get(
+  "/test/readSensorData/:userId/:deviceId",
+  testController.testReadSensorData
+);
 
 // Authentication routes
 // Handles user registration
