@@ -12,11 +12,17 @@
             <li class="nav-item"><a class="nav-link" href="/contact">Contact Us</a></li>
             <li class="nav-item"><a class="nav-link" href="/about">About Us</a></li>
             <li class="nav-item"><a class="nav-link" href="/test">Test</a></li>
-            <li class="nav-item"><a class="nav-link" href="/dashboard">Dashboard</a></li>
-            <li class="nav-item"><a class="nav-link" href="/settings">Settings</a></li>
-            <li class="nav-item"><a class="nav-link" href="/logout">Logout</a></li>
-            <li class="nav-item"><a class="nav-link" href="/login">Sign In</a></li>
-            <li class="nav-item"><a class="nav-link" href="/register">Register</a></li>
+        </ul>
+        <ul class="navbar-nav ml-auto">
+            <% if (typeof user !=='undefined' && user) { %>
+                <li class="nav-item"><a class="nav-link" href="/dashboard">Dashboard</a></li>
+                <li class="nav-item"><a class="nav-link" href="/settings">Settings</a></li>
+                <li class="nav-item"><a class="nav-link" href="/profile">Profile</a></li>
+                <li class="nav-item"><a class="nav-link" href="/logout">Logout</a></li>
+                <% } else { %>
+                    <li class="nav-item"><a class="nav-link" href="/login">Sign In</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/register">Register</a></li>
+                    <% } %>
         </ul>
     </div>
 </nav>
