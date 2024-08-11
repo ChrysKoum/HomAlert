@@ -97,4 +97,37 @@ router.get("/dashboard", authMiddleware, (req, res, next) => {
   });
 });
 
+// About Us Route
+router.get("/about-us", (req, res) => {
+  logger.info("About Us route accessed");
+  res.render("about-us.ejs");
+});
+
+// Contact Us Route
+router.get("/contact-us", (req, res) => {
+  logger.info("Contact Us route accessed");
+  res.render("contact-us.ejs");
+});
+
+// FAQ Route
+router.get("/faq", (req, res) => {
+  logger.info("FAQ route accessed");
+  res.render("faq.ejs");
+});
+
+// Product Route
+router.get("/product", (req, res) => {
+  logger.info("Product route accessed");
+  res.render("product.ejs");
+});
+
+// Profile Page Route (Protected by Authentication Middleware)
+router.get("/profile-page", authMiddleware, (req, res) => {
+  logger.info("Profile Page route accessed");
+  res.render("profile-page.ejs");
+});
+
+//test
+
+
 module.exports = router;

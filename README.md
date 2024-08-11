@@ -134,15 +134,25 @@ HomAlert/
 │   │   ├── forgot-password.ejs
 │   │   ├── sign-in.ejs
 │   │   ├── sign-up.ejs
+│   ├── dashboard/
+│   │   ├── dashboard.ejs
+│   │   ├── profile-page.ejs
 │   ├── layouts/
 │   │   ├── boilerplate.ejs
 │   ├── partials/
 │   │   ├── footer.ejs
 │   │   ├── navbar.ejs
+│   │   ├── join-us.ejs
+│   │   ├── testimonials.ejs
 │   ├── errors/
 │   │   ├── 404.ejs
 │   │   ├── 500.ejs
+│   ├── about-us.ejs
+│   ├── contact-us.ejs
+│   ├── faq.ejs
 │   ├── home.ejs
+│   ├── product.ejs
+│   ├── test.ejs (will be removed only for development help)
 ├── .env-example
 ├── .gitignore
 ├── app.js
@@ -175,6 +185,7 @@ HomAlert/
   - `firebaseUtils.js`: Utility functions for Firebase operations.
 - **views/**: Contains EJS templates for rendering HTML pages.
   - `auth/`: Templates related to authentication (e.g., sign-in, sign-up).
+  - `dashboard/`: Templates related to the dashboard.
   - `layouts/`: Layout templates.
   - `partials/`: Reusable partial templates (e.g., navbar, footer).
   - Main pages (e.g., home.ejs, dashboard.ejs, contact-us.ejs).
