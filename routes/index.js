@@ -14,6 +14,7 @@ const dashboardController = require("../controllers/dashboardController");
 const testController = require("../controllers/testController");
 const authMiddleware = require("../middleware/auth");
 const logger = require("../middleware/logger");
+const errorHandler = require("../middleware/errorHandler");
 
 // Home route
 // Renders the home page
@@ -127,7 +128,105 @@ router.get("/profile-page", authMiddleware, (req, res) => {
   res.render("profile-page.ejs");
 });
 
-//test
+// User Management Routes
 
+// PUT Route for User Update (Protected)
+router.put("/user/update", authMiddleware, (req, res, next) => {
+  logger.info("User update attempted");
+  authController
+    .updateUser(req, res, next)
+    .then(() => {
+      logger.info("User updated successfully");
+    })
+    .catch((err) => {
+      logger.error(`User update error: ${err.message}`);
+      next(err);
+    });
+});
+
+// DELETE Route for User Deletion (Protected)
+router.delete("/user/delete", authMiddleware, (req, res, next) => {
+  logger.info("User deletion attempted");
+  authController
+    .deleteUser(req, res, next)
+    .then(() => {
+      logger.info("User deleted successfully");
+    })
+    .catch((err) => {
+      logger.error(`User deletion error: ${err.message}`);
+      next(err);
+    });
+});
+
+// PUT Route for Editing Device Name and Place (Protected)
+router.put("/device/update", authMiddleware, (req, res, next) => {
+  logger.info("Device update attempted");
+  // Assuming you have a controller function for updating device information
+  dashboardController
+    .updateDevice(req, res, next)
+    .then(() => {
+      logger.info("Device updated successfully");
+    })
+    .catch((err) => {
+      logger.error(`Device update error: ${err.message}`);
+      next(err);
+    });
+});
+
+
+// Authentication routes
+// Handles user registration
+router.post("/register", (req, res, next) => {
+  logger.info("Registration attempt");
+  authController
+    .register(req, res, next)
+    .then(() => {
+      logger.info("User registered successfully");
+    })
+    .catch((err) => {
+      logger.error(`Registration error: ${err.message}`);
+      next(err);
+    });
+});
+
+// Handles user login
+router.post("/login", (req, res, next) => {
+  logger.info("Login attempt");
+  authController
+    .login(req, res, next)
+    .then(() => {
+      logger.info("User logged in successfully");
+    })
+    .catch((err) => {
+      logger.error(`Login error: ${err.message}`);
+      next(err);
+    });
+});
+
+// Handles user logout, protected by authentication middleware
+router.get("/logout", authMiddleware, (req, res, next) => {
+  logger.info("Logout attempt");
+  authController
+    .logout(req, res, next)
+    .then(() => {
+      logger.info("User logged out successfully");
+    })
+    .catch((err) => {
+      logger.error(`Logout error: ${err.message}`);
+      next(err);
+    });
+});
+
+// Dashboard route (protected)
+// Shows the dashboard, protected by authentication middleware
+router.get("/dashboard", authMiddleware, (req, res, next) => {
+  logger.info("Dashboard route accessed");
+  dashboardController.showDashboard(req, res, next).catch((err) => {
+    logger.error(`Dashboard error: ${err.message}`);
+    next(err);
+  });
+});
+
+//testv2
 
 module.exports = router;
