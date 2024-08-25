@@ -103,3 +103,45 @@
 2024-07-26T12:12:47.404Z [info]: Firebase initialized with provided configuration
 2024-07-26T12:12:47.409Z [info]: Database reference initialized
 2024-07-26T12:12:47.689Z [info]: Server started on port 3005
+2024-08-25T23:01:36.284Z [info]: Firebase initialized successfully
+2024-08-25T23:01:36.296Z [info]: Server started on port 3005
+2024-08-25T23:01:46.890Z [info]: GET /
+2024-08-25T23:01:46.897Z [info]: Home route accessed
+2024-08-25T23:01:46.939Z [info]: GET /stylesheets/style.css
+2024-08-25T23:01:46.947Z [info]: GET /javascripts/main.js
+2024-08-25T23:01:46.952Z [info]: GET /path/to/your/image1.png
+2024-08-25T23:01:46.964Z [info]: GET /path/to/your/image2.png
+2024-08-25T23:01:46.969Z [info]: GET /path/to/your/image3.png
+2024-08-25T23:01:47.045Z [info]: GET /favicon.ico
+2024-08-25T23:01:50.928Z [info]: GET /contact
+2024-08-25T23:01:50.941Z [info]: GET /javascripts/main.js
+2024-08-25T23:01:50.946Z [info]: GET /stylesheets/style.css
+2024-08-25T23:02:51.430Z [info]: Firebase initialized successfully
+2024-08-25T23:02:51.441Z [info]: Server started on port 3005
+2024-08-25T23:02:54.287Z [info]: GET /contact
+2024-08-25T23:02:54.291Z [info]: Contact Us route accessed
+2024-08-25T23:02:54.317Z [info]: GET /javascripts/main.js
+2024-08-25T23:02:54.321Z [info]: GET /stylesheets/style.css
+2024-08-25T23:03:01.075Z [info]: GET /about
+2024-08-25T23:03:01.092Z [info]: GET /javascripts/main.js
+2024-08-25T23:03:01.095Z [info]: GET /stylesheets/style.css
+2024-08-25T23:03:13.790Z [info]: GET /contact
+2024-08-25T23:03:13.793Z [info]: Contact Us route accessed
+2024-08-25T23:03:13.809Z [info]: GET /stylesheets/style.css
+2024-08-25T23:03:13.814Z [info]: GET /javascripts/main.js
+2024-08-25T23:06:35.422Z [info]: GET /contact
+2024-08-25T23:06:35.430Z [info]: Contact Us route accessed
+2024-08-25T23:06:35.456Z [info]: GET /stylesheets/style.css
+2024-08-25T23:06:35.457Z [info]: GET /javascripts/main.js
+2024-08-25T23:06:54.040Z [info]: GET /contact
+2024-08-25T23:06:54.042Z [info]: Contact Us route accessed
+2024-08-25T23:06:54.050Z [info]: GET /javascripts/main.js
+2024-08-25T23:06:54.052Z [info]: GET /stylesheets/style.css
+2024-08-25T23:06:56.639Z [info]: GET /contact
+2024-08-25T23:06:56.639Z [info]: Contact Us route accessed
+2024-08-25T23:06:56.647Z [info]: GET /stylesheets/style.css
+2024-08-25T23:06:56.648Z [info]: GET /javascripts/main.js
+2024-08-25T23:06:59.318Z [info]: GET /contact
+2024-08-25T23:06:59.319Z [info]: Contact Us route accessed
+2024-08-25T23:06:59.326Z [info]: GET /stylesheets/style.css
+2024-08-25T23:06:59.327Z [info]: GET /javascripts/main.js

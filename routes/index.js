@@ -105,7 +105,7 @@ router.get("/about-us", (req, res) => {
 });
 
 // Contact Us Route
-router.get("/contact-us", (req, res) => {
+router.get("/contact", (req, res) => {
   logger.info("Contact Us route accessed");
   res.render("contact-us.ejs");
 });
