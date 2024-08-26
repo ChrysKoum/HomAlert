@@ -11,12 +11,96 @@
 <!-- Use the boilerplate layout for consistent structure it will retrieve the layout of the boilerplate file -->
 <% layout('layouts/boilerplate') %>
 
-<button type="button" class="btn btn-primary">Primary</button>
 
-<!-- Example image-->
-<div class="card" style="width: 18rem;">
-     <img src="..." class="card-img-top" alt="...">
-     <div class="card-body">
-       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-     </div>
-   </div>
+<style>
+  body, html {
+      height: 100%;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-image: url('assets/images/contact-us.png'); 
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+  }
+  .contact-form {
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 400px;
+      margin: auto;
+      color: white;
+      margin-top: 100px;
+      background-size:
+  }
+  .footer {
+      background-color: #f8f9fa;
+      padding: 20px;
+      text-align: center;
+      margin-top: 100px;
+      width: 100%;
+  }
+  .footer img {
+      max-width: 50px;
+      margin-bottom: 10px;
+  }
+  .social-icon {
+    width: 24px; /* Adjust to your preferred size */
+    height: 24px; /* Adjust to your preferred size */
+    margin-right: 15px;
+    transition: opacity 0.3s;
+}
+
+.social-icon:hover {
+    opacity: 0.7; /* A subtle hover effect */
+}
+</style>
+
+<body>
+
+  <!-- Contact Form -->
+  <div class="container">
+      <div class="contact-form">
+          <h3 class="text-center">CONTACT US</h3>
+          <p class="text-center">Have a question or need assistance? We're here to help.</p>
+          <form>
+              <div class="mb-3">
+                  <input type="text" class="form-control" placeholder="Name" required>
+              </div>
+              <div class="mb-3">
+                  <input type="email" class="form-control" placeholder="Email" required>
+              </div>
+              <div class="mb-3">
+                  <textarea class="form-control" placeholder="Message" rows="4" required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary w-100">Submit</button>
+          </form>
+      </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+      <div class="container">
+          <!-- Logo -->
+          <img src="assets/logo/logo trasperant without text.png" alt="Logo">
+
+          <!-- HyperLinks -->
+          <div class="mt-3">
+              <a href="/" class="me-3">Home</a>
+              <a href="/product" class="me-3">Product</a>
+              <a href="/about" class="me-3">About Us</a>
+              <a href="/test" class="me-3">FAQ</a>
+              <a href="/contact">Contact</a>
+          </div>
+
+          <!-- Social Icons -->
+          <div class="mt-3">
+            <% ['Facebook', 'Instagram', 'X', 'Linkedin', 'Youtube'].forEach(function(icon) { %>  <!-- Wanna add a new social icon? Add it in the array  !!! -->
+                <a href="#"><img src="assets/icons/social/<%= icon %>.png" alt="<%= icon.charAt(0).toUpperCase() + icon.slice(1) %>" class="social-icon"></a>
+            <% }); %>
+          </div>
+
+      </div>
+  </footer>
+  
+</body>
+
