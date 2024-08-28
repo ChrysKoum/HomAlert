@@ -99,7 +99,7 @@ router.get("/dashboard", authMiddleware, (req, res, next) => {
 });
 
 // About Us Route
-router.get("/about-us", (req, res) => {
+router.get("/about", (req, res) => {
   logger.info("About Us route accessed");
   res.render("about-us.ejs");
 });
