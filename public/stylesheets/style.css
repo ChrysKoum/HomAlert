@@ -92,3 +92,89 @@ button:hover {
   background-color: darken(var(--accent-color), 10%);
 }
 
+
+/* kotsios testing css for footer */
+
+.footer-logo {
+  max-width: 50px; /* Limit the maximum width */
+  height: auto;    /* Maintain the aspect ratio */
+}
+
+.social-icon {
+  max-width: 30px; /* Set the maximum width for social icons */
+  height: auto;    /* Maintain the aspect ratio */
+  margin-left: 10px; /* Optional: add spacing between icons */
+}
+
+/* General Footer Styling */
+.footer {
+  padding: 20px 0;
+  background-color: #f8f9fa; /* Light gray background color */
+  border-top: 1px solid #e7e7e7; /* Slight border at the top */
+  border-bottom: 1px solid #e0e0e0; /* Adjust color and thickness as needed */
+}
+
+/* Flexbox container adjustments */
+.footer .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo Styling */
+.footer img {
+  max-width: 50px; /* Limit logo size */
+  height: auto;
+  width: 50px;
+  height: 50px;
+}
+
+/* Hyperlink Styling */
+.footer a {
+  color: #007bff; /* Bootstrap primary blue color */
+  text-decoration: none;
+  font-size: 16px;
+  margin-right: 15px; /* Space between links */
+}
+
+.footer a:hover {
+  color: #0056b3; /* Darker blue on hover */
+  text-decoration: underline;
+}
+
+/* Social Icon Styling */
+.social-icon {
+  width: 24px; /* Icon width */
+  height: 24px; /* Icon height */
+  margin-left: 10px; /* Space between social icons */
+}
+
+/* Adjusting layout for smaller screens */
+@media (max-width: 767px) {
+  .footer .container {
+      flex-direction: column;
+      text-align: center;
+  }
+
+  .footer a {
+      display: inline-block;
+      margin: 10px 0;
+  }
+
+  .social-icon {
+      margin: 10px 5px;
+  }
+}
+
+
+/* kotsios testing css for nav bar  */
+
+/* Add more left space to the logo */
+.navbar-brand {
+  margin-left: 20px; /* You can adjust this value */
+}
+
+/* Add custom styles for the buttons if needed */
+.navbar-nav .nav-link.btn {
+  margin-right: 10px; /* Adjust spacing between buttons */
+}
