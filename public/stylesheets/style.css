@@ -92,19 +92,40 @@ button:hover {
   background-color: darken(var(--accent-color), 10%);
 }
 
+/* kotsios css for nav and fouter  */
 
-/* kotsios testing css for footer */
+.nav-link {
+  color: var(--secondary-color); /* Default text color */
+  transition: color 0.3s ease; /* Smooth transition effect */
+}
+
+.nav-link:hover {
+  color: var(--accent-color); /* Blue color on hover */
+}
+
+
+.social-icon {
+  max-width: 30px; /* Set the maximum width for social icons */
+  height: auto;    /* Maintain the aspect ratio */
+  margin-left: 10px; /* Optional: add spacing between icons */
+  filter: invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
+  transition: filter 0.3s ease, transform 0.3s ease; /* Smooth transition effect for hover */
+}
+
+.social-icon:hover {
+  transform: scale(1.1); /* Slightly enlarge the icon on hover */
+  filter: invert(33%) sepia(97%) saturate(1665%) hue-rotate(199deg) brightness(96%) contrast(103%);
+}
+
+
+/* kotsios testing css  */
 
 .footer-logo {
   max-width: 50px; /* Limit the maximum width */
   height: auto;    /* Maintain the aspect ratio */
 }
 
-.social-icon {
-  max-width: 30px; /* Set the maximum width for social icons */
-  height: auto;    /* Maintain the aspect ratio */
-  margin-left: 10px; /* Optional: add spacing between icons */
-}
+
 
 /* General Footer Styling */
 .footer {
@@ -178,3 +199,5 @@ button:hover {
 .navbar-nav .nav-link.btn {
   margin-right: 10px; /* Adjust spacing between buttons */
 }
+
+
