@@ -125,6 +125,10 @@ button:hover {
 
 /* General Footer Styling */
 
+.footer-background {
+  background-color: var(--primary-color); /* or use another variable/color defined in your CSS */
+}
+
 .footer-logo {
   max-width: 50px; /* Limit the maximum width */
   height: auto;    /* Maintain the aspect ratio */
