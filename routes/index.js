@@ -15,8 +15,7 @@ const testController = require("../controllers/testController");
 const authMiddleware = require("../middleware/auth");
 const logger = require("../middleware/logger");
 const errorHandler = require("../middleware/errorHandler");
-
-
+const socials = require("..public/svg/socials");
 
 // Test route
 // Renders the test page
@@ -38,7 +37,6 @@ router.get(
   "/test/readSensorData/:userId/:deviceId",
   testController.testReadSensorData
 );
-
 
 /////// 1 Basic routes ///////
 
@@ -72,7 +70,6 @@ router.get("/product", (req, res) => {
   res.render("product.ejs");
 });
 
-
 /////// 2 Authentication routes ///////
 
 // Handles user registration
@@ -89,9 +86,7 @@ router.post("/register", (req, res, next) => {
     });
 });
 
-
-
-// Forgot Password Route 
+// Forgot Password Route
 // todo//
 
 // Reset Password Route//
@@ -121,7 +116,6 @@ router.post("/login", (req, res, next) => {
 
 //////////////////////////////////////////
 
-
 ///////////////Log OUT //////////////////
 
 // Handles user logout, protected by authentication middleware
@@ -139,14 +133,6 @@ router.get("/logout", authMiddleware, (req, res, next) => {
 });
 
 ////////////////////////////////////////////////////////////
-
-
-
-
-
-
-
-
 
 // Dashboard route (protected)
 // Shows the dashboard, protected by authentication middleware
@@ -209,7 +195,6 @@ router.put("/device/update", authMiddleware, (req, res, next) => {
     });
 });
 
-
 // Authentication routes
 // Handles user registration
 router.post("/register", (req, res, next) => {
@@ -224,11 +209,6 @@ router.post("/register", (req, res, next) => {
       next(err);
     });
 });
-
-
-
-
-
 
 // Handles user logout, protected by authentication middleware
 router.get("/logout", authMiddleware, (req, res, next) => {
@@ -253,6 +233,5 @@ router.get("/dashboard", authMiddleware, (req, res, next) => {
     next(err);
   });
 });
-
 
 module.exports = router;
