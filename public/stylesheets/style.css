@@ -105,18 +105,20 @@ button:hover {
   color: var(--accent-color); /* Blue color on hover */
 }
 
-.social-icon {
-  max-width: 30px; /* Set the maximum width for social icons */
-  height: auto;    /* Maintain the aspect ratio */
-  margin-left: 10px; /* Optional: add spacing between icons */
-  filter: invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
-  transition: filter 0.3s ease, transform 0.3s ease; /* Smooth transition effect for hover */
+.social-icon svg{
+  width: 24px; /* Define size */
+  height: 24px;
+  fill: var(--secondary-color); /* Default color */
+  transition: fill 0.3s ease; /* Smooth transition for the color change */
 }
 
-.social-icon:hover {
-  transform: scale(1.1); /* Slightly enlarge the icon on hover */
-   /* this may need to change in the futert */
-  filter: invert(33%) sepia(97%) saturate(1665%) hue-rotate(199deg) brightness(96%) contrast(103%);
+.social-icon{
+  color: var(--secondary-color);
+  transition: color 0.3s ease;
+}
+
+.social-icon:hover  {
+  color: var(--accent-color); /* Replace this with your accent color */
 }
 
 

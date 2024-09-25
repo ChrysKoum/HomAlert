@@ -10,14 +10,12 @@
 -->
 <!-- Use the boilerplate layout for consistent structure it will retrieve the layout of the boilerplate file -->
 <% layout('layouts/boilerplate') %>
-<link rel="stylesheet" href="stylesheets/contact-us.css">
+
+<!-- contact-us Styles-->
+<link rel="stylesheet" href="stylesheets/contact-us.css"> 
 
 
-
-
-
-
-<body>
+<section class="contact-us">
 
   <!-- Contact Form -->
   <div class="container">
@@ -39,31 +37,8 @@
       </div>
   </div>
 
-  <!-- Footer -->
-  <footer class="footer">
-      <div class="container">
-          <!-- Logo -->
-          <img src="assets/logo/logo trasperant without text.png" alt="Logo">
-
-          <!-- HyperLinks -->
-          <div class="mt-3">
-              <a href="/" class="me-3">Home</a>
-              <a href="/product" class="me-3">Product</a>
-              <a href="/about" class="me-3">About Us</a>
-              <a href="/test" class="me-3">FAQ</a>
-              <a href="/contact">Contact</a>
-          </div>
-
-          <!-- Social Icons -->
-          <div class="mt-3">
-            <% ['Facebook', 'Instagram', 'X', 'Linkedin', 'Youtube'].forEach(function(icon) { %>  <!-- Wanna add a new social icon? Add it in the array  !!! -->
-                <a href="#"><img src="assets/icons/social/<%= icon %>.png" alt="<%= icon.charAt(0).toUpperCase() + icon.slice(1) %>" class="social-icon"></a>
-            <% }); %>
-          </div>
-
-      </div>
-  </footer>
   
   
-</body>
+  
+</section>
 
