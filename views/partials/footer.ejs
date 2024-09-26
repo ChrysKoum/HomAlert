@@ -8,7 +8,6 @@
      3. Make sure the footer remains at the bottom of the page.
      ===========================================
 -->
-<%- include('../../public/svg/socials.js') %>
 
 <div class="footer-background p-5">
     <div class="container">
@@ -33,27 +32,18 @@
                 </div>
 
                 <!-- Social Media Icons on the Right -->
-                <!-- In your EJS footer file, e.g., footer.ejs -->
-
-<div class="social-icons">
-    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
-        <%= icons.facebook %>
-    </a>
-    <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-        <%= icons.twitter %>
-    </a>
-    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
-        <%= icons.instagram %>
-    </a>
-    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-        <%= icons.linkedin %>
-    </a>
-    <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">
-        <%= icons.youtube %>
-    </a>
-</div>
-
+                <div class="col-4 d-flex justify-content-end">
+                    <div class="social-icons">
+                        <i class="fab fa-facebook" style="font-size: 1.5em;"></i>
+                        <i class="fab fa-instagram" style="font-size: 1.5em;"></i>
+                        <i class="fab fa-x-twitter" style="font-size: 1.5em;"></i>
+                        <i class="fab fa-linkedin" style="font-size: 1.5em;"></i>
+                        <i class="fab fa-youtube" style="font-size: 1.5em;"></i>
+                      </div>
+                </div>
             </div>
+
+            
         </footer>
     </div>
 
@@ -62,9 +52,6 @@
         <span id="dateDisplay"></span>
     </div>
 </div>
-
-
-
 
 
 <script>

@@ -15,7 +15,7 @@ const testController = require("../controllers/testController");
 const authMiddleware = require("../middleware/auth");
 const logger = require("../middleware/logger");
 const errorHandler = require("../middleware/errorHandler");
-const socials = require("..public/svg/socials");
+
 
 // Test route
 // Renders the test page

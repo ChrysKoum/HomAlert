@@ -7580,3 +7580,252 @@ icons is not defined
     43|         <%= icons.twitter %>
 
 icons is not defined
+2024-09-26T11:31:56.162Z [info]: Firebase initialized successfully
+2024-09-26T11:31:56.170Z [info]: Server started on port 3005
+2024-09-26T11:32:02.732Z [info]: GET /
+2024-09-26T11:32:02.734Z [info]: Home route accessed
+2024-09-26T11:32:02.738Z [error]: Server error: /Users/konstandinosdimitriou/Documents/[06]Work/[063]Home_Alert/main/HomAlert/views/layouts/boilerplate.ejs:43
+    41|         </main>
+    42| 
+ >> 43|         <%- include('../partials/footer')%>
+    44| 
+    45|             <!-- Font Awesome Icons -->
+    46|             <script src="https://kit.fontawesome.com/db4dfad525.js" crossorigin="anonymous"></script>
+
+/Users/konstandinosdimitriou/Documents/[06]Work/[063]Home_Alert/main/HomAlert/views/partials/footer.ejs:11
+    9|      ===========================================
+    10| -->
+ >> 11| <%- include('../../public/svg/socials.js') %>
+    12| 
+    13| <div class="footer-background p-5">
+    14|     <div class="container">
+
+Could not find the include file "../../public/svg/socials.js"
+2024-09-26T11:32:02.745Z [info]: GET /stylesheets/style.css
+2024-09-26T11:32:02.747Z [info]: GET /stylesheets/contact-us.css
+2024-09-26T11:32:02.749Z [info]: GET /stylesheets/navbar.css
+2024-09-26T11:32:02.750Z [info]: GET /javascripts/main.js
+2024-09-26T11:32:02.750Z [info]: GET /assets/logo/logo%20trasperant%20without%20text.png
+2024-09-26T11:32:02.757Z [info]: GET /path/to/your/image3.png
+2024-09-26T11:32:02.757Z [info]: GET /path/to/your/image2.png
+2024-09-26T11:32:02.761Z [error]: Server error: /Users/konstandinosdimitriou/Documents/[06]Work/[063]Home_Alert/main/HomAlert/views/layouts/boilerplate.ejs:43
+    41|         </main>
+    42| 
+ >> 43|         <%- include('../partials/footer')%>
+    44| 
+    45|             <!-- Font Awesome Icons -->
+    46|             <script src="https://kit.fontawesome.com/db4dfad525.js" crossorigin="anonymous"></script>
+
+/Users/konstandinosdimitriou/Documents/[06]Work/[063]Home_Alert/main/HomAlert/views/partials/footer.ejs:11
+    9|      ===========================================
+    10| -->
+ >> 11| <%- include('../../public/svg/socials.js') %>
+    12| 
+    13| <div class="footer-background p-5">
+    14|     <div class="container">
+
+Could not find the include file "../../public/svg/socials.js"
+2024-09-26T11:32:02.763Z [info]: GET /path/to/your/image1.png
+2024-09-26T11:32:02.769Z [error]: Server error: /Users/konstandinosdimitriou/Documents/[06]Work/[063]Home_Alert/main/HomAlert/views/layouts/boilerplate.ejs:43
+    41|         </main>
+    42| 
+ >> 43|         <%- include('../partials/footer')%>
+    44| 
+    45|             <!-- Font Awesome Icons -->
+    46|             <script src="https://kit.fontawesome.com/db4dfad525.js" crossorigin="anonymous"></script>
+
+/Users/konstandinosdimitriou/Documents/[06]Work/[063]Home_Alert/main/HomAlert/views/partials/footer.ejs:11
+    9|      ===========================================
+    10| -->
+ >> 11| <%- include('../../public/svg/socials.js') %>
+    12| 
+    13| <div class="footer-background p-5">
+    14|     <div class="container">
+
+Could not find the include file "../../public/svg/socials.js"
+2024-09-26T11:32:02.772Z [error]: Server error: /Users/konstandinosdimitriou/Documents/[06]Work/[063]Home_Alert/main/HomAlert/views/layouts/boilerplate.ejs:43
+    41|         </main>
+    42| 
+ >> 43|         <%- include('../partials/footer')%>
+    44| 
+    45|             <!-- Font Awesome Icons -->
+    46|             <script src="https://kit.fontawesome.com/db4dfad525.js" crossorigin="anonymous"></script>
+
+/Users/konstandinosdimitriou/Documents/[06]Work/[063]Home_Alert/main/HomAlert/views/partials/footer.ejs:11
+    9|      ===========================================
+    10| -->
+ >> 11| <%- include('../../public/svg/socials.js') %>
+    12| 
+    13| <div class="footer-background p-5">
+    14|     <div class="container">
+
+Could not find the include file "../../public/svg/socials.js"
+2024-09-26T11:32:06.384Z [info]: GET /
+2024-09-26T11:32:06.385Z [info]: Home route accessed
+2024-09-26T11:32:06.388Z [error]: Server error: /Users/konstandinosdimitriou/Documents/[06]Work/[063]Home_Alert/main/HomAlert/views/layouts/boilerplate.ejs:43
+    41|         </main>
+    42| 
+ >> 43|         <%- include('../partials/footer')%>
+    44| 
+    45|             <!-- Font Awesome Icons -->
+    46|             <script src="https://kit.fontawesome.com/db4dfad525.js" crossorigin="anonymous"></script>
+
+/Users/konstandinosdimitriou/Documents/[06]Work/[063]Home_Alert/main/HomAlert/views/partials/footer.ejs:11
+    9|      ===========================================
+    10| -->
+ >> 11| <%- include('../../public/svg/socials.js') %>
+    12| 
+    13| <div class="footer-background p-5">
+    14|     <div class="container">
+
+Could not find the include file "../../public/svg/socials.js"
+2024-09-26T11:32:06.391Z [info]: GET /stylesheets/style.css
+2024-09-26T11:32:06.393Z [info]: GET /javascripts/main.js
+2024-09-26T11:32:06.393Z [info]: GET /stylesheets/navbar.css
+2024-09-26T11:32:06.395Z [info]: GET /stylesheets/contact-us.css
+2024-09-26T11:32:06.396Z [info]: GET /assets/logo/logo%20trasperant%20without%20text.png
+2024-09-26T11:32:41.563Z [info]: GET /
+2024-09-26T11:32:41.565Z [info]: Home route accessed
+2024-09-26T11:32:41.573Z [info]: GET /stylesheets/style.css
+2024-09-26T11:32:41.573Z [info]: GET /stylesheets/navbar.css
+2024-09-26T11:32:41.574Z [info]: GET /stylesheets/contact-us.css
+2024-09-26T11:32:41.575Z [info]: GET /javascripts/main.js
+2024-09-26T11:32:41.575Z [info]: GET /assets/logo/logo%20trasperant%20without%20text.png
+2024-09-26T11:32:41.578Z [info]: GET /path/to/your/image3.png
+2024-09-26T11:32:41.579Z [info]: GET /path/to/your/image2.png
+2024-09-26T11:32:41.583Z [info]: GET /path/to/your/image1.png
+2024-09-26T11:36:24.063Z [info]: GET /
+2024-09-26T11:36:24.065Z [info]: Home route accessed
+2024-09-26T11:36:24.080Z [info]: GET /javascripts/main.js
+2024-09-26T11:36:24.084Z [info]: GET /stylesheets/style.css
+2024-09-26T11:36:24.085Z [info]: GET /path/to/your/image3.png
+2024-09-26T11:36:24.088Z [info]: GET /assets/logo/logo%20trasperant%20without%20text.png
+2024-09-26T11:36:24.089Z [info]: GET /stylesheets/navbar.css
+2024-09-26T11:36:24.089Z [info]: GET /path/to/your/image1.png
+2024-09-26T11:36:24.089Z [info]: GET /path/to/your/image2.png
+2024-09-26T11:38:02.730Z [info]: GET /
+2024-09-26T11:38:02.742Z [info]: Home route accessed
+2024-09-26T11:38:02.747Z [info]: GET /stylesheets/style.css
+2024-09-26T11:38:02.748Z [info]: GET /stylesheets/navbar.css
+2024-09-26T11:38:02.748Z [info]: GET /javascripts/main.js
+2024-09-26T11:38:02.749Z [info]: GET /path/to/your/image2.png
+2024-09-26T11:38:02.749Z [info]: GET /path/to/your/image1.png
+2024-09-26T11:38:02.754Z [info]: GET /path/to/your/image3.png
+2024-09-26T11:38:02.754Z [info]: GET /assets/logo/logo%20trasperant%20without%20text.png
+2024-09-26T11:38:02.756Z [info]: GET /stylesheets/style.css
+2024-09-26T11:38:02.756Z [info]: GET /javascripts/main.js
+2024-09-26T11:38:02.757Z [info]: GET /stylesheets/navbar.css
+2024-09-26T11:38:02.757Z [info]: GET /assets/logo/logo%20trasperant%20without%20text.png
+2024-09-26T11:38:02.766Z [info]: GET /path/to/your/image1.png
+2024-09-26T11:38:02.766Z [info]: GET /path/to/your/image2.png
+2024-09-26T11:38:02.767Z [info]: GET /path/to/your/image3.png
+2024-09-26T11:39:24.149Z [info]: GET /
+2024-09-26T11:39:24.153Z [info]: Home route accessed
+2024-09-26T11:39:24.164Z [info]: GET /stylesheets/style.css
+2024-09-26T11:39:24.168Z [info]: GET /path/to/your/image3.png
+2024-09-26T11:39:24.168Z [info]: GET /javascripts/main.js
+2024-09-26T11:39:24.169Z [info]: GET /assets/logo/logo%20trasperant%20without%20text.png
+2024-09-26T11:39:24.172Z [info]: GET /path/to/your/image2.png
+2024-09-26T11:39:24.174Z [info]: GET /path/to/your/image1.png
+2024-09-26T11:39:24.175Z [info]: GET /stylesheets/navbar.css
+2024-09-26T11:40:42.531Z [info]: GET /
+2024-09-26T11:40:42.540Z [info]: Home route accessed
+2024-09-26T11:40:42.548Z [info]: GET /path/to/your/image3.png
+2024-09-26T11:40:42.548Z [info]: GET /path/to/your/image1.png
+2024-09-26T11:40:42.548Z [info]: GET /path/to/your/image2.png
+2024-09-26T11:40:42.559Z [info]: GET /stylesheets/style.css
+2024-09-26T11:40:42.560Z [info]: GET /javascripts/main.js
+2024-09-26T11:40:42.568Z [info]: GET /stylesheets/navbar.css
+2024-09-26T11:40:42.568Z [info]: GET /assets/logo/logo%20trasperant%20without%20text.png
+2024-09-26T11:40:42.582Z [info]: GET /path/to/your/image1.png
+2024-09-26T11:40:42.582Z [info]: GET /path/to/your/image2.png
+2024-09-26T11:40:42.582Z [info]: GET /path/to/your/image3.png
+2024-09-26T11:41:21.825Z [info]: GET /
+2024-09-26T11:41:21.834Z [info]: Home route accessed
+2024-09-26T11:41:21.844Z [info]: GET /path/to/your/image1.png
+2024-09-26T11:41:21.848Z [info]: GET /javascripts/main.js
+2024-09-26T11:41:21.848Z [info]: GET /path/to/your/image3.png
+2024-09-26T11:41:21.849Z [info]: GET /stylesheets/navbar.css
+2024-09-26T11:41:21.850Z [info]: GET /path/to/your/image2.png
+2024-09-26T11:41:21.851Z [info]: GET /assets/logo/logo%20trasperant%20without%20text.png
+2024-09-26T11:41:21.851Z [info]: GET /stylesheets/style.css
+2024-09-26T11:41:21.858Z [info]: GET /path/to/your/image1.png
+2024-09-26T11:41:21.859Z [info]: GET /path/to/your/image3.png
+2024-09-26T11:41:21.859Z [info]: GET /path/to/your/image2.png
+2024-09-26T11:43:27.853Z [info]: GET /
+2024-09-26T11:43:27.855Z [info]: Home route accessed
+2024-09-26T11:43:27.864Z [info]: GET /path/to/your/image1.png
+2024-09-26T11:43:27.867Z [info]: GET /path/to/your/image3.png
+2024-09-26T11:43:27.867Z [info]: GET /javascripts/main.js
+2024-09-26T11:43:27.869Z [info]: GET /stylesheets/style.css
+2024-09-26T11:43:27.869Z [info]: GET /path/to/your/image2.png
+2024-09-26T11:43:27.870Z [info]: GET /stylesheets/navbar.css
+2024-09-26T11:43:27.871Z [info]: GET /assets/logo/logo%20trasperant%20without%20text.png
+2024-09-26T11:43:27.876Z [info]: GET /path/to/your/image1.png
+2024-09-26T11:43:27.877Z [info]: GET /path/to/your/image2.png
+2024-09-26T11:43:27.880Z [info]: GET /path/to/your/image3.png
+2024-09-26T11:43:37.806Z [info]: GET /
+2024-09-26T11:43:37.806Z [info]: Home route accessed
+2024-09-26T11:43:37.813Z [info]: GET /javascripts/main.js
+2024-09-26T11:43:37.817Z [info]: GET /stylesheets/style.css
+2024-09-26T11:43:37.817Z [info]: GET /stylesheets/navbar.css
+2024-09-26T11:43:37.818Z [info]: GET /assets/logo/logo%20trasperant%20without%20text.png
+2024-09-26T11:43:37.818Z [info]: GET /path/to/your/image2.png
+2024-09-26T11:43:37.821Z [info]: GET /path/to/your/image1.png
+2024-09-26T11:43:37.821Z [info]: GET /path/to/your/image3.png
+2024-09-26T11:43:37.828Z [info]: GET /path/to/your/image1.png
+2024-09-26T11:43:37.829Z [info]: GET /path/to/your/image2.png
+2024-09-26T11:43:37.829Z [info]: GET /path/to/your/image3.png
+2024-09-26T11:43:46.014Z [info]: GET /
+2024-09-26T11:43:46.015Z [info]: Home route accessed
+2024-09-26T11:43:46.021Z [info]: GET /javascripts/main.js
+2024-09-26T11:43:46.024Z [info]: GET /stylesheets/style.css
+2024-09-26T11:43:46.025Z [info]: GET /stylesheets/navbar.css
+2024-09-26T11:43:46.026Z [info]: GET /assets/logo/logo%20trasperant%20without%20text.png
+2024-09-26T11:43:46.026Z [info]: GET /path/to/your/image2.png
+2024-09-26T11:43:46.026Z [info]: GET /path/to/your/image1.png
+2024-09-26T11:43:46.026Z [info]: GET /path/to/your/image3.png
+2024-09-26T11:43:46.034Z [info]: GET /path/to/your/image1.png
+2024-09-26T11:43:46.035Z [info]: GET /path/to/your/image2.png
+2024-09-26T11:43:46.035Z [info]: GET /path/to/your/image3.png
+2024-09-26T11:44:14.052Z [info]: GET /
+2024-09-26T11:44:14.053Z [info]: Home route accessed
+2024-09-26T11:44:14.062Z [info]: GET /stylesheets/style.css
+2024-09-26T11:44:14.084Z [info]: GET /stylesheets/navbar.css
+2024-09-26T11:44:14.085Z [info]: GET /assets/logo/logo%20trasperant%20without%20text.png
+2024-09-26T11:44:14.085Z [info]: GET /path/to/your/image1.png
+2024-09-26T11:44:14.085Z [info]: GET /javascripts/main.js
+2024-09-26T11:44:14.085Z [info]: GET /path/to/your/image2.png
+2024-09-26T11:44:14.086Z [info]: GET /path/to/your/image3.png
+2024-09-26T11:44:36.435Z [info]: GET /
+2024-09-26T11:44:36.437Z [info]: Home route accessed
+2024-09-26T11:44:36.441Z [info]: GET /path/to/your/image2.png
+2024-09-26T11:44:36.442Z [info]: GET /path/to/your/image1.png
+2024-09-26T11:44:36.444Z [info]: GET /path/to/your/image3.png
+2024-09-26T11:44:36.449Z [info]: GET /stylesheets/style.css
+2024-09-26T11:44:36.449Z [info]: GET /javascripts/main.js
+2024-09-26T11:44:36.450Z [info]: GET /assets/logo/logo%20trasperant%20without%20text.png
+2024-09-26T11:44:36.450Z [info]: GET /stylesheets/navbar.css
+2024-09-26T11:44:36.454Z [info]: GET /path/to/your/image1.png
+2024-09-26T11:44:36.455Z [info]: GET /path/to/your/image2.png
+2024-09-26T11:44:36.455Z [info]: GET /path/to/your/image3.png
+2024-09-26T11:46:58.633Z [info]: GET /
+2024-09-26T11:46:58.634Z [info]: Home route accessed
+2024-09-26T11:46:58.644Z [info]: GET /javascripts/main.js
+2024-09-26T11:46:58.646Z [info]: GET /stylesheets/navbar.css
+2024-09-26T11:46:58.646Z [info]: GET /stylesheets/style.css
+2024-09-26T11:46:58.647Z [info]: GET /path/to/your/image3.png
+2024-09-26T11:46:58.648Z [info]: GET /path/to/your/image1.png
+2024-09-26T11:46:58.648Z [info]: GET /path/to/your/image2.png
+2024-09-26T11:46:58.652Z [info]: GET /assets/logo/logo%20trasperant%20without%20text.png
+2024-09-26T11:46:58.654Z [info]: GET /path/to/your/image3.png
+2024-09-26T11:49:28.399Z [info]: GET /
+2024-09-26T11:49:28.400Z [info]: Home route accessed
+2024-09-26T11:49:28.413Z [info]: GET /javascripts/main.js
+2024-09-26T11:49:28.415Z [info]: GET /path/to/your/image3.png
+2024-09-26T11:49:28.418Z [info]: GET /stylesheets/style.css
+2024-09-26T11:49:28.418Z [info]: GET /assets/logo/logo%20trasperant%20without%20text.png
+2024-09-26T11:49:28.419Z [info]: GET /stylesheets/navbar.css
+2024-09-26T11:49:28.419Z [info]: GET /path/to/your/image2.png
+2024-09-26T11:49:28.419Z [info]: GET /path/to/your/image1.png
+2024-09-26T11:49:28.426Z [info]: GET /path/to/your/image3.png

@@ -314,3 +314,88 @@ icons is not defined
     43|         <%= icons.twitter %>
 
 icons is not defined
+2024-09-26T11:32:02.738Z [error]: Server error: /Users/konstandinosdimitriou/Documents/[06]Work/[063]Home_Alert/main/HomAlert/views/layouts/boilerplate.ejs:43
+    41|         </main>
+    42| 
+ >> 43|         <%- include('../partials/footer')%>
+    44| 
+    45|             <!-- Font Awesome Icons -->
+    46|             <script src="https://kit.fontawesome.com/db4dfad525.js" crossorigin="anonymous"></script>
+
+/Users/konstandinosdimitriou/Documents/[06]Work/[063]Home_Alert/main/HomAlert/views/partials/footer.ejs:11
+    9|      ===========================================
+    10| -->
+ >> 11| <%- include('../../public/svg/socials.js') %>
+    12| 
+    13| <div class="footer-background p-5">
+    14|     <div class="container">
+
+Could not find the include file "../../public/svg/socials.js"
+2024-09-26T11:32:02.761Z [error]: Server error: /Users/konstandinosdimitriou/Documents/[06]Work/[063]Home_Alert/main/HomAlert/views/layouts/boilerplate.ejs:43
+    41|         </main>
+    42| 
+ >> 43|         <%- include('../partials/footer')%>
+    44| 
+    45|             <!-- Font Awesome Icons -->
+    46|             <script src="https://kit.fontawesome.com/db4dfad525.js" crossorigin="anonymous"></script>
+
+/Users/konstandinosdimitriou/Documents/[06]Work/[063]Home_Alert/main/HomAlert/views/partials/footer.ejs:11
+    9|      ===========================================
+    10| -->
+ >> 11| <%- include('../../public/svg/socials.js') %>
+    12| 
+    13| <div class="footer-background p-5">
+    14|     <div class="container">
+
+Could not find the include file "../../public/svg/socials.js"
+2024-09-26T11:32:02.769Z [error]: Server error: /Users/konstandinosdimitriou/Documents/[06]Work/[063]Home_Alert/main/HomAlert/views/layouts/boilerplate.ejs:43
+    41|         </main>
+    42| 
+ >> 43|         <%- include('../partials/footer')%>
+    44| 
+    45|             <!-- Font Awesome Icons -->
+    46|             <script src="https://kit.fontawesome.com/db4dfad525.js" crossorigin="anonymous"></script>
+
+/Users/konstandinosdimitriou/Documents/[06]Work/[063]Home_Alert/main/HomAlert/views/partials/footer.ejs:11
+    9|      ===========================================
+    10| -->
+ >> 11| <%- include('../../public/svg/socials.js') %>
+    12| 
+    13| <div class="footer-background p-5">
+    14|     <div class="container">
+
+Could not find the include file "../../public/svg/socials.js"
+2024-09-26T11:32:02.772Z [error]: Server error: /Users/konstandinosdimitriou/Documents/[06]Work/[063]Home_Alert/main/HomAlert/views/layouts/boilerplate.ejs:43
+    41|         </main>
+    42| 
+ >> 43|         <%- include('../partials/footer')%>
+    44| 
+    45|             <!-- Font Awesome Icons -->
+    46|             <script src="https://kit.fontawesome.com/db4dfad525.js" crossorigin="anonymous"></script>
+
+/Users/konstandinosdimitriou/Documents/[06]Work/[063]Home_Alert/main/HomAlert/views/partials/footer.ejs:11
+    9|      ===========================================
+    10| -->
+ >> 11| <%- include('../../public/svg/socials.js') %>
+    12| 
+    13| <div class="footer-background p-5">
+    14|     <div class="container">
+
+Could not find the include file "../../public/svg/socials.js"
+2024-09-26T11:32:06.388Z [error]: Server error: /Users/konstandinosdimitriou/Documents/[06]Work/[063]Home_Alert/main/HomAlert/views/layouts/boilerplate.ejs:43
+    41|         </main>
+    42| 
+ >> 43|         <%- include('../partials/footer')%>
+    44| 
+    45|             <!-- Font Awesome Icons -->
+    46|             <script src="https://kit.fontawesome.com/db4dfad525.js" crossorigin="anonymous"></script>
+
+/Users/konstandinosdimitriou/Documents/[06]Work/[063]Home_Alert/main/HomAlert/views/partials/footer.ejs:11
+    9|      ===========================================
+    10| -->
+ >> 11| <%- include('../../public/svg/socials.js') %>
+    12| 
+    13| <div class="footer-background p-5">
+    14|     <div class="container">
+
+Could not find the include file "../../public/svg/socials.js"
