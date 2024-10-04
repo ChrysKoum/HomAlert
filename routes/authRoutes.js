@@ -5,7 +5,7 @@ const authMiddleware = require("../middleware/auth");
 const logger = require("../middleware/logger");
 
 // Handles user registration
-router.post("/test/register", (req, res, next) => {
+router.post("/register", (req, res, next) => {
   logger.info("Registration attempt");
   authController
     .register(req, res, next)
@@ -19,13 +19,13 @@ router.post("/test/register", (req, res, next) => {
 });
 
 // Get login page
-router.get("/test/login", (req, res, next) => {
+router.get("/test", (req, res, next) => {
   logger.info("Login page accessed");
-  res.render("login.ejs");
+  res.render("test.ejs");
 });
 
 // Post login
-router.post("/tsest/login", (req, res, next) => {
+router.post("/login", (req, res, next) => {
   logger.info("Login attempt");
   authController
     .login(req, res, next)
