@@ -11,34 +11,56 @@
 <!-- Use the boilerplate layout for consistent structure it will retrieve the layout of the boilerplate file -->
 <% layout('layouts/boilerplate') %>
 
-<!-- contact-us Styles-->
-<link rel="stylesheet" href="stylesheets/contact-us.css"> 
+<!-- ===========================================
+     Contact Us View
+     ===========================================
+     This file serves as the contact page of the web dashboard.
+     Key actions:
+     1. Include the necessary layout and partials.
+     2. Display real-time data and user interactions.
+     3. Ensure the page is styled consistently with the overall design.
+     ===========================================
+-->
+<!-- Use the boilerplate layout for consistent structure -->
+<% layout('layouts/boilerplate') %>
 
+<!-- contact-us Styles -->
+<link rel="stylesheet" href="stylesheets/contact-us.css">
 
 <section class="contact-us">
-
   <!-- Contact Form -->
   <div class="container">
-      <div class="contact-form">
-          <h3 class="text-center">CONTACT US</h3>
-          <p class="text-center">Have a question or need assistance? We're here to help.</p>
-          <form>
-              <div class="mb-3">
-                  <input type="text" class="form-control" placeholder="Name" required>
-              </div>
-              <div class="mb-3">
-                  <input type="email" class="form-control" placeholder="Email" required>
-              </div>
-              <div class="mb-3">
-                  <textarea class="form-control" placeholder="Message" rows="4" required></textarea>
-              </div>
-              <button type="submit" class="btn btn-primary w-100">Submit</button>
-          </form>
-      </div>
+    <div class="contact-form">
+      <h3 class="text-center">CONTACT US</h3>
+      <p class="text-center">Have a question or need assistance? We're here to help.</p>
+
+      <!-- Check for success or error message and display it -->
+      <% if (typeof successMessage !== 'undefined') { %>
+        <div class="alert alert-success text-center">
+          <%= successMessage %>
+        </div>
+      <% } %>
+
+      <% if (typeof errorMessage !== 'undefined') { %>
+        <div class="alert alert-danger text-center">
+          <%= errorMessage %>
+        </div>
+      <% } %>
+
+      <!-- Contact form for user input -->
+      <form action="/contact-us" method="POST">
+        <div class="mb-3">
+          <input type="text" name="name" class="form-control" placeholder="Name" required>
+        </div>
+        <div class="mb-3">
+          <input type="email" name="email" class="form-control" placeholder="Email" required>
+        </div>
+        <div class="mb-3">
+          <textarea name="message" class="form-control" placeholder="Message" rows="4" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary w-100">Submit</button>
+      </form>
+    </div>
+    
   </div>
-
-  
-  
-  
 </section>
-
