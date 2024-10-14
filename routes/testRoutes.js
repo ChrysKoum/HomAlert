@@ -4,27 +4,27 @@ const testController = require("../controllers/testController");
 
 // Test route
 // Renders the test page
-router.get("/test", testController.renderHome);
+router.get("/", testController.renderHome);
 
 // Test routes for Firebase functions
 
-router.post("/test/register", testController.testRegister);
-router.post("/test/login", testController.testLogin);
-router.get("/test/logout", testController.testLogout);
-router.post("/test/resetPassword", testController.testResetPassword);
-router.post("/test/writeUserData", testController.testWriteUserData);
-router.post("/test/writeDeviceData", testController.testWriteDeviceData);
-router.get("/test/readUserData/:userId", testController.testReadUserData);
+router.post("/register", testController.testRegister);
+router.post("/login", testController.testLogin);
+router.get("/logout", testController.testLogout);
+router.post("/resetPassword", testController.testResetPassword);
+router.post("/writeUserData", testController.testWriteUserData);
+router.post("/writeDeviceData", testController.testWriteDeviceData);
+router.get("/readUserData/:userId", testController.testReadUserData);
 router.get(
-  "/test/readDeviceData/:userId/:deviceId",
+  "/readDeviceData/:userId/:deviceId",
   testController.testReadDeviceData
 );
 router.get(
-  "/test/readSensorData/:userId/:deviceId",
+  "/readSensorData/:userId/:deviceId",
   testController.testReadSensorData
 );
 
-router.get("/test", (req, res) => {
+router.get("/", (req, res) => {
   logger.info("Test route accessed");
   res.render("test.ejs");
 });

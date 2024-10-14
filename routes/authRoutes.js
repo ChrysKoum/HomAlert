@@ -5,7 +5,7 @@ const authMiddleware = require("../middleware/auth");
 const logger = require("../middleware/logger");
 
 // Handles user registration
-router.post("/register", (req, res, next) => {
+router.post("/", (req, res, next) => {
   logger.info("Registration attempt");
   authController
     .register(req, res, next)

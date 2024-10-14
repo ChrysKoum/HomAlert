@@ -32,4 +32,6 @@ router.get("/product", (req, res) => {
   res.render("product.ejs");
 });
 
+
+
 module.exports = router;

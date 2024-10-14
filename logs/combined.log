@@ -1,0 +1,322 @@
+2024-10-11T10:23:10.265Z [info]: Firebase initialized successfully
+2024-10-11T10:23:10.277Z [info]: Server started on port 3005
+2024-10-11T10:23:14.498Z [info]: GET /about
+2024-10-11T10:23:14.501Z [info]: About Us route accessed
+2024-10-11T10:23:14.520Z [info]: GET /stylesheets/partials/partial.css
+2024-10-11T10:23:14.524Z [info]: GET /stylesheets/style.css
+2024-10-11T10:23:14.526Z [info]: GET /javascripts/main.js
+2024-10-11T10:23:14.528Z [info]: GET /assets/logo/logo%20trasperant%20without%20text.png
+2024-10-11T10:23:16.376Z [info]: GET /contact
+2024-10-11T10:23:16.378Z [info]: Contact Us route accessed
+2024-10-11T10:23:16.389Z [info]: GET /stylesheets/style.css
+2024-10-11T10:23:16.390Z [info]: GET /stylesheets/partials/partial.css
+2024-10-11T10:23:16.391Z [info]: GET /javascripts/main.js
+2024-10-11T10:23:16.393Z [info]: GET /assets/logo/logo%20trasperant%20without%20text.png
+2024-10-11T10:23:16.398Z [info]: GET /stylesheets/contact-us.css
+2024-10-11T10:23:16.408Z [info]: GET /assets/images/contact-us.png
+2024-10-11T10:23:19.240Z [info]: GET /
+2024-10-11T10:23:19.241Z [info]: Home route accessed
+2024-10-11T10:23:19.252Z [info]: GET /stylesheets/style.css
+2024-10-11T10:23:19.254Z [info]: GET /javascripts/main.js
+2024-10-11T10:23:19.254Z [info]: GET /stylesheets/partials/partial.css
+2024-10-11T10:23:19.255Z [info]: GET /assets/logo/logo%20trasperant%20without%20text.png
+2024-10-11T10:23:19.256Z [info]: GET /path/to/your/image1.png
+2024-10-11T10:23:19.263Z [info]: GET /path/to/your/image2.png
+2024-10-11T10:23:19.269Z [info]: GET /path/to/your/image3.png
+2024-10-11T10:23:20.909Z [info]: GET /faq
+2024-10-11T10:23:20.909Z [info]: FAQ route accessed
+2024-10-11T10:23:20.921Z [info]: GET /javascripts/main.js
+2024-10-11T10:23:20.921Z [info]: GET /stylesheets/partials/partial.css
+2024-10-11T10:23:20.922Z [info]: GET /stylesheets/style.css
+2024-10-11T10:23:20.922Z [info]: GET /assets/logo/logo%20trasperant%20without%20text.png
+2024-10-11T10:23:20.923Z [info]: GET /assets/icons/user/user.png
+2024-10-11T10:23:21.905Z [info]: GET /contact
+2024-10-11T10:23:21.906Z [info]: Contact Us route accessed
+2024-10-11T10:23:21.916Z [info]: GET /stylesheets/partials/partial.css
+2024-10-11T10:23:21.917Z [info]: GET /stylesheets/style.css
+2024-10-11T10:23:21.918Z [info]: GET /javascripts/main.js
+2024-10-11T10:23:21.919Z [info]: GET /assets/logo/logo%20trasperant%20without%20text.png
+2024-10-11T10:23:21.919Z [info]: GET /stylesheets/contact-us.css
+2024-10-11T10:23:21.934Z [info]: GET /assets/images/contact-us.png
+2024-10-11T10:23:24.005Z [info]: GET /faq
+2024-10-11T10:23:24.006Z [info]: FAQ route accessed
+2024-10-11T10:23:24.017Z [info]: GET /javascripts/main.js
+2024-10-11T10:23:24.018Z [info]: GET /stylesheets/style.css
+2024-10-11T10:23:24.018Z [info]: GET /stylesheets/partials/partial.css
+2024-10-11T10:23:24.019Z [info]: GET /assets/logo/logo%20trasperant%20without%20text.png
+2024-10-11T10:23:24.019Z [info]: GET /assets/icons/user/user.png
+2024-10-11T10:24:39.723Z [info]: GET /contact
+2024-10-11T10:24:39.724Z [info]: Contact Us route accessed
+2024-10-11T10:24:39.735Z [info]: GET /stylesheets/style.css
+2024-10-11T10:24:39.739Z [info]: GET /javascripts/main.js
+2024-10-11T10:24:39.743Z [info]: GET /stylesheets/partials/partial.css
+2024-10-11T10:24:39.744Z [info]: GET /stylesheets/contact-us.css
+2024-10-11T10:24:39.745Z [info]: GET /assets/logo/logo%20trasperant%20without%20text.png
+2024-10-11T10:24:39.767Z [info]: GET /assets/images/contact-us.png
+2024-10-11T10:25:25.044Z [info]: GET /
+2024-10-11T10:25:25.045Z [info]: Home route accessed
+2024-10-11T10:25:25.057Z [info]: GET /stylesheets/style.css
+2024-10-11T10:25:25.062Z [info]: GET /path/to/your/image3.png
+2024-10-11T10:25:25.063Z [info]: GET /stylesheets/partials/partial.css
+2024-10-11T10:25:25.063Z [info]: GET /javascripts/main.js
+2024-10-11T10:25:25.064Z [info]: GET /path/to/your/image2.png
+2024-10-11T10:25:25.066Z [info]: GET /assets/logo/logo%20trasperant%20without%20text.png
+2024-10-11T10:25:25.072Z [info]: GET /path/to/your/image1.png
+2024-10-11T10:25:25.705Z [info]: GET /product
+2024-10-11T10:25:25.705Z [info]: Product route accessed
+2024-10-11T10:25:25.714Z [info]: GET /stylesheets/style.css
+2024-10-11T10:25:25.715Z [info]: GET /stylesheets/partials/partial.css
+2024-10-11T10:25:25.715Z [info]: GET /javascripts/main.js
+2024-10-11T10:25:25.716Z [info]: GET /assets/logo/logo%20trasperant%20without%20text.png
+2024-10-11T10:25:26.610Z [info]: GET /about
+2024-10-11T10:25:26.610Z [info]: About Us route accessed
+2024-10-11T10:25:26.620Z [info]: GET /stylesheets/style.css
+2024-10-11T10:25:26.621Z [info]: GET /stylesheets/partials/partial.css
+2024-10-11T10:25:26.621Z [info]: GET /javascripts/main.js
+2024-10-11T10:25:26.621Z [info]: GET /assets/logo/logo%20trasperant%20without%20text.png
+2024-10-11T10:25:27.470Z [info]: GET /faq
+2024-10-11T10:25:27.471Z [info]: FAQ route accessed
+2024-10-11T10:25:27.483Z [info]: GET /stylesheets/style.css
+2024-10-11T10:25:27.483Z [info]: GET /stylesheets/partials/partial.css
+2024-10-11T10:25:27.484Z [info]: GET /javascripts/main.js
+2024-10-11T10:25:27.484Z [info]: GET /assets/logo/logo%20trasperant%20without%20text.png
+2024-10-11T10:25:27.485Z [info]: GET /assets/icons/user/user.png
+2024-10-11T10:26:58.033Z [info]: GET /faq
+2024-10-11T10:26:58.033Z [info]: FAQ route accessed
+2024-10-11T10:26:58.044Z [info]: GET /stylesheets/style.css
+2024-10-11T10:26:58.048Z [info]: GET /stylesheets/partials/partial.css
+2024-10-11T10:26:58.048Z [info]: GET /javascripts/main.js
+2024-10-11T10:26:58.049Z [info]: GET /assets/logo/logo%20trasperant%20without%20text.png
+2024-10-11T10:26:58.049Z [info]: GET /assets/icons/user/user.png
+2024-10-11T10:26:59.656Z [info]: GET /contact
+2024-10-11T10:26:59.656Z [info]: Contact Us route accessed
+2024-10-11T10:26:59.666Z [info]: GET /stylesheets/style.css
+2024-10-11T10:26:59.667Z [info]: GET /javascripts/main.js
+2024-10-11T10:26:59.667Z [info]: GET /stylesheets/contact-us.css
+2024-10-11T10:26:59.667Z [info]: GET /assets/logo/logo%20trasperant%20without%20text.png
+2024-10-11T10:26:59.668Z [info]: GET /stylesheets/partials/partial.css
+2024-10-11T10:26:59.686Z [info]: GET /assets/images/contact-us.png
+2024-10-14T20:12:12.903Z [info]: Firebase initialized successfully
+2024-10-14T20:12:12.919Z [info]: Server started on port 3005
+2024-10-14T20:12:17.536Z [info]: GET /
+2024-10-14T20:12:17.539Z [info]: Home route accessed
+2024-10-14T20:12:17.558Z [info]: GET /stylesheets/style.css
+2024-10-14T20:12:17.563Z [info]: GET /stylesheets/partials/partial.css
+2024-10-14T20:12:17.564Z [info]: GET /javascripts/main.js
+2024-10-14T20:12:17.567Z [info]: GET /assets/logo/logo%20trasperant%20without%20text.png
+2024-10-14T20:12:17.568Z [info]: GET /path/to/your/image1.png
+2024-10-14T20:12:17.573Z [info]: GET /path/to/your/image2.png
+2024-10-14T20:12:17.576Z [info]: GET /path/to/your/image3.png
+2024-10-14T20:12:18.123Z [info]: GET /path/to/your/image1.png
+2024-10-14T20:12:18.126Z [info]: GET /path/to/your/image2.png
+2024-10-14T20:12:18.134Z [info]: GET /path/to/your/image3.png
+2024-10-14T21:08:30.125Z [info]: GET /
+2024-10-14T21:08:30.132Z [info]: Home route accessed
+2024-10-14T21:08:30.162Z [info]: GET /assets/logo/logo%20trasperant%20without%20text.png
+2024-10-14T21:08:30.164Z [info]: GET /path/to/your/image2.png
+2024-10-14T21:08:30.171Z [info]: GET /stylesheets/style.css
+2024-10-14T21:08:30.172Z [info]: GET /stylesheets/partials/partial.css
+2024-10-14T21:08:30.173Z [info]: GET /javascripts/main.js
+2024-10-14T21:08:30.174Z [info]: GET /path/to/your/image1.png
+2024-10-14T21:08:30.181Z [info]: GET /path/to/your/image3.png
+2024-10-14T21:08:30.187Z [info]: GET /path/to/your/image2.png
+2024-10-14T21:08:36.717Z [info]: GET /test
+2024-10-14T21:08:36.730Z [info]: GET /stylesheets/style.css
+2024-10-14T21:08:36.732Z [info]: GET /javascripts/main.js
+2024-10-14T21:08:36.732Z [info]: GET /stylesheets/partials/partial.css
+2024-10-14T21:08:36.733Z [info]: GET /assets/logo/logo%20trasperant%20without%20text.png
+2024-10-14T21:08:40.959Z [info]: GET /register
+2024-10-14T21:08:40.967Z [info]: GET /stylesheets/style.css
+2024-10-14T21:08:40.968Z [info]: GET /stylesheets/partials/partial.css
+2024-10-14T21:08:40.969Z [info]: GET /javascripts/main.js
+2024-10-14T21:08:40.974Z [info]: GET /assets/logo/logo%20trasperant%20without%20text.png
+2024-10-14T21:08:41.891Z [info]: GET /login
+2024-10-14T21:08:41.898Z [info]: GET /stylesheets/style.css
+2024-10-14T21:08:41.899Z [info]: GET /stylesheets/partials/partial.css
+2024-10-14T21:08:41.900Z [info]: GET /javascripts/main.js
+2024-10-14T21:08:41.900Z [info]: GET /assets/logo/logo%20trasperant%20without%20text.png
+2024-10-14T21:08:42.877Z [info]: GET /register
+2024-10-14T21:08:42.886Z [info]: GET /stylesheets/partials/partial.css
+2024-10-14T21:08:42.887Z [info]: GET /stylesheets/style.css
+2024-10-14T21:08:42.887Z [info]: GET /javascripts/main.js
+2024-10-14T21:08:42.887Z [info]: GET /assets/logo/logo%20trasperant%20without%20text.png
+2024-10-14T21:08:44.075Z [info]: GET /login
+2024-10-14T21:08:44.084Z [info]: GET /stylesheets/style.css
+2024-10-14T21:08:44.085Z [info]: GET /stylesheets/partials/partial.css
+2024-10-14T21:08:44.085Z [info]: GET /javascripts/main.js
+2024-10-14T21:08:44.086Z [info]: GET /assets/logo/logo%20trasperant%20without%20text.png
+2024-10-14T21:08:44.959Z [info]: GET /contact
+2024-10-14T21:08:44.960Z [info]: Contact Us route accessed
+2024-10-14T21:08:44.968Z [info]: GET /stylesheets/style.css
+2024-10-14T21:08:44.969Z [info]: GET /stylesheets/partials/partial.css
+2024-10-14T21:08:44.969Z [info]: GET /javascripts/main.js
+2024-10-14T21:08:44.970Z [info]: GET /assets/logo/logo%20trasperant%20without%20text.png
+2024-10-14T21:08:44.972Z [info]: GET /stylesheets/contact-us.css
+2024-10-14T21:08:44.994Z [info]: GET /assets/images/contact-us.png
+2024-10-14T21:08:46.292Z [info]: GET /faq
+2024-10-14T21:08:46.292Z [info]: FAQ route accessed
+2024-10-14T21:08:46.303Z [info]: GET /stylesheets/style.css
+2024-10-14T21:08:46.304Z [info]: GET /javascripts/main.js
+2024-10-14T21:08:46.305Z [info]: GET /stylesheets/partials/partial.css
+2024-10-14T21:08:46.306Z [info]: GET /assets/logo/logo%20trasperant%20without%20text.png
+2024-10-14T21:08:46.306Z [info]: GET /assets/icons/user/user.png
+2024-10-14T21:08:47.041Z [info]: GET /about
+2024-10-14T21:08:47.042Z [info]: About Us route accessed
+2024-10-14T21:08:47.048Z [info]: GET /stylesheets/style.css
+2024-10-14T21:08:47.050Z [info]: GET /stylesheets/partials/partial.css
+2024-10-14T21:08:47.050Z [info]: GET /javascripts/main.js
+2024-10-14T21:08:47.050Z [info]: GET /assets/logo/logo%20trasperant%20without%20text.png
+2024-10-14T21:08:47.725Z [info]: GET /product
+2024-10-14T21:08:47.725Z [info]: Product route accessed
+2024-10-14T21:08:47.732Z [info]: GET /javascripts/main.js
+2024-10-14T21:08:47.734Z [info]: GET /stylesheets/style.css
+2024-10-14T21:08:47.735Z [info]: GET /stylesheets/partials/partial.css
+2024-10-14T21:08:47.735Z [info]: GET /assets/logo/logo%20trasperant%20without%20text.png
+2024-10-14T21:08:48.409Z [info]: GET /
+2024-10-14T21:08:48.410Z [info]: Home route accessed
+2024-10-14T21:08:48.418Z [info]: GET /stylesheets/style.css
+2024-10-14T21:08:48.419Z [info]: GET /stylesheets/partials/partial.css
+2024-10-14T21:08:48.419Z [info]: GET /javascripts/main.js
+2024-10-14T21:08:48.420Z [info]: GET /assets/logo/logo%20trasperant%20without%20text.png
+2024-10-14T21:08:48.420Z [info]: GET /path/to/your/image3.png
+2024-10-14T21:08:48.424Z [info]: GET /path/to/your/image1.png
+2024-10-14T21:08:48.425Z [info]: GET /path/to/your/image2.png
+2024-10-14T21:10:58.487Z [info]: GET /test/register
+2024-10-14T21:10:58.528Z [info]: GET /test/stylesheets/style.css
+2024-10-14T21:10:58.532Z [info]: GET /test/stylesheets/partials/partial.css
+2024-10-14T21:10:58.539Z [info]: GET /javascripts/main.js
+2024-10-14T21:10:58.540Z [info]: GET /test/assets/logo/logo%20trasperant%20without%20text.png
+2024-10-14T21:12:53.208Z [info]: Firebase initialized successfully
+2024-10-14T21:12:53.219Z [info]: Server started on port 3005
+2024-10-14T21:12:56.144Z [info]: GET /login
+2024-10-14T21:12:56.183Z [info]: GET /assets/logo/logo%20trasperant%20without%20text.png
+2024-10-14T21:12:56.201Z [info]: GET /javascripts/main.js
+2024-10-14T21:12:56.203Z [info]: GET /stylesheets/partials/partial.css
+2024-10-14T21:12:56.208Z [info]: GET /stylesheets/style.css
+2024-10-14T21:12:56.846Z [info]: GET /register
+2024-10-14T21:12:56.881Z [info]: GET /stylesheets/style.css
+2024-10-14T21:12:56.894Z [info]: GET /stylesheets/partials/partial.css
+2024-10-14T21:12:56.897Z [info]: GET /javascripts/main.js
+2024-10-14T21:12:56.903Z [info]: GET /assets/logo/logo%20trasperant%20without%20text.png
+2024-10-14T21:13:01.555Z [info]: GET /test
+2024-10-14T21:13:01.569Z [info]: GET /stylesheets/style.css
+2024-10-14T21:13:01.570Z [info]: GET /stylesheets/partials/partial.css
+2024-10-14T21:13:01.571Z [info]: GET /assets/logo/logo%20trasperant%20without%20text.png
+2024-10-14T21:13:01.571Z [info]: GET /javascripts/main.js
+2024-10-14T21:13:06.759Z [info]: Firebase initialized successfully
+2024-10-14T21:13:06.770Z [info]: Server started on port 3005
+2024-10-14T21:13:11.366Z [info]: GET /login
+2024-10-14T21:13:11.382Z [info]: GET /stylesheets/style.css
+2024-10-14T21:13:11.385Z [info]: GET /stylesheets/partials/partial.css
+2024-10-14T21:13:11.386Z [info]: GET /assets/logo/logo%20trasperant%20without%20text.png
+2024-10-14T21:13:11.388Z [info]: GET /javascripts/main.js
+2024-10-14T21:13:12.105Z [info]: GET /register
+2024-10-14T21:13:12.114Z [info]: GET /stylesheets/style.css
+2024-10-14T21:13:12.115Z [info]: GET /stylesheets/partials/partial.css
+2024-10-14T21:13:12.117Z [info]: GET /javascripts/main.js
+2024-10-14T21:13:12.118Z [info]: GET /assets/logo/logo%20trasperant%20without%20text.png
+2024-10-14T21:13:13.722Z [info]: GET /login
+2024-10-14T21:13:13.744Z [info]: GET /stylesheets/style.css
+2024-10-14T21:13:13.745Z [info]: GET /javascripts/main.js
+2024-10-14T21:13:13.745Z [info]: GET /stylesheets/partials/partial.css
+2024-10-14T21:13:13.746Z [info]: GET /assets/logo/logo%20trasperant%20without%20text.png
+2024-10-14T21:13:14.522Z [info]: GET /contact
+2024-10-14T21:13:14.523Z [info]: Contact Us route accessed
+2024-10-14T21:13:14.531Z [info]: GET /stylesheets/style.css
+2024-10-14T21:13:14.532Z [info]: GET /stylesheets/partials/partial.css
+2024-10-14T21:13:14.533Z [info]: GET /javascripts/main.js
+2024-10-14T21:13:14.537Z [info]: GET /assets/logo/logo%20trasperant%20without%20text.png
+2024-10-14T21:13:14.540Z [info]: GET /stylesheets/contact-us.css
+2024-10-14T21:13:14.554Z [info]: GET /assets/images/contact-us.png
+2024-10-14T21:13:16.073Z [info]: GET /login
+2024-10-14T21:13:16.081Z [info]: GET /stylesheets/style.css
+2024-10-14T21:13:16.082Z [info]: GET /javascripts/main.js
+2024-10-14T21:13:16.082Z [info]: GET /stylesheets/partials/partial.css
+2024-10-14T21:13:16.083Z [info]: GET /assets/logo/logo%20trasperant%20without%20text.png
+2024-10-14T21:14:40.787Z [info]: Firebase initialized successfully
+2024-10-14T21:14:40.797Z [info]: Server started on port 3005
+2024-10-14T21:14:42.446Z [info]: GET /login
+2024-10-14T21:14:42.479Z [info]: GET /javascripts/main.js
+2024-10-14T21:14:42.482Z [info]: GET /stylesheets/style.css
+2024-10-14T21:14:42.484Z [info]: GET /stylesheets/partials/partial.css
+2024-10-14T21:14:42.486Z [info]: GET /assets/logo/logo%20trasperant%20without%20text.png
+2024-10-14T21:14:43.687Z [info]: GET /register
+2024-10-14T21:14:43.697Z [info]: GET /stylesheets/partials/partial.css
+2024-10-14T21:14:43.698Z [info]: GET /javascripts/main.js
+2024-10-14T21:14:43.700Z [info]: GET /stylesheets/style.css
+2024-10-14T21:14:43.701Z [info]: GET /assets/logo/logo%20trasperant%20without%20text.png
+2024-10-14T21:14:44.575Z [info]: GET /login
+2024-10-14T21:14:44.587Z [info]: GET /stylesheets/style.css
+2024-10-14T21:14:44.589Z [info]: GET /stylesheets/partials/partial.css
+2024-10-14T21:14:44.590Z [info]: GET /javascripts/main.js
+2024-10-14T21:14:44.594Z [info]: GET /assets/logo/logo%20trasperant%20without%20text.png
+2024-10-14T21:14:45.553Z [info]: GET /contact
+2024-10-14T21:14:45.555Z [info]: Contact Us route accessed
+2024-10-14T21:14:45.562Z [info]: GET /stylesheets/style.css
+2024-10-14T21:14:45.564Z [info]: GET /javascripts/main.js
+2024-10-14T21:14:45.565Z [info]: GET /stylesheets/partials/partial.css
+2024-10-14T21:14:45.565Z [info]: GET /stylesheets/contact-us.css
+2024-10-14T21:14:45.569Z [info]: GET /assets/logo/logo%20trasperant%20without%20text.png
+2024-10-14T21:14:45.580Z [info]: GET /assets/images/contact-us.png
+2024-10-14T21:14:46.654Z [info]: GET /login
+2024-10-14T21:14:46.664Z [info]: GET /stylesheets/partials/partial.css
+2024-10-14T21:14:46.664Z [info]: GET /javascripts/main.js
+2024-10-14T21:14:46.664Z [info]: GET /stylesheets/style.css
+2024-10-14T21:14:46.665Z [info]: GET /assets/logo/logo%20trasperant%20without%20text.png
+2024-10-14T21:15:25.538Z [info]: Firebase initialized successfully
+2024-10-14T21:15:25.548Z [info]: Server started on port 3005
+2024-10-14T21:15:28.703Z [info]: Firebase initialized successfully
+2024-10-14T21:15:28.711Z [info]: Server started on port 3005
+2024-10-14T21:16:10.240Z [info]: Firebase initialized successfully
+2024-10-14T21:16:10.252Z [info]: Server started on port 3005
+2024-10-14T21:16:19.163Z [info]: Firebase initialized successfully
+2024-10-14T21:16:19.171Z [info]: Server started on port 3005
+2024-10-14T21:16:27.658Z [info]: Firebase initialized successfully
+2024-10-14T21:16:27.666Z [info]: Server started on port 3005
+2024-10-14T21:16:29.607Z [info]: GET /login
+2024-10-14T21:16:29.630Z [info]: GET /javascripts/main.js
+2024-10-14T21:16:29.642Z [info]: GET /stylesheets/style.css
+2024-10-14T21:16:29.644Z [info]: GET /stylesheets/partials/partial.css
+2024-10-14T21:16:29.645Z [info]: GET /assets/logo/logo%20trasperant%20without%20text.png
+2024-10-14T21:16:30.639Z [info]: GET /register
+2024-10-14T21:16:30.652Z [info]: GET /stylesheets/style.css
+2024-10-14T21:16:30.654Z [info]: GET /stylesheets/partials/partial.css
+2024-10-14T21:16:30.655Z [info]: GET /javascripts/main.js
+2024-10-14T21:16:30.656Z [info]: GET /assets/logo/logo%20trasperant%20without%20text.png
+2024-10-14T21:16:35.989Z [info]: GET /test
+2024-10-14T21:16:35.991Z [info]: Test page rendered
+2024-10-14T21:16:36.001Z [info]: GET /stylesheets/partials/partial.css
+2024-10-14T21:16:36.005Z [info]: GET /stylesheets/style.css
+2024-10-14T21:16:36.006Z [info]: GET /javascripts/main.js
+2024-10-14T21:16:36.007Z [info]: GET /assets/logo/logo%20trasperant%20without%20text.png
+2024-10-14T21:16:47.200Z [info]: GET /login
+2024-10-14T21:16:47.210Z [info]: GET /stylesheets/style.css
+2024-10-14T21:16:47.212Z [info]: GET /stylesheets/partials/partial.css
+2024-10-14T21:16:47.213Z [info]: GET /javascripts/main.js
+2024-10-14T21:16:47.213Z [info]: GET /assets/logo/logo%20trasperant%20without%20text.png
+2024-10-14T21:16:47.971Z [info]: GET /register
+2024-10-14T21:16:47.980Z [info]: GET /stylesheets/style.css
+2024-10-14T21:16:47.980Z [info]: GET /stylesheets/partials/partial.css
+2024-10-14T21:16:47.981Z [info]: GET /javascripts/main.js
+2024-10-14T21:16:47.982Z [info]: GET /assets/logo/logo%20trasperant%20without%20text.png
+2024-10-14T21:17:06.123Z [info]: GET /auth/register
+2024-10-14T21:17:06.134Z [info]: GET /auth/stylesheets/style.css
+2024-10-14T21:17:06.137Z [info]: GET /auth/stylesheets/partials/partial.css
+2024-10-14T21:17:06.140Z [info]: GET /javascripts/main.js
+2024-10-14T21:17:06.141Z [info]: GET /auth/assets/logo/logo%20trasperant%20without%20text.png
+2024-10-14T21:17:49.354Z [info]: GET /register
+2024-10-14T21:17:49.366Z [info]: GET /stylesheets/style.css
+2024-10-14T21:17:49.369Z [info]: GET /stylesheets/partials/partial.css
+2024-10-14T21:17:49.378Z [info]: GET /javascripts/main.js
+2024-10-14T21:17:49.382Z [info]: GET /assets/logo/logo%20trasperant%20without%20text.png
+2024-10-14T21:17:50.116Z [info]: GET /login
+2024-10-14T21:17:50.124Z [info]: GET /stylesheets/style.css
+2024-10-14T21:17:50.125Z [info]: GET /stylesheets/partials/partial.css
+2024-10-14T21:17:50.126Z [info]: GET /javascripts/main.js
+2024-10-14T21:17:50.127Z [info]: GET /assets/logo/logo%20trasperant%20without%20text.png
+2024-10-14T21:18:45.442Z [info]: Firebase initialized successfully
+2024-10-14T21:18:45.457Z [info]: Server started on port 3005
+2024-10-14T21:18:47.466Z [info]: Firebase initialized successfully
+2024-10-14T21:18:47.474Z [info]: Server started on port 3005
+2024-10-14T21:18:48.931Z [info]: Firebase initialized successfully
+2024-10-14T21:18:48.947Z [info]: Server started on port 3005
