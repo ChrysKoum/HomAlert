@@ -32,6 +32,16 @@ router.get("/product", (req, res) => {
   res.render("product.ejs");
 });
 
+// Login Route
+router.get("/login", (req, res) => {
+  logger.info("Login route accessed");
+  res.render("auth/sign-in.ejs");
+});
 
+// Register Route
+router.get("/register", (req, res) => {
+  logger.info("Register route accessed");
+  res.render("auth/sign-up.ejs");
+});
 
 module.exports = router;

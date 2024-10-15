@@ -10,11 +10,11 @@ const dashboardRoutes = require("./dashboardRoutes");
 const testRoutes = require("./testRoutes");
 
 // Use the routes in the main router
-router.use("/", basicRoutes);  // Basic routes like home, about, contact
-router.use("/auth", authRoutes);  // Authentication-related routes
-router.use("/user", userRoutes);  // User management routes
-router.use("/device", deviceRoutes);  // Device-related routes
-router.use("/dashboard", dashboardRoutes);  // Dashboard-related routes
-router.use("/test", testRoutes);  // Test routes
+router.use("/", basicRoutes); // Basic routes like home, about, contact
+router.use("/auth", authRoutes); // Authentication-related routes
+router.use("/user", userRoutes); // User management routes
+router.use("/device", deviceRoutes); // Device-related routes
+router.use("/dashboard", dashboardRoutes); // Dashboard-related routes
+router.use("/test", testRoutes); // Test routes
 
 module.exports = router;

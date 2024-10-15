@@ -24,9 +24,4 @@ router.get(
   testController.testReadSensorData
 );
 
-router.get("/", (req, res) => {
-  logger.info("Test route accessed");
-  res.render("test.ejs");
-});
-
 module.exports = router;
