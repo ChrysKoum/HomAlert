@@ -11,6 +11,7 @@ const {
   signUpUser,
   signInUser,
   signOutUser,
+  resetPassword,
 } = require("../Firebase/firebaseAuth");
 const { validateEmail, validatePassword } = require("../utils/validation");
 
@@ -65,5 +66,9 @@ const authController = {
     }
   },
 };
+
+resetPassword: async (req, res) => {
+// todo //
+},
 
 module.exports = authController;
