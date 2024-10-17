@@ -670,3 +670,85 @@
 2024-08-26T01:23:16.390Z [info]: GET /assets/icons/social/X.png
 2024-08-26T01:23:16.390Z [info]: GET /assets/icons/social/Youtube.png
 2024-08-26T01:23:16.399Z [info]: GET /assets/images/contact-us.png
+2024-10-16T21:37:25.557Z [info]: Firebase initialized successfully
+2024-10-16T21:37:25.562Z [info]: Server started on port 3005
+2024-10-16T21:37:31.293Z [info]: GET /
+2024-10-16T21:37:31.296Z [info]: Home route accessed
+2024-10-16T21:37:31.344Z [info]: GET /stylesheets/style.css
+2024-10-16T21:37:31.349Z [info]: GET /path/to/your/image1.png
+2024-10-16T21:37:31.353Z [info]: GET /path/to/your/image2.png
+2024-10-16T21:37:31.589Z [info]: GET /path/to/your/image3.png
+2024-10-16T21:37:31.600Z [info]: GET /javascripts/main.js
+2024-10-16T21:37:31.838Z [info]: GET /favicon.ico
+2024-10-16T22:10:49.781Z [info]: Firebase initialized successfully
+2024-10-16T22:10:49.786Z [info]: Server started on port 3005
+2024-10-16T22:11:23.399Z [info]: GET /
+2024-10-16T22:11:23.400Z [info]: Home route accessed
+2024-10-16T22:11:23.457Z [info]: GET /stylesheets/style.css
+2024-10-16T22:11:23.465Z [info]: GET /path/to/your/image1.png
+2024-10-16T22:11:23.468Z [info]: GET /path/to/your/image2.png
+2024-10-16T22:11:23.706Z [info]: GET /path/to/your/image3.png
+2024-10-16T22:11:23.723Z [info]: GET /javascripts/main.js
+2024-10-16T22:11:32.338Z [info]: GET /
+2024-10-16T22:11:32.339Z [info]: Home route accessed
+2024-10-16T22:11:32.370Z [info]: GET /path/to/your/image1.png
+2024-10-16T22:11:32.374Z [info]: GET /path/to/your/image2.png
+2024-10-16T22:11:32.376Z [info]: GET /stylesheets/style.css
+2024-10-16T22:11:32.376Z [info]: GET /javascripts/main.js
+2024-10-16T22:11:32.470Z [info]: GET /path/to/your/image3.png
+2024-10-16T22:11:33.741Z [info]: GET /
+2024-10-16T22:11:33.741Z [info]: Home route accessed
+2024-10-16T22:11:33.771Z [info]: GET /path/to/your/image1.png
+2024-10-16T22:11:33.772Z [info]: GET /path/to/your/image2.png
+2024-10-16T22:11:33.772Z [info]: GET /stylesheets/style.css
+2024-10-16T22:11:33.773Z [info]: GET /javascripts/main.js
+2024-10-16T22:11:33.873Z [info]: GET /path/to/your/image3.png
+2024-10-16T22:11:34.051Z [info]: GET /
+2024-10-16T22:11:34.052Z [info]: Home route accessed
+2024-10-16T22:11:34.084Z [info]: GET /path/to/your/image1.png
+2024-10-16T22:11:34.085Z [info]: GET /path/to/your/image2.png
+2024-10-16T22:11:34.086Z [info]: GET /stylesheets/style.css
+2024-10-16T22:11:34.089Z [info]: GET /javascripts/main.js
+2024-10-16T22:11:34.184Z [info]: GET /path/to/your/image3.png
+2024-10-17T18:20:14.679Z [info]: GET /path/to/your/image1.png
+2024-10-17T18:20:14.692Z [info]: GET /path/to/your/image2.png
+2024-10-17T18:20:14.693Z [info]: GET /stylesheets/style.css
+2024-10-17T18:20:14.919Z [info]: GET /path/to/your/image3.png
+2024-10-17T18:20:14.934Z [info]: GET /javascripts/main.js
+2024-10-17T19:52:22.715Z [info]: Firebase initialized successfully
+2024-10-17T19:52:22.720Z [info]: Server started on port 3005
+2024-10-17T19:53:00.446Z [info]: GET /
+2024-10-17T19:53:00.448Z [info]: Home route accessed
+2024-10-17T19:53:00.505Z [info]: GET /stylesheets/style.css
+2024-10-17T19:53:00.512Z [info]: GET /path/to/your/image1.png
+2024-10-17T19:53:00.517Z [info]: GET /path/to/your/image2.png
+2024-10-17T19:53:00.761Z [info]: GET /path/to/your/image3.png
+2024-10-17T19:53:00.783Z [info]: GET /javascripts/main.js
+2024-10-17T19:53:51.144Z [info]: Firebase initialized successfully
+2024-10-17T19:53:51.149Z [info]: Server started on port 3005
+2024-10-17T19:56:00.189Z [info]: GET /about-us
+2024-10-17T19:56:00.191Z [info]: About Us route accessed
+2024-10-17T19:56:00.234Z [info]: GET /logo.png
+2024-10-17T19:56:00.240Z [info]: GET /image.jpg
+2024-10-17T19:56:00.243Z [info]: GET /stylesheets/style.css
+2024-10-17T19:56:00.447Z [info]: GET /javascripts/main.js
+2024-10-17T19:56:22.805Z [info]: GET /
+2024-10-17T19:56:22.807Z [info]: Home route accessed
+2024-10-17T19:56:22.855Z [info]: GET /path/to/your/image1.png
+2024-10-17T19:56:22.860Z [info]: GET /path/to/your/image2.png
+2024-10-17T19:56:22.864Z [info]: GET /javascripts/main.js
+2024-10-17T19:56:22.867Z [info]: GET /stylesheets/style.css
+2024-10-17T19:56:22.980Z [info]: GET /path/to/your/image3.png
+2024-10-17T19:56:31.012Z [info]: GET /about
+2024-10-17T19:56:31.055Z [info]: GET /stylesheets/style.css
+2024-10-17T19:56:31.057Z [info]: GET /javascripts/main.js
+2024-10-17T19:56:41.861Z [info]: GET /
+2024-10-17T19:56:41.862Z [info]: Home route accessed
+2024-10-17T19:56:41.896Z [info]: GET /path/to/your/image1.png
+2024-10-17T19:56:41.897Z [info]: GET /path/to/your/image2.png
+2024-10-17T19:56:41.901Z [info]: GET /stylesheets/style.css
+2024-10-17T19:56:41.903Z [info]: GET /javascripts/main.js
+2024-10-17T19:56:41.991Z [info]: GET /path/to/your/image3.png
+2024-10-17T19:56:43.879Z [info]: GET /about
+2024-10-17T19:56:43.914Z [info]: GET /stylesheets/style.css
+2024-10-17T19:56:43.920Z [info]: GET /javascripts/main.js
