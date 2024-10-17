@@ -1,0 +1,40 @@
+/* Style for contact-us */
+/* Kotsios code !!!*/
+
+body {
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('../assets/images/contact-us.png'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .contact-form {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 400px;
+    margin: auto;
+    margin-bottom: 10%;
+    color: white;
+    margin-top: 100px;
+    position: center;
+  }
+  .footer {
+    background-color: #f8f9fa;
+    padding: 20px;
+    text-align: center;
+    margin-top: 100px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+  .footer img {
+    max-width: 50px;
+    margin-bottom: 10px;
+  }
+
+
+  

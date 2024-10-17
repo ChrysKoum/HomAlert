@@ -70,9 +70,12 @@ HomAlert is an advanced Smart Home Emergency Notification System designed to saf
    FIREBASE_APP_ID=your_app_id
    FIREBASE_MEASUREMENT_ID=your_measurement_id
    ```
-**Tip:** *This Configurations will need to change. So, you will create Firebase Project, then Web Application to take all the configurations except the FIREBASE_DATABASE_URL. Then create also a realtime firebase database to get the FIREBASE_DATABASE_URL. Or you can ask me to give you my credentials if yo are not interested.*
+**Tip:** *This Configurations will need to change. So, you will create Firebase Project, then Web Application to take all the configurations except the FIREBASE_DATABASE_URL. Then create also a realtime firebase database to get the FIREBASE_DATABASE_URL. You will need to create Firebase Auth Service and accept email-password credentials.*
 
-4. **Run the Application**
+4. **Set Up Environment Variables**
+   Make a **logs** folder in the main directory with 2 files inside the **combined.log** and **error.log**.
+   
+5. **Run the Application**
 
    ```sh
    npm start
