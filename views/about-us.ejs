@@ -61,16 +61,25 @@
     align-items: center;
     border-radius: 10px;
     padding: 40px;
+    flex-direction: row;
   }
 
   .content {
     width: 50%;
   }
 
-  .icon {
+  .icon img {
     width: 40px;
     height: 40px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+  }
+
+  .stay-alert {
+    margin-left: 70px;
+  }
+
+  .stay-alert img {
+    border-radius: 16px;
   }
 
   h1 {
@@ -99,6 +108,23 @@
     color: black;
     background-color: #ffff;
   }
+
+  @media (max-width: 1000px) {
+    .container {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .stay-alert {
+      width: 100%;
+      margin-left: 0;
+      margin-top: 20px;
+    }
+
+    .content {
+      width: 100%;
+    }
+  }
 </style>
 
 <section class="About-Us">
@@ -107,7 +133,9 @@
       <div class="container">
         <div class="content">
           <div class="icon">
-            <img src="logo.png" alt="Icon" />
+            <img
+              src="https://img.icons8.com/?size=100&id=113307&format=png&color=000000"
+            />
           </div>
           <h1>Our Journey to Creating the Smart Home System</h1>
           <p>
@@ -126,8 +154,10 @@
             <button class="sing-up">Sing Up ></button>
           </div>
         </div>
-        <div class="image">
-          <img src="image.jpg" alt="Smart Home" />
+        <div class="stay-alert">
+          <img
+            src="https://t3.ftcdn.net/jpg/00/72/10/14/360_F_72101436_DSA3oBE7Mc2zssKFUfcWtArqkE8L8ZMC.jpg"
+          />
         </div>
       </div>
 <<<<<<< HEAD
