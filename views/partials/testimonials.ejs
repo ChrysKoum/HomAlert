@@ -13,16 +13,19 @@
             <div class="col-md-4 mb-3">
                 <div class="card p-3">
                     <div class="card-body">
-                        <p class="star-rating">
+                        <!-- Left align star rating -->
+                        <p class="star-rating text-start">
                             <% for (let i = 0; i < testimonial.stars; i++) { %>
                                 &#9733;
                             <% } %>
                         </p>
-                        <p class="card-text">"<%= testimonial.review %>"</p>
-                        <div class="d-flex align-items-center">
+                        <!-- Center align the review text -->
+                        <p class="card-text text-start">"<%= testimonial.review %>"</p>
+                         <!-- Left align name, position, and company name -->
+                         <div class="d-flex align-items-start">
                             <img src="/assets/icons/user/user.png" alt="User image" class="rounded-circle me-3" style="width: 40px; height: 40px;">
-                            <div>
-                                <p class="mb-0 font-weight-bold"><%= testimonial.name %></p>
+                            <div class="text-start">
+                                <p class="mb-0 font-weight-bold" ><%= testimonial.name %></p>
                                 <small class="text-muted"><%= testimonial.position %></small>
                             </div>
                         </div>
