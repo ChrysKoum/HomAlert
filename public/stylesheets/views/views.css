@@ -1,0 +1,16 @@
+/*/////FAQ/////*/
+
+    /* Default style for the title */
+    .questions-title {
+        color:var(--secondary-color); /* Default text color */
+        transition: color 0.3s ease; /* Smooth transition for color change */
+    }
+
+    /* Hover effect for the title */
+    .questions-title:hover {
+        color:  var(--accent-color); /* Change to blue when hovered */
+    }
+
+/*//CONTACT-US//*/
+
+ 
