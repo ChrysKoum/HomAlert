@@ -128,10 +128,10 @@
 
     .faq {
       width: 100%;
-      border-top: 1px solid grey;
+      border-top: 1px solid var(--secondary-color);
   }
   .faq-item {
-      border-bottom: 1px solid grey;
+      border-bottom: 1px solid var(--secondary-color);
       padding: 10px 0;
   }
   .faq-question {
@@ -141,14 +141,14 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      color: grey; /* Initially grey */
+      color: var(--secondary-color); /* Initially grey */
       transition: color 0.3s ease; /* Smooth color transition */
   }
   .faq-question:hover {
-      color: blue; /* Turn blue on hover */
+      color: var(--accent-color); /* Turn blue on hover */
   }
   .faq-question.active {
-      color: blue; /* Stay blue when selected */
+      color: var(--accent-color); /* Stay blue when selected */
   }
   .faq-answer {
       max-height: 0; /* Initially hidden */
