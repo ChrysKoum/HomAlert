@@ -70,8 +70,12 @@ HomAlert is an advanced Smart Home Emergency Notification System designed to saf
    FIREBASE_APP_ID=your_app_id
    FIREBASE_MEASUREMENT_ID=your_measurement_id
    ```
+**Tip:** *This Configurations will need to change. So, you will create Firebase Project, then Web Application to take all the configurations except the FIREBASE_DATABASE_URL. Then create also a realtime firebase database to get the FIREBASE_DATABASE_URL. You will need to create Firebase Auth Service and accept email-password credentials.*
 
-4. **Run the Application**
+4. **Set Up Environment Variables**
+   Make a **logs** folder in the main directory with 2 files inside the **combined.log** and **error.log**.
+   
+5. **Run the Application**
 
    ```sh
    npm start
@@ -134,15 +138,25 @@ HomAlert/
 │   │   ├── forgot-password.ejs
 │   │   ├── sign-in.ejs
 │   │   ├── sign-up.ejs
+│   ├── dashboard/
+│   │   ├── dashboard.ejs
+│   │   ├── profile-page.ejs
 │   ├── layouts/
 │   │   ├── boilerplate.ejs
 │   ├── partials/
 │   │   ├── footer.ejs
 │   │   ├── navbar.ejs
+│   │   ├── join-us.ejs
+│   │   ├── testimonials.ejs
 │   ├── errors/
 │   │   ├── 404.ejs
 │   │   ├── 500.ejs
+│   ├── about-us.ejs
+│   ├── contact-us.ejs
+│   ├── faq.ejs
 │   ├── home.ejs
+│   ├── product.ejs
+│   ├── test.ejs (will be removed only for development help)
 ├── .env-example
 ├── .gitignore
 ├── app.js
@@ -175,6 +189,7 @@ HomAlert/
   - `firebaseUtils.js`: Utility functions for Firebase operations.
 - **views/**: Contains EJS templates for rendering HTML pages.
   - `auth/`: Templates related to authentication (e.g., sign-in, sign-up).
+  - `dashboard/`: Templates related to the dashboard.
   - `layouts/`: Layout templates.
   - `partials/`: Reusable partial templates (e.g., navbar, footer).
   - Main pages (e.g., home.ejs, dashboard.ejs, contact-us.ejs).
