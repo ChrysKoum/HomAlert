@@ -76,6 +76,20 @@ p {
   font-size: var(--font-size-body);
 }
 
+:root {
+  --vh-size: 75vh; /* Default value */
+}
+
+/* Use the variable for the sections */
+section.vh-section {
+  height: var(--vh-size);
+}
+
+.vh-section {
+  height: var(--vh-size, 75vh); /* default height value */
+}
+
+
 /* UI Components */
 /* Style for buttons */
 button {
