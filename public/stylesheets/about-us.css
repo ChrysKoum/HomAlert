@@ -1,0 +1,61 @@
+.learn-more-btn {
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.sign-up-btn {
+    background-color: white;
+    color: black;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: white;
+}
+
+.sign-up-btn:hover {
+    border-radius: 20px;
+}
+
+/*list styling */
+.milestones {
+    position: relative;
+    padding-left: 40px;
+    list-style-type: none;
+}
+
+/* Individual milestone item */
+.milestones li {
+    position: relative;
+    padding: 20px 0 20px 40px;
+}
+
+/* bullet points styling */
+.milestones li::before {
+    content: '';
+    position: absolute;
+    left: 0; 
+    top: 23px;
+    width: 20px;
+    height: 25px;
+    background-image: url('../assets/images/bulletpoint.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 1;
+}
+
+/* Vertical line between bullet points */
+.milestones li::after {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 30px;
+    bottom: -30px;
+    width: 2px;
+    background-color: #333;
+    z-index: 0;
+}
