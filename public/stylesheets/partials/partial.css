@@ -132,7 +132,7 @@
   }
   .faq-item {
       border-bottom: 1px solid var(--secondary-color);
-      padding: 10px 0;
+      padding: 20px 0;
   }
   .faq-question {
       cursor: pointer;
