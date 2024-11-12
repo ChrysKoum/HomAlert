@@ -9,19 +9,35 @@
 }
 
 .sign-up-btn {
-    background-color: white;
-    color: black;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    border: white;
+    background-color: white;        
+    color: #333;                    
+    border: none;                   
+    padding: 10px 20px;             
+    font-size: 16px;               
+    cursor: pointer;                
+    display: inline-flex;       
+    align-items: center;           
+    border-radius: 30px;             
+    transition: 
+    background-color 0.3s ease,   
+    border-radius 0.3s ease;      
 }
 
 .sign-up-btn:hover {
-    border-radius: 20px;
+    border-radius: 30px;
 }
 
-/*list styling */
+.sign-up-btn .fa-greater-than {
+    display: inline-block;
+    transition: transform 0.3s ease; 
+    margin-left: 5px; 
+}
+  
+.sign-up-btn:hover .fa-greater-than {
+    transform: translateX(5px); 
+}
+
+/* Milestones list styling */
 .milestones {
     position: relative;
     padding-left: 40px;
@@ -34,14 +50,14 @@
     padding: 20px 0 20px 40px;
 }
 
-/* bullet points styling */
+/* Bullet points styling with increased size */
 .milestones li::before {
     content: '';
     position: absolute;
     left: 0; 
-    top: 23px;
-    width: 20px;
-    height: 25px;
+    top: 15px;               /* positioning */
+    width: 40px;             /* bigger bullet */
+    height: 30px;            /* height - bigger bullet */
     background-image: url('../assets/images/bulletpoint.png');
     background-size: cover;
     background-repeat: no-repeat;
@@ -52,8 +68,8 @@
 .milestones li::after {
     content: '';
     position: absolute;
-    left: 10px;
-    top: 30px;
+    left: 20px;              /* Adjust based on the bullet size */
+    top: 55px;
     bottom: -30px;
     width: 2px;
     background-color: #333;
