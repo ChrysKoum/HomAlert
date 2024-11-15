@@ -16,15 +16,17 @@
     font-size: 16px;               
     cursor: pointer;                
     display: inline-flex;       
-    align-items: center;           
-    border-radius: 30px;             
-    transition: 
-    background-color 0.3s ease,   
-    border-radius 0.3s ease;      
+    align-items: center;   
 }
 
 .sign-up-btn:hover {
+    color:#3170FD;
     border-radius: 30px;
+}
+
+.learn-more-btn:hover {
+    border: 2px solid #3170FD;
+    background-color: #3170FD;
 }
 
 .sign-up-btn .fa-greater-than {
@@ -56,8 +58,8 @@
     position: absolute;
     left: 0; 
     top: 15px;               /* positioning */
-    width: 40px;             /* bigger bullet */
-    height: 30px;            /* height - bigger bullet */
+    width: 43px;             /* bigger bullet */
+    height: 33px;            /* height - bigger bullet */
     background-image: url('../assets/images/bulletpoint.png');
     background-size: cover;
     background-repeat: no-repeat;
