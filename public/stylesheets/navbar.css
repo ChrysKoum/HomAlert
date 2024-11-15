@@ -1,0 +1,18 @@
+/* General button hover effect */
+.navbar-nav .nav-link.btn:hover {
+    background-color: blue;
+    color: white;
+}
+
+/* For the outlined 'Sign In' button */
+.navbar-nav .nav-link.btn-outline-primary:hover {
+    background-color: blue;
+    color: white;
+    border-color: blue;
+}
+
+/* For the primary 'Sign Up' button */
+.navbar-nav .nav-link.btn-primary:hover {
+    background-color: blue;
+    color: white;
+}
