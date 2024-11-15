@@ -1,3 +1,4 @@
+/* Buttons styling */
 .learn-more-btn {
     background-color: white;
     color: black;
@@ -20,7 +21,7 @@
 }
 
 .sign-up-btn:hover {
-    color:#3170FD;
+    color: #3170FD;
     border-radius: 30px;
 }
 
@@ -49,17 +50,17 @@
 /* Individual milestone item */
 .milestones li {
     position: relative;
-    padding: 20px 0 20px 40px;
+    padding: 20px 0 20px 50px; /* Adjusted left padding for 10px space from bullet points */
 }
 
-/* Bullet points styling with increased size */
+/* Default bullet points styling */
 .milestones li::before {
     content: '';
     position: absolute;
-    left: 0; 
-    top: 15px;               /* positioning */
-    width: 43px;             /* bigger bullet */
-    height: 33px;            /* height - bigger bullet */
+    left: 5px;              /* Adjusted for bullet positioning */
+    top: 15px;               /* Positioning */
+    width: 43px;             /* Bigger bullet */
+    height: 33px;            /* Height - bigger bullet */
     background-image: url('../assets/images/bulletpoint.png');
     background-size: cover;
     background-repeat: no-repeat;
@@ -70,10 +71,20 @@
 .milestones li::after {
     content: '';
     position: absolute;
-    left: 20px;              /* Adjust based on the bullet size */
+    left: 25px;              /* Adjusted for vertical line positioning */
     top: 55px;
     bottom: -30px;
     width: 2px;
-    background-color: #333;
+    background-color: black;  /* Default color */
     z-index: 0;
+}
+
+/* First two bullet points with blue image */
+.milestones li:nth-child(-n+2)::before {
+    background-image: url('../assets/images/bulletpoint_blue.png');
+}
+
+/* First two vertical lines in blue */
+.milestones li:nth-child(-n+2)::after {
+    background-color: #3170FD; /* Blue vertical lines */
 }
