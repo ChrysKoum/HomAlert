@@ -1,18 +1,47 @@
-/* General button hover effect */
-.navbar-nav .nav-link.btn:hover {
-    background-color: blue;
-    color: white;
+/* General Navbar Styling */
+.navbar {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add subtle shadow for depth */
 }
 
-/* For the outlined 'Sign In' button */
-.navbar-nav .nav-link.btn-outline-primary:hover {
-    background-color: blue;
-    color: white;
-    border-color: blue;
+.navbar-nav .nav-link {
+    font-size: 1rem; /* Standardize font size for links */
+    color: #000; /* Link text color */
 }
 
-/* For the primary 'Sign Up' button */
-.navbar-nav .nav-link.btn-primary:hover {
-    background-color: blue;
-    color: white;
+.navbar-nav .nav-link:hover {
+    color: #0056b3; /* Change color on hover */
+}
+
+/* Sign In and Sign Up Buttons */
+.navbar-nav .btn-outline-primary {
+    border-color: blue; /* Outline button color */
+    color: blue; /* Text color */
+    margin-right: 0; /* Reduced margin to bring buttons closer */
+}
+
+.navbar-nav .btn-outline-primary:hover {
+    background-color: lightgray; /* Fill color on hover */
+}
+
+.navbar-nav .btn-primary {
+    background-color: blue; /* Fill color */
+    color: #fff; /* Text color */
+    border-color: blue; /* Match border color */
+}
+
+.navbar-nav .btn-primary:hover {
+    background-color: lightgray;
+    color: blue;
+}
+
+/* Mobile View Adjustments */
+@media (max-width: 768px) {
+    .navbar-nav {
+        text-align: center; /* Center links in mobile view */
+    }
+
+    .btn {
+        width: 100%; /* Make buttons take full width */
+        margin-bottom: 0.5rem; /* Add spacing between buttons */
+    }
 }
