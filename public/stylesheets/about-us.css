@@ -1,0 +1,90 @@
+/* Buttons styling */
+.learn-more-btn {
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+    border-radius: 30px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.sign-up-btn {
+    background-color: white;        
+    color: #333;                    
+    border: none;                   
+    padding: 10px 20px;             
+    font-size: 16px;               
+    cursor: pointer;                
+    display: inline-flex;       
+    align-items: center;   
+}
+
+.sign-up-btn:hover {
+    color: #3170FD;
+    border-radius: 30px;
+}
+
+.learn-more-btn:hover {
+    border: 2px solid #3170FD;
+    background-color: #3170FD;
+}
+
+.sign-up-btn .fa-greater-than {
+    display: inline-block;
+    transition: transform 0.3s ease; 
+    margin-left: 5px; 
+}
+  
+.sign-up-btn:hover .fa-greater-than {
+    transform: translateX(5px); 
+}
+
+/* Milestones list styling */
+.milestones {
+    position: relative;
+    padding-left: 40px;
+    list-style-type: none;
+}
+
+/* Individual milestone item */
+.milestones li {
+    position: relative;
+    padding: 20px 0 20px 50px; /* Adjusted left padding for 10px space from bullet points */
+}
+
+/* Default bullet points styling */
+.milestones li::before {
+    content: '';
+    position: absolute;
+    left: 5px;              /* Adjusted for bullet positioning */
+    top: 15px;               /* Positioning */
+    width: 43px;             /* Bigger bullet */
+    height: 33px;            /* Height - bigger bullet */
+    background-image: url('../assets/images/bulletpoint.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 1;
+}
+
+/* Vertical line between bullet points */
+.milestones li::after {
+    content: '';
+    position: absolute;
+    left: 25px;              /* Adjusted for vertical line positioning */
+    top: 55px;
+    bottom: -30px;
+    width: 2px;
+    background-color: black;  /* Default color */
+    z-index: 0;
+}
+
+/* First two bullet points with blue image */
+.milestones li:nth-child(-n+2)::before {
+    background-image: url('../assets/images/bulletpoint_blue.png');
+}
+
+/* First two vertical lines in blue */
+.milestones li:nth-child(-n+2)::after {
+    background-color: #3170FD; /* Blue vertical lines */
+}
