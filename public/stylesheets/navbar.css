@@ -4,7 +4,7 @@
 }
 
 .navbar-nav .nav-link {
-    font-size: 1rem; /* Standardize font size for links */
+    font-size: 16px; /* Standardize font size for links */
     color: #000; /* Link text color */
 }
 
@@ -42,6 +42,6 @@
 
     .btn {
         width: 100%; /* Make buttons take full width */
-        margin-bottom: 0.5rem; /* Add spacing between buttons */
+        margin-bottom: 8px; /* Add spacing between buttons */
     }
 }
