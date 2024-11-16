@@ -1,8 +1,8 @@
 /* Buttons styling */
 .learn-more-btn {
-    background-color: white;
-    color: black;
-    border: 2px solid black;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    border: 2px solid var(--secondary-color);
     border-radius: 30px;
     padding: 10px 20px;
     font-size: 16px;
@@ -10,8 +10,8 @@
 }
 
 .sign-up-btn {
-    background-color: white;        
-    color: #333;                    
+    background-color: var(--primary-color);       
+    color: var(--secondary-color);                   
     border: none;                   
     padding: 10px 20px;             
     font-size: 16px;               
@@ -21,13 +21,13 @@
 }
 
 .sign-up-btn:hover {
-    color: #3170FD;
+    color: var(--accent-color);
     border-radius: 30px;
 }
 
 .learn-more-btn:hover {
-    border: 2px solid #3170FD;
-    background-color: #3170FD;
+    border: 2px solid var(--accent-color);;
+    background-color: var(--accent-color);;
 }
 
 .sign-up-btn .fa-greater-than {
@@ -75,7 +75,7 @@
     top: 55px;
     bottom: -30px;
     width: 2px;
-    background-color: black;  /* Default color */
+    background-color: var(--secondary-color);  /* Default color */
     z-index: 0;
 }
 
@@ -86,5 +86,5 @@
 
 /* First two vertical lines in blue */
 .milestones li:nth-child(-n+2)::after {
-    background-color: #3170FD; /* Blue vertical lines */
+    background-color: var(--accent-color);; /* Blue vertical lines */
 }
