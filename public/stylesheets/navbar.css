@@ -1,47 +1,32 @@
-/* General Navbar Styling */
-.navbar {
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add subtle shadow for depth */
+.navbar-nav .btn {
+    transition: all 0.3s ease;
 }
 
-.navbar-nav .nav-link {
-    font-size: 16px; /* Standardize font size for links */
-    color: #000; /* Link text color */
-}
-
-.navbar-nav .nav-link:hover {
-    color: #0056b3; /* Change color on hover */
-}
-
-/* Sign In and Sign Up Buttons */
+/* Default styles */
 .navbar-nav .btn-outline-primary {
-    border-color: blue; /* Outline button color */
-    color: blue; /* Text color */
-    margin-right: 0; /* Reduced margin to bring buttons closer */
+    border: 1px solid #2A70FF;
+    border-radius: 20px 0 0 20px;
+    color: black;
+    background-color: white;
+    padding: 8px 30px;
+    margin-right: 0;
 }
 
 .navbar-nav .btn-outline-primary:hover {
-    background-color: lightgray; /* Fill color on hover */
+    background-color: #2154CC;
+    color: white;
 }
 
 .navbar-nav .btn-primary {
-    background-color: blue; /* Fill color */
-    color: #fff; /* Text color */
-    border-color: blue; /* Match border color */
+    background-color: blue;
+    color: #fff;
+    border: 1px solid blue;
+    border-radius: 0 20px 20px 0;
+    padding: 8px 20px;
+    margin-left: 0;
 }
 
 .navbar-nav .btn-primary:hover {
-    background-color: lightgray;
-    color: blue;
-}
-
-/* Mobile View Adjustments */
-@media (max-width: 768px) {
-    .navbar-nav {
-        text-align: center; /* Center links in mobile view */
-    }
-
-    .btn {
-        width: 100%; /* Make buttons take full width */
-        margin-bottom: 8px; /* Add spacing between buttons */
-    }
+    background-color: white;
+    color:#2154CC;
 }
