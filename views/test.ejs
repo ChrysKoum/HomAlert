@@ -27,13 +27,17 @@
                     <h1 class="display-4">This Page is for Educational Demostration of Jquery and fetching Data </h1>
                     <div id="message" class="alert alert-info" style="display: none;"></div>
                     <div id="authButtons">
+                         <!-- <button id="registerButton" class="btn btn-primary btn-lg">Register</button> -->
                          <button id="loginButton" class="btn btn-primary btn-lg">Login</button>
                          <button id="logoutButton" class="btn btn-primary btn-lg" style="display: none;">Logout</button>
+                         <!-- <button id="resetPasswordButton" class="btn btn-primary btn-lg">Reset Password</button> -->
                     </div>
                     <div id="dataButtons" style="display: none;">
                          <button id="readUserDataButton" class="btn btn-secondary btn-lg">Read User Data</button>
                          <button id="readDeviceDataButton" class="btn btn-secondary btn-lg">Read Device Data</button>
                          <button id="readSensorDataButton" class="btn btn-secondary btn-lg">Read Sensor Data</button>
+                         <button id="writeSensorDataButton" class="btn btn-secondary btn-lg">Write Sensor Data</button>
+                         <button id="writeUserDataButton" class="btn btn-secondary btn-lg">Write User Data</button>
                     </div>
                </div>
           </section>
@@ -249,6 +253,18 @@
                     $('#readSensorDataButton').click(function () {
                          $('#readSensorDataForm').show();
                          $('#registerForm, #loginForm, #resetPasswordForm, #writeUserDataForm, #writeDeviceDataForm, #readUserDataForm, #readDeviceDataForm').hide();
+                    });
+
+
+                    $('#writeUserDataButton').click(function () {
+                         $('#writeUserDataForm').show();
+                         $('#registerForm, #loginForm, #resetPasswordForm, #readSensorDataForm, #writeDeviceDataForm, #readUserDataForm, #readDeviceDataForm').hide();
+                    });
+
+
+                    $('#writeSensorDataButton').click(function () {
+                         $('#writeDeviceDataForm').show();
+                         $('#registerForm, #loginForm, #resetPasswordForm, #writeUserDataForm, #readSensorDataForm, #readUserDataForm, #readDeviceDataForm').hide();
                     });
 
                     $('#registerForm button').click(function () {

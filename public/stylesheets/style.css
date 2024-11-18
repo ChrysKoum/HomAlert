@@ -23,13 +23,15 @@
   --font-secondary: 'Nunito', sans-serif;
 
   /* Font Size Variables */
-  --font-size-h1: 2.5rem; /* Example size, adjust as needed */
-  --font-size-h2: 2rem;
-  --font-size-h3: 1.75rem;
-  --font-size-h4: 1.5rem;
-  --font-size-h5: 1.25rem;
-  --font-size-h6: 1rem;
-  --font-size-body: 1rem;
+  --font-size-h1: 3rem; /* Example size, adjust as needed */
+  --font-size-h2: 2.25rem;
+  --font-size-h3: 1.75rem; /* Typically around 28px */
+  --font-size-h4: 1.5rem; /* Typically around 24px */
+  --font-size-h5: 1.25rem; /* Typically around 20px */
+  --font-size-h6: 1rem;   /* Typically around 16px */
+  --font-size-body: 1rem; /* Base font size, typically 16px */
+  --font-size-small: 0.875rem; /* Smaller text, typically 14px */
+  --font-size-tiny: 0.75rem; /* Tiny text, typically 12px */
 }
 
 /* Responsive Design */
@@ -44,31 +46,37 @@ body {
 h1 {
   font-family: var(--font-secondary);
   font-size: var(--font-size-h1);
+  font-weight: bold;
 }
 
 h2 {
   font-family: var(--font-secondary);
   font-size: var(--font-size-h2);
+  font-weight: bold;
 }
 
 h3 {
   font-family: var(--font-secondary);
   font-size: var(--font-size-h3);
+  font-weight: bold;
 }
 
 h4 {
   font-family: var(--font-secondary);
   font-size: var(--font-size-h4);
+  font-weight: bold;
 }
 
 h5 {
   font-family: var(--font-secondary);
   font-size: var(--font-size-h5);
+  font-weight: bold;
 }
 
 h6 {
   font-family: var(--font-secondary);
   font-size: var(--font-size-h6);
+  font-weight: bold;
 }
 
 p {
@@ -76,19 +84,14 @@ p {
   font-size: var(--font-size-body);
 }
 
-:root {
-  --vh-size: 75vh; /* Default value */
+/* For smaller text */
+small {
+  font-size: var(--font-size-small);
 }
 
-/* Use the variable for the sections */
-section.vh-section {
-  height: var(--vh-size);
+.tiny {
+  font-size: var(--font-size-tiny);
 }
-
-.vh-section {
-  height: var(--vh-size, 75vh); /* default height value */
-}
-
 
 /* UI Components */
 /* Style for buttons */
@@ -99,10 +102,67 @@ button {
   border: none;
   padding: 0.5rem 1rem;
   border-radius: 0.25rem;
+  padding: 10px 20px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 button:hover {
   background-color: darken(var(--accent-color), 10%);
+}
+
+/* Define the section padding class */
+section {
+  padding: 8rem 1rem;
+}
+
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  :root {
+    --font-size-h1: 2.5rem; /* 40px */
+    --font-size-h2: 2rem; /* 32px */
+    --font-size-h3: 1.5rem; /* 24px */
+    --font-size-h4: 1.25rem; /* 20px */
+    --font-size-h5: 1rem; /* 16px */
+    --font-size-h6: 0.875rem; /* 14px */
+    --font-size-body: 0.875rem; /* 14px */
+  }
+
+  section {
+    padding: 6rem 1rem;
+  }
+}
+
+@media (max-width: 992px) {
+  :root {
+    --font-size-h1: 2rem; /* 32px */
+    --font-size-h2: 1.75rem; /* 28px */
+    --font-size-h3: 1.5rem; /* 24px */
+    --font-size-h4: 1.25rem; /* 20px */
+    --font-size-h5: 1rem; /* 16px */
+    --font-size-h6: 0.875rem; /* 14px */
+    --font-size-body: 0.875rem; /* 14px */
+  }
+
+  section {
+    padding: 5rem 0.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --font-size-h1: 1.75rem; /* 28px */
+    --font-size-h2: 1.5rem; /* 24px */
+    --font-size-h3: 1.25rem; /* 20px */
+    --font-size-h4: 1rem; /* 16px */
+    --font-size-h5: 0.875rem; /* 14px */
+    --font-size-h6: 0.75rem; /* 12px */
+    --font-size-body: 0.75rem; /* 12px */
+  }
+
+  section {
+    padding: 3rem 0.5rem;
+  }
 }
 
