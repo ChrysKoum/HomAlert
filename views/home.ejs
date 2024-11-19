@@ -11,7 +11,7 @@
 <!-- Use the boilerplate layout for consistent structure it will retrieve the layout of the boilerplate file -->
 <% layout('layouts/boilerplate') %>
 
-    <!-- <section class="vh-100 d-flex align-items-center">
+  <!-- <section class="vh-100 d-flex align-items-center">
           <div class="container text-center">
                <h1 class="display-4">Stay Safe, Stay Alert</h1>
                <p class="lead">Protecting What Matters Most</p>
@@ -19,82 +19,316 @@
           </div>
      </section> -->
 
-     <section class="hero-section vh-100 d-flex align-items-center">
-          <div class="container">
-               <div class="row align-items-center" style="margin-top: -4rem;">
-                    <div class="col-md-6">
-                        <h1 class="display-4" style="font-weight: 700;">
-                            Stay <span class="text-primary">Safe</span>, Stay <span class="text-primary">Alert</span><br>
-                            Protecting What <br> Matters Most
-                        </h1>
-                        <p class="lead mt-3" style="font-weight: bold; color:#6A6B71 ">
-                            Experience Ultimate Home Safety with HomAlert: 
-                            <br>Advanced Smart Home Emergency System for Real-Time <br> Monitoring and Instant Alerts Against Fires, Floods, Gas 
-                            <br>Leaks, and Intrusions.
-                        </p>
-                        <a href="#" class="btn btn-primary btn-lg mt-3 rounded-5" style="padding-left: 2rem; padding-right:2rem;">Learn More</a>
-               </div>
 
-               <div class="col-md-6 text-center">
-                    <img src="/assets/images/Capture.PNG" alt="Our Service" class="img-fluid">
-                    <p class="text-muted" style="font-size: 0.8rem;">Note: This image will change to a GIF.</p>
-               </div>
+  
+  <section class="hero-section vh-100 d-flex align-items-center">
+    <div class="container">
+      <div class="row align-items-center" >
+        <div class="col-md-6">
+          <h1 class="display-4" style="font-weight: 700;">
+            Stay <span class="text-primary">Safe</span>, Stay <span class="text-primary">Alert</span><br>
+            Protecting What <br> Matters Most
+          </h1>
+          <p class="lead mt-3" style="font-weight: bold; color:#6A6B71 ">
+            Experience Ultimate Home Safety with HomAlert:
+            <br>Advanced Smart Home Emergency System for Real-Time <br> Monitoring and Instant Alerts Against Fires,
+            Floods, Gas
+            <br>Leaks, and Intrusions.
+          </p>
+          <a href="#" class="btn btn-primary btn-lg mt-3 rounded-5"
+            style="padding-left: 2rem; padding-right:2rem;">Learn More</a>
+        </div>
 
+        <div class="col-md-6 ">
+          <img src="/assets/images/hero_image.png" alt="Our Service" class="img-fluid" style="width: 100%;">
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="py-5 vh-100 text-center">
+
+    <div class="container">
+
+      <h3 style="margin-bottom: -0.8rem; font-size: 30px;">Our Features</h3>
+
+      <svg width="212" height="12" viewBox="0 0 212 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+        <path
+          d="M0.226497 5.99963L5.99963 11.7735L11.7735 6.00037L6.00037 0.226497L0.226497 5.99963ZM211.773 6.01313L206 0.239255L200.227 6.01239L206 11.7863L211.773 6.01313ZM5.99994 7L206 7.01276L206 5.01276L6.00006 5L5.99994 7Z"
+          fill="#2A61E2" />
+      </svg>
+      <h2 style="color: #3A70EF; font-size: 40px; margin-top: 1rem;">Our Key Benefits</h2>
+
+      <p class="mb-4" style="font-size: 20px; margin-top: 1rem;">
+        Tailored to meet your specific safety needs and protect your home.
+      </p>
+
+    </div>
+
+    <!-- Circular Layout for Large Screens -->
+    <div class="position-relative d-none d-md-block" style="height: 600px;">
+      <!-- d-none d-md-block: Circular layout to be hidden on smaller screens -->
+
+      <!-- Center Circle -->
+      <div class="position-absolute start-50 top-50 translate-middle"
+        style="width: 200px; height: 200px; display: flex; align-items: center; justify-content: center; background-color: white; border-radius: 50%; border: 0.5px dashed #3A70EF;">
+        <!-- HomAlert Image -->
+        <img src="/assets/logo/logo trasperant without text.png" alt="Home Icon"
+          style="width: 100px; transform: translate(6%,0%);">
+      </div>
+
+      <!-- Top Feature -->
+      <div class="position-absolute start-50"
+        style="width: 1px; height: 120px; background: none; border-left: 0.5px dashed #3A70EF; top: 22%; transform: translateX(-50%);">
+      </div>
+      <div class="position-absolute start-50" style="transform: translateX(-50%); top: 0; text-align: center;">
+        <img src="/assets/icons/features/24-hours-support.png" alt="24/7 Monitoring Icon" style="width: 60px;">
+        <h4 class="mt-1" style="color:#3A70EF; font-size: 1.25rem;">24/7 Monitoring</h4>
+        <p>Constant surveillance for complete protection</p>
+      </div>
+
+      <!-- Bottom Feature -->
+      <div class="position-absolute start-50"
+        style="width: 1px; height: 100px; background: none; border-left: 0.5px dashed #3A70EF; top: 60%; transform: translateX(-50%);">
+      </div>
+      <div class="position-absolute start-50" style="transform: translate(-50%,10%); bottom: 0; text-align: center;">->
+        <img src="/assets/icons/features/phone-ringing.png" alt="Instant Alerts Notifications Icon"
+          style="width: 60px;">
+        <h4 class="mt-1" style="color: #3A70EF; font-size: 1.25rem;">Instant Alert Notifications</h4>
+        <p>Continuous tracking of home conditions</p>
+      </div>
+
+      <!-- Top Left Feature -->
+      <div class="position-absolute" style="transform: translateX(-15%); top: 20%; left: 5%; text-align: center;">
+        <img src="/assets/icons/features/theft.png" alt="Intrusion Detection Icon" style="width: 60px;">
+        <h4 class="mt-1" style="color: #3A70EF; font-size: 1.25rem;">Intrusion Detection</h4>
+        <p>Monitors unauthorized entries for enhanced security</p>
+      </div>
+      <div class="position-absolute"
+        style="width: 180px; height: 1px; background: none; border-top: 0.5px dashed #3A70EF; top: 43%; left: 33.1%; transform: rotate(13deg);">
+      </div>
+
+      <!-- Bottom Left Feature -->
+      <div class="position-absolute" style="bottom: 10%; left: 5%; text-align: center;">
+        <img src="/assets/icons/features/natural-disaster.png" alt="Flood Detection Icon" style="width: 60px;">
+        <h4 class="mt-1" style="color: #3A70EF; font-size: 1.25rem;">Flood Detection</h4>
+        <p>Immediate alerts for leaks or floods</p>
+      </div>
+      <div class="position-absolute"
+        style="width: 205px; height: 1px; background: none; border-top: 0.5px dashed #3A70EF; top: 65%; left: 32.5%; transform: rotate(-210deg);">
+      </div>
+
+      <!-- Top Right Feature -->
+      <div class="position-absolute" style="top: 20%; right: 5%; text-align: center;">
+        <img src="/assets/icons/features/leak.png" alt="Gas Leak Detection Icon" style="width: 60px;">
+        <h4 class="mt-1" style="color: #3A70EF; font-size: 1.25rem;">Gas Leak Detection</h4>
+        <p>Detects harmful gas leaks to ensure safety</p>
+      </div>
+      <div class="position-absolute"
+        style="width: 180px; height: 1px; background: none; border-top: 0.5px dashed #3A70EF; top: 43%; left: 53%; transform: rotate(-13deg);">
+      </div>
+
+      <!-- Bottom Right Feature -->
+      <div class="position-absolute" style="transform: translateX(5%); bottom: 10%; right: 5%; text-align: center;">
+        <img src="/assets/icons/features/fire-alarm.png" alt="Fire Detection Icon" style="width: 60px;">
+        <h4 class="mt-1" style="color: #3A70EF; font-size: 1.25rem;">Fire Detection</h4>
+        <p>Swift identification of fires to prevent damage</p>
+      </div>
+      <div class="position-absolute"
+        style="width: 205px; height: 1px; background: none; border-top: 0.5px dashed #3A70EF; top: 64.5%; right: 32%; transform: rotate(210deg);">
+      </div>
+    </div>
+
+
+    <!-- Column Layout for Small Screens -->
+    <div class="d-md-none">
+      <div class="row">
+        <div class="col-12 text-center mb-4">
+          <img src="/assets/icons/features/24-hours-support.png" alt="24/7 Monitoring Icon" style="width: 60px;">
+          <h4 class="mt-1" style="color:#3A70EF; font-size: 1.25rem;">24/7 Monitoring</h4>
+          <p>Constant surveillance for complete protection</p>
+        </div>
+        <div class="col-12 text-center mb-4">
+          <img src="/assets/icons/features/theft.png" alt="Intrusion Detection Icon" style="width: 60px;">
+          <h4 class="mt-1" style="color: #3A70EF; font-size: 1.25rem;">Intrusion Detection</h4>
+          <p>Monitors unauthorized entries for enhanced security</p>
+        </div>
+        <div class="col-12 text-center mb-4">
+          <img src="/assets/icons/features/leak.png" alt="Gas Leak Detection Icon" style="width: 60px;">
+          <h4 class="mt-1" style="color: #3A70EF; font-size: 1.25rem;">Gas Leak Detection</h4>
+          <p>Detects harmful gas leaks to ensure safety</p>
+        </div>
+        <div class="col-12 text-center mb-4">
+          <img src="/assets/icons/features/phone-ringing.png" alt="Instant Alerts Notifications Icon"
+            style="width: 60px;">
+          <h4 class="mt-1" style="color: #3A70EF; font-size: 1.25rem;">Instant Alert Notifications</h4>
+          <p>Continuous tracking of home conditions</p>
+        </div>
+        <div class="col-12 text-center mb-4">
+          <img src="/assets/icons/features/natural-disaster.png" alt="Flood Detection Icon" style="width: 60px;">
+          <h4 class="mt-1" style="color: #3A70EF; font-size: 1.25rem;">Flood Detection</h4>
+          <p>Immediate alerts for leaks or floods</p>
+        </div>
+        <div class="col-12 text-center mb-4">
+          <img src="/assets/icons/features/fire-alarm.png" alt="Fire Detection Icon" style="width: 60px;">
+          <h4 class="mt-1" style="color: #3A70EF; font-size: 1.25rem;">Fire Detection</h4>
+          <p>Swift identification of fires to prevent damage</p>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <section class="py-5 vh-100 text-center" style="margin-top: 5rem;">
+    <!-- py-5: 3rem -->
+    <!-- vh-100: 100% of the viewport height -->
+
+    <div class="container" style="margin-top: 0rem;" id="responsive-container">
+      <!-- margin-top: 0rem;: Initial top margin that will later be altered with js for smaller screens! -->
+      <!-- id="responsive-container": id to target the container in js -->
+
+      <h3 style="margin-bottom: -0.8rem; font-size: 30px;">Why Choose Us</h3>
+
+      <svg width="212" height="12" viewBox="0 0 212 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M0.226497 5.99963L5.99963 11.7735L11.7735 6.00037L6.00037 0.226497L0.226497 5.99963ZM211.773 6.01313L206 0.239255L200.227 6.01239L206 11.7863L211.773 6.01313ZM5.99994 7L206 7.01276L206 5.01276L6.00006 5L5.99994 7Z"
+          fill="#2A61E2" />
+      </svg>
+
+      <h2 style="color: #3A70EF; font-size: 40px; margin-top: 1rem;">The Trusted Source</h2>
+
+      <p style="font-size: 20px; margin-top: 1rem;">Receive real-time alerts with seamless, user-friendly protection you
+        can trust.</p>
+
+
+      <div class="position-relative mt-5">
+        <!-- d-md-flex: Displays the feature block only on medium and larger screens -->
+        <!-- d-none: This class completely hides the element, making it invisible and removing it from the layout -->
+        <!-- d-md-block: Hides the wave image on small screens (width < 768px) -->
+        <!-- col-6: Takes up half the width on small screens -->
+        <!-- col-md-3: Takes up one-fourth of the width on medium and larger screens -->
+
+        <!-- Wave Image: This is the wave image for the Why_Choose_Us Section -->
+        <img src="/assets/icons/features/wave_graph.png" alt="Wave Graph Icon" class="d-none d-md-block"
+          style="width: 100%; height: auto;">
+
+
+        <div class="row justify-content-center d-none d-md-flex"
+          style="position: absolute; top: 50%; width: 100%; transform: translateY(-50%);">
+
+          <!-- Feature 1 -->
+          <div class="col-6 col-md-3 text-center mb-4" style="transform: translate(15%,-30%);">
+            <h4 style="color: #3A70EF; font-size: 20px; margin-top: 1rem;">Budget-Friendly</h4>
+            <p style="font-size: 15px;">Affordable security <br>solutions for every home.</p>
+            <img src="/assets/icons/whyChooseUs/hand.png" alt="Finance Icon"
+              style="width: 100px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); border-radius: 15px; background: white; padding: 10px;">
           </div>
-     </section>
 
-     <section class="py-5 vh-100">
-          <div class="container text-center">
-               <h2 class="mb-4">Our Key Benefits</h2>
-               <div class="row">
-                    <div class="col-md-4">
-                         <div class="p-3">
-                              <img src="path/to/your/image1.png" class="img-fluid mb-3" alt="Feature 1">
-                              <h3>Feature 1</h3>
-                              <p>Details about feature 1.</p>
-                         </div>
-                    </div>
-                    <div class="col-md-4">
-                         <div class="p-3">
-                              <img src="path/to/your/image2.png" class="img-fluid mb-3" alt="Feature 2">
-                              <h3>Feature 2</h3>
-                              <p>Details about feature 2.</p>
-                         </div>
-                    </div>
-                    <div class="col-md-4">
-                         <div class="p-3">
-                              <img src="path/to/your/image3.png" class="img-fluid mb-3" alt="Feature 3">
-                              <h3>Feature 3</h3>
-                              <p>Details about feature 3.</p>
-                         </div>
-                    </div>
-               </div>
+          <!-- Feature 2 -->
+          <div class="col-6 col-md-3 text-center mb-4" style="transform: translate(0%,-30%);">
+            <h4 style="color: #3A70EF; font-size: 20px; margin-top: 1rem;">Total Home Protection</h4>
+            <p style="font-size: 15px;">Complete protection against <br>fire, intruders, gas leaks, and more.</p>
+            <img src="/assets/icons/whyChooseUs/security.png" alt="Home Security Icon"
+              style="width: 100px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); border-radius: 15px; background: white; padding: 10px;">
           </div>
-     </section>
 
-     <section class="py-5 bg-light">
-          <div class="container text-center">
-               <h2 class="mb-4">Customer Testimonials</h2>
-               <div class="row">
-                    <div class="col-md-6">
-                         <blockquote class="blockquote">
-                              <p class="mb-0">Testimonial 1.</p>
-                              <footer class="blockquote-footer">Customer 1</footer>
-                         </blockquote>
-                    </div>
-                    <div class="col-md-6">
-                         <blockquote class="blockquote">
-                              <p class="mb-0">Testimonial 2.</p>
-                              <footer class="blockquote-footer">Customer 2</footer>
-                         </blockquote>
-                    </div>
-               </div>
+          <!-- Feature 3 -->
+          <div class="col-6 col-md-3 text-center mb-4" style="transform: translate(5%,22%);">
+            <img src="/assets/icons/whyChooseUs/alarm (1).png" alt="Instant Notifications Icon"
+              style="width: 100px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); border-radius: 15px; background: white; padding: 10px;">
+            <h4 style="color: #3A70EF; font-size: 20px; margin-top: 1rem;">Immediate Alerts</h4>
+            <p style="font-size: 15px;">Immediate notifications <br>for any detected danger.</p>
           </div>
-     </section>
 
-     <section class="py-5">
-          <div class="container text-center">
-               <h2 class="mb-4">Join our mission for safety</h2>
-               <a href="#" class="btn btn-primary btn-lg">Get Started</a>
+          <!-- Feature 4 -->
+          <div class="col-6 col-md-3 text-center mb-4" style="transform: translate(-5%,22%);">
+            <img src="/assets/icons/whyChooseUs/check.png" alt="User-Friendly Icon"
+              style="width: 100px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); border-radius: 15px; background: white; padding: 10px;">
+            <h4 style="color: #3A70EF; font-size: 20px; margin-top: 1rem;">User-Friendly & Customizable</h4>
+            <p style="font-size: 15px;">Easy to use and customizable settings.</p>
           </div>
-     </section>
+
+
+        </div>
+
+        <!-- Features for Small Screens -->
+        <div class="row d-md-none mt-5">
+          <div class="col-6 text-center mb-4">
+            <h4 style="color: #3A70EF; font-size: 20px; margin-top: 1rem;">Budget-Friendly</h4>
+            <p style="font-size: 15px;">Affordable security solutions for every home.</p>
+          </div>
+          <div class="col-6 text-center mb-4">
+            <h4 style="color: #3A70EF; font-size: 20px; margin-top: 1rem;">Total Home Protection</h4>
+            <p style="font-size: 15px;">Complete protection against fire, intruders, gas leaks, and more.</p>
+          </div>
+          <div class="col-6 text-center mb-4">
+            <h4 style="color: #3A70EF; font-size: 20px; margin-top: 1rem;">Immediate Alerts</h4>
+            <p style="font-size: 15px;">Immediate notifications for any detected danger.</p>
+          </div>
+          <div class="col-6 text-center mb-4">
+            <h4 style="color: #3A70EF; font-size: 20px; margin-top: 1rem;">User-Friendly & Customizable</h4>
+            <p style="font-size: 15px;">Easy to use and customizable settings.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <script>
+    function adjustContainerMargin() {  //script for the countainer
+      const container = document.getElementById('responsive-container');
+      if (window.innerWidth < 768) {
+        container.style.marginTop = "12rem"; //The Why_Choose_Us section will have larger margin top, because in smaller screens this section and Features Section overlap
+      } else {
+        container.style.marginTop = "0";
+      }
+    }
+
+    // Attach resize event to adjust margin dynamically
+    window.addEventListener('resize', adjustContainerMargin);
+    // Trigger on page load
+    adjustContainerMargin();
+  </script>
+
+
+
+  <!--TO-DO LIST
+  -Customer Testimonials
+      Add more testimonials with photos.
+      Use a slider for better display.
+      Make the design mobile-friendly.
+  -Join Our Mission
+      Make the heading more action-driven.
+      Add a short description.
+      Improve the button text and design.
+  -->
+  <section class="py-50 bg-light vh-100 text-center">
+    <div class="container text-center">
+      <h2 class="mb-4">Customer Testimonials</h2>
+      <div class="row">
+        <div class="col-md-6">
+          <blockquote class="blockquote">
+            <p class="mb-0">Testimonial 1.</p>
+            <footer class="blockquote-footer">Customer 1</footer>
+          </blockquote>
+        </div>
+        <div class="col-md-6">
+          <blockquote class="blockquote">
+            <p class="mb-0">Testimonial 2.</p>
+            <footer class="blockquote-footer">Customer 2</footer>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-5">
+    <div class="container text-center">
+      <h2 class="mb-4">Join our mission for safety</h2>
+      <a href="#" class="btn btn-primary btn-lg">Get Started</a>
+    </div>
+  </section>
