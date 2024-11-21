@@ -15,7 +15,7 @@
     border-radius: 20px 0 0 20px;
     color: black;
     background-color: var(--primary-color);
-    padding: 5px 30px;
+    padding: 5px 12px !important;
     margin-right: 0;
 }
 
@@ -29,7 +29,7 @@
     color: var(--primary-color);
     border: 1px solid var(--accent-color);
     border-radius: 0 20px 20px 0;
-    padding: 5px 20px;
+    padding: 5px 12px !important;
     margin-left: 0;
 }
 
@@ -39,3 +39,58 @@
     border-color: #2154CC;
 }
 
+.nav-link {
+    padding-right: 20px !important;
+}
+
+.logo {
+    max-width: 40px;
+}
+
+.navbar-brand {
+    font-weight: bold;
+}
+
+.navbar-nav .btn-outline-primary {
+    border-radius: 20px 0 0 20px;
+    
+}
+
+.navbar-nav .btn-primary {
+    border-radius: 0 20px 20px 0;
+}
+
+.nav-link {
+    color: var(--secondary-color); /* Default text color */
+    transition: color 0.3s ease; /* Smooth transition effect */
+}
+  
+.nav-link:hover {
+    color: var(--accent-color); /* Blue color on hover */
+}
+
+/*media control*/
+
+@media (max-width: 990px) {
+
+
+    .navbar-nav .btn-outline-primary {
+        border-radius: 5px !important;
+        padding: 10px 20px !important;
+        margin-bottom: 10px;
+    }
+
+    .navbar-nav .btn-primary {
+        border-radius: 5px !important;
+        padding: 10px 20px !important;
+    }
+
+    .logo {
+        max-width: 30px;
+    }
+
+    .navbar-brand {
+        font-size: 18px;
+    }
+
+}
