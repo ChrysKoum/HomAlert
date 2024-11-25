@@ -1,37 +1,46 @@
-<div class="container text-center py-5">
-    <h2>Customer Testimonials</h2>
-    <p class="py-3">See how Home Alert's disaster detection system has impacted the lives of our users.</p>
-    
-    <div class="row">
-        <% let testimonials = [
-            { stars: 5, review: "Home Alert’s detection system alerted us to an earthquake just in time. We took cover before the shaking started, and it kept us safe.", name: "John Doe", position: "Homeowner, Los Angeles, CA" },
-            { stars: 5, review: "When floods hit, Home Alert's timely detection saved our property from severe water damage. It gave us the time we needed to act fast.", name: "Maria Smith", position: "Business Owner, Houston, TX" },
-            { stars: 5, review: "Indoor fires are a constant threat in our area, but thanks to Home Alert's early warnings, we managed to protect our home and evacuate safely.", name: "Michael Brown", position: "Resident, San Francisco, CA" }
-        ]; %>
+<section class="d-flex align-items-center">
+    <div class="container text-center">
 
-        <% testimonials.forEach(function(testimonial) { %>
-            <div class="col-md-4 mb-3">
-                <div class="card p-3 h-100"> <!-- Added h-100 class here -->
-                    <div class="card-body d-flex flex-column"> <!-- Changed card-body to use flex-column -->
-                        <!-- Left align star rating -->
-                        <p class="star-rating text-start">
-                            <% for (let i = 0; i < testimonial.stars; i++) { %>
-                                &#9733;
-                            <% } %>
-                        </p>
-                        <!-- Center align the review text -->
-                        <p class="card-text text-start flex-grow-1">"<%= testimonial.review %>"</p> <!-- Added flex-grow-1 for flexible height -->
-                         <!-- Left align name, position, and company name -->
-                         <div class="d-flex align-items-start">
-                            <img src="/assets/icons/user/user.png" alt="User image" class="rounded-circle me-3" style="width: 40px; height: 40px;">
-                            <div class="text-start">
-                                <p class="mb-0 font-weight-bold" ><%= testimonial.name %></p>
-                                <small class="text-muted"><%= testimonial.position %></small>
+        <div class="container text-center py-5">
+            <h2>Customer Testimonials</h2>
+            <p class="py-3">See how Home Alert's disaster detection system has impacted the lives of our users.</p>
+            
+            <div class="row">
+                <% let testimonials = [
+                    { stars: 5, review: "Home Alert’s detection system alerted us to an earthquake just in time. We took cover before the shaking started, and it kept us safe.", name: "John Doe", position: "Homeowner, Los Angeles, CA" },
+                    { stars: 5, review: "When floods hit, Home Alert's timely detection saved our property from severe water damage. It gave us the time we needed to act fast.", name: "Maria Smith", position: "Business Owner, Houston, TX" },
+                    { stars: 5, review: "Indoor fires are a constant threat in our area, but thanks to Home Alert's early warnings, we managed to protect our home and evacuate safely.", name: "Michael Brown", position: "Resident, San Francisco, CA" }
+                ]; %>
+
+
+
+                <% testimonials.forEach(function(testimonial) { %>
+                    <div class="col-md-4 mb-3">
+                        <div class="card p-3 h-100"> <!-- Added h-100 class here -->
+                            <div class="card-body d-flex flex-column"> <!-- Changed card-body to use flex-column -->
+                                <!-- Left align star rating -->
+                                <p class="star-rating text-start">
+                                    <% for (let i = 0; i < testimonial.stars; i++) { %>
+                                        &#9733;
+                                    <% } %>
+                                </p>
+                                <!-- Center align the review text -->
+                                <p class="card-text text-start flex-grow-1">"<%= testimonial.review %>"</p> <!-- Added flex-grow-1 for flexible height -->
+                                <!-- Left align name, position, and company name -->
+                                <div class="d-flex align-items-start">
+                                    <img src="/assets/icons/user/user.png" alt="User image" class="rounded-circle me-3" style="width: 40px; height: 40px;">
+                                    <div class="text-start">
+                                        <p class="mb-0 font-weight-bold" ><%= testimonial.name %></p>
+                                        <small class="text-muted"><%= testimonial.position %></small>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                <% }) %>
             </div>
-        <% }) %>
+        </div>
+
     </div>
-</div>
+</section>
+
