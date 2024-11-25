@@ -16,6 +16,7 @@ const ejsMate = require("ejs-mate");
 const indexRouter = require("./routes/index");
 const logger = require("./middleware/logger");
 
+
 // Load environment variables from .env file
 dotenv.config();
 
