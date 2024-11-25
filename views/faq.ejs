@@ -12,31 +12,32 @@
 <% layout('layouts/boilerplate') %>
 
 
-<!--Questions -->
-<section class="d-flex align-items-center">
-     <div class="container text-left">
-          <div class="row">
-               <div class="col">
-                    <h1>Questions</h1>
-                    <p class = "py-3">Find answers to common questions about our products, including installation, compatibility, and usage. </p>
-                    <p p class = "pb-1">Didn’t find what you are looking for? </p>
-                    <button>Contact Us</button>
-               </div>
- 
-               <div class="col">
-                    <%- include('partials/faq-drop-down') %>
-               </div>
-     
-          </div>
-     
-</section>
+     <!--Questions -->
+     <section class="d-flex align-items-center">
+          <div class="container text-left">
+               <div class="row">
+                    <div class="col">
+                         <h1>Questions</h1>
+                         <p class="py-3">Find answers to common questions about our products, including installation,
+                              compatibility, and usage. </p>
+                         <p p class="pb-1">Didn’t find what you are looking for? </p>
+                         <button class="btn btn-primary btn-lg rounded-pill">Contact Us</button>
+                    </div>
 
-<!--Customer testimoials-->
-<section class="d-flex align-items-center">
-     <div class="container text-center">
-          <%- include('partials/testimonials') %>
-     </div>
-</section>
+                    <div class="col">
+                         <%- include('partials/faq-drop-down') %>
+                    </div>
+
+               </div>
+
+     </section>
+
+     <!--Customer testimoials-->
+     <section class="d-flex align-items-center">
+          <div class="container text-center">
+               <%- include('partials/testimonials') %>
+          </div>
+     </section>
 
 <%- include('partials/join-us') %>
 
