@@ -69,6 +69,13 @@
     color: var(--accent-color); /* Blue color on hover */
 }
 
+/*navbar on logged in*/
+
+.navbar .btn img {
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
 /*media control*/
 
 @media (max-width: 990px) {

@@ -28,14 +28,22 @@
                 </ul>
             </div>
 
-            <!-- Sign In and Sign Up Buttons on the Right -->
+            <!-- Dynamic Buttons on the Right -->
             <ul class="navbar-nav">
                 <% if (typeof user !== 'undefined' && user) { %>
-                    <li class="nav-item"><a class="nav-link" href="/dashboard">Dashboard</a></li>
+                    <!-- Dashboard Button -->
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-primary d-flex align-items-center" href="/dashboard">
+                            <img src="assets/icons/dashboard-icon.png" alt="Dashboard Icon" class="mr-2" style="width: 20px; height: 20px;">
+                            Dashboard
+                        </a>
+                    </li>
+                    <!-- Additional User Links -->
                     <li class="nav-item"><a class="nav-link" href="/settings">Settings</a></li>
                     <li class="nav-item"><a class="nav-link" href="/profile">Profile</a></li>
                     <li class="nav-item"><a class="nav-link" href="/logout">Logout</a></li>
                 <% } else { %>
+                    <!-- Sign In and Sign Up Buttons -->
                     <li class="nav-item">
                         <a class="nav-link btn btn-outline-primary mr-2" href="/login">Sign In</a>
                     </li>
@@ -47,5 +55,3 @@
         </div>
     </div>
 </nav>
-
-
