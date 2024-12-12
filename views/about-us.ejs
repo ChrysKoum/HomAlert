@@ -106,14 +106,20 @@
           <h6 class="fw-bold"><%= member.name %></h6>
           <p class="text-muted mb-2"><%= member.role %></p>
           <p class="fs-6"><%= member.bio %></p>
-          <div>
-            <a href="#" class="text-dark me-2"
-              ><i class="fab fa-linkedin"></i
-            ></a>
-            <a href="#" class="text-dark me-2"><i class="fab fa-github"></i></a>
-            <a href="#" class="text-dark me-2"
-              ><i class="fab fa-twitter"></i
-            ></a>
+          <div class="social-icons">
+            <% if (member.social.linkedin) { %>
+            <a href="<%= member.social.linkedin %>" target="_blank">
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <% } %> <% if (member.social.github) { %>
+            <a href="<%= member.social.github %>" target="_blank">
+              <i class="fab fa-github"></i>
+            </a>
+            <% } %> <% if (member.social.website) { %>
+            <a href="<%= member.social.website %>" target="_blank">
+              <i class="fas fa-globe"></i>
+            </a>
+            <% } %>
           </div>
         </div>
       </div>
