@@ -6,9 +6,9 @@ const teamMembers = [
     bio: "George is a visionary leader with a passion for creating safe home environments.",
     image: "https://www.svgrepo.com/show/508699/landscape-placeholder.svg",
     social: {
-      linkedin: "#",
-      github: "#",
-      website: "#",
+      linkedin: "https://www.linkedin.com/in/xenofontosgiorgos/",
+      github: "",
+      website: "https://georgexen.github.io/gXen/main.html",
     },
   },
   {
@@ -18,9 +18,9 @@ const teamMembers = [
     bio: "Chrysostomos is a technology expert specializing in smart home ecosystems.",
     image: "https://www.svgrepo.com/show/508699/landscape-placeholder.svg",
     social: {
-      linkedin: "#",
-      github: "#",
-      website: "#",
+      linkedin: "",
+      github: "",
+      website: "",
     },
   },
   {
@@ -30,9 +30,9 @@ const teamMembers = [
     bio: "Agni is a technology expert specializing in smart home ecosystems.",
     image: "https://www.svgrepo.com/show/508699/landscape-placeholder.svg",
     social: {
-      linkedin: "#",
-      github: "#",
-      website: "#",
+      linkedin: "",
+      github: "",
+      website: "",
     },
   },
   {
@@ -42,9 +42,9 @@ const teamMembers = [
     bio: "Ioannis has extensive experience in cloud infrastructure and security systems.",
     image: "https://www.svgrepo.com/show/508699/landscape-placeholder.svg",
     social: {
-      linkedin: "#",
-      github: "#",
-      website: "#",
+      linkedin: "",
+      github: "",
+      website: "",
     },
   },
   {
@@ -54,9 +54,9 @@ const teamMembers = [
     bio: "Tsiartas is a highly skilled engineer with a focus on cybersecurity, known for innovative solutions.",
     image: "https://www.svgrepo.com/show/508699/landscape-placeholder.svg",
     social: {
-      linkedin: "#",
-      github: "#",
-      website: "#",
+      linkedin: "",
+      github: "",
+      website: "",
     },
   },
   {
@@ -66,9 +66,9 @@ const teamMembers = [
     bio: "Konstantinos is the chief meme engineer and a software developer with creative problem-solving skills.",
     image: "https://www.svgrepo.com/show/508699/landscape-placeholder.svg",
     social: {
-      linkedin: "#",
-      github: "#",
-      website: "#",
+      linkedin: "",
+      github: "",
+      website: "",
     },
   },
   {
@@ -78,9 +78,9 @@ const teamMembers = [
     bio: "Petros specializes in software development and creating innovative tech solutions.",
     image: "https://www.svgrepo.com/show/508699/landscape-placeholder.svg",
     social: {
-      linkedin: "#",
-      github: "#",
-      website: "#",
+      linkedin: "https://www.linkedin.com/in/petros-xenofontos-720824198/",
+      github: "https://github.com/petros-xen",
+      website: "",
     },
   },
   {
@@ -90,9 +90,9 @@ const teamMembers = [
     bio: "Argiro is a talented frontend developer with a keen eye for design and user experience.",
     image: "https://www.svgrepo.com/show/508699/landscape-placeholder.svg",
     social: {
-      linkedin: "#",
-      github: "#",
-      website: "#",
+      linkedin: "",
+      github: "",
+      website: "",
     },
   },
   {
@@ -102,9 +102,9 @@ const teamMembers = [
     bio: "Dimitris is Agros' best engineer specializing in object-oriented programming.",
     image: "https://www.svgrepo.com/show/508699/landscape-placeholder.svg",
     social: {
-      linkedin: "#",
-      github: "#",
-      website: "#",
+      linkedin: "",
+      github: "",
+      website: "",
     },
   },
   {
@@ -114,9 +114,9 @@ const teamMembers = [
     bio: "Kaso is a talented software developer with expertise in backend development.",
     image: "https://www.svgrepo.com/show/508699/landscape-placeholder.svg",
     social: {
-      linkedin: "#",
-      github: "#",
-      website: "#",
+      linkedin: "",
+      github: "",
+      website: "",
     },
   },
   {
@@ -126,9 +126,9 @@ const teamMembers = [
     bio: "Alexandros is a computer engineer with a master's degree in embedded systems.",
     image: "https://www.svgrepo.com/show/508699/landscape-placeholder.svg",
     social: {
-      linkedin: "#",
-      github: "#",
-      website: "#",
+      linkedin: "",
+      github: "",
+      website: "",
     },
   },
   {
@@ -138,9 +138,9 @@ const teamMembers = [
     bio: "George specializes in creating innovative solutions for electronics systems and IoT.",
     image: "https://www.svgrepo.com/show/508699/landscape-placeholder.svg",
     social: {
-      linkedin: "#",
-      github: "#",
-      website: "#",
+      linkedin: "",
+      github: "",
+      website: "",
     },
   },
 ];
