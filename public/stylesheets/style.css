@@ -84,6 +84,11 @@ p {
   font-size: var(--font-size-body);
 }
 
+a{
+  color: var(--accent-color);
+  text-decoration: none;
+}
+
 /* For smaller text */
 small {
   font-size: var(--font-size-small);
