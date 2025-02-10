@@ -1,0 +1,148 @@
+const teamMembers = [
+  {
+    id: 1,
+    name: "George Xenofontos",
+    role: "Electronics Leader",
+    bio: "George is a visionary leader with a passion for creating safe home environments.",
+    image: "https://www.svgrepo.com/show/508699/landscape-placeholder.svg",
+    social: {
+      linkedin: "https://www.linkedin.com/in/xenofontosgiorgos/",
+      github: "",
+      website: "https://georgexen.github.io/gXen/main.html",
+    },
+  },
+  {
+    id: 2,
+    name: "Chrysostomos Koumides",
+    role: "Software Leader",
+    bio: "Chrysostomos is a technology expert specializing in smart home ecosystems.",
+    image: "https://www.svgrepo.com/show/508699/landscape-placeholder.svg",
+    social: {
+      linkedin: "",
+      github: "",
+      website: "",
+    },
+  },
+  {
+    id: 3,
+    name: "Agni Nakoula",
+    role: "Technical Specialist",
+    bio: "Agni is a technology expert specializing in smart home ecosystems.",
+    image: "https://www.svgrepo.com/show/508699/landscape-placeholder.svg",
+    social: {
+      linkedin: "",
+      github: "",
+      website: "",
+    },
+  },
+  {
+    id: 4,
+    name: "Ioannis Ioannidis",
+    role: "System Engineer",
+    bio: "Ioannis has extensive experience in cloud infrastructure and security systems.",
+    image: "https://www.svgrepo.com/show/508699/landscape-placeholder.svg",
+    social: {
+      linkedin: "",
+      github: "",
+      website: "",
+    },
+  },
+  {
+    id: 5,
+    name: "Chrysovalantis Tsiartas",
+    role: "Software Developer",
+    bio: "Tsiartas is a highly skilled engineer with a focus on cybersecurity, known for innovative solutions.",
+    image: "https://www.svgrepo.com/show/508699/landscape-placeholder.svg",
+    social: {
+      linkedin: "",
+      github: "",
+      website: "",
+    },
+  },
+  {
+    id: 6,
+    name: "Konstantinos Demetriou",
+    role: "Software Developer",
+    bio: "Konstantinos is the chief meme engineer and a software developer with creative problem-solving skills.",
+    image: "https://www.svgrepo.com/show/508699/landscape-placeholder.svg",
+    social: {
+      linkedin: "",
+      github: "",
+      website: "",
+    },
+  },
+  {
+    id: 7,
+    name: "Petros Xenofontos",
+    role: "Software Developer",
+    bio: "Petros specializes in software development and creating innovative tech solutions.",
+    image: "https://www.svgrepo.com/show/508699/landscape-placeholder.svg",
+    social: {
+      linkedin: "https://www.linkedin.com/in/petros-xenofontos-720824198/",
+      github: "https://github.com/petros-xen",
+      website: "",
+    },
+  },
+  {
+    id: 8,
+    name: "Argiro Tsoukali",
+    role: "Frontend Developer",
+    bio: "Argiro is a talented frontend developer with a keen eye for design and user experience.",
+    image: "https://www.svgrepo.com/show/508699/landscape-placeholder.svg",
+    social: {
+      linkedin: "",
+      github: "",
+      website: "",
+    },
+  },
+  {
+    id: 9,
+    name: "Dimitris Koutsoventis",
+    role: "Software Developer",
+    bio: "Dimitris is Agros' best engineer specializing in object-oriented programming.",
+    image: "https://www.svgrepo.com/show/508699/landscape-placeholder.svg",
+    social: {
+      linkedin: "",
+      github: "",
+      website: "",
+    },
+  },
+  {
+    id: 10,
+    name: "Kaso Hodaj",
+    role: "Software Developer",
+    bio: "Kaso is a talented software developer with expertise in backend development.",
+    image: "https://www.svgrepo.com/show/508699/landscape-placeholder.svg",
+    social: {
+      linkedin: "",
+      github: "",
+      website: "",
+    },
+  },
+  {
+    id: 11,
+    name: "Alexandros Mavrotheris",
+    role: "Electronics Specialist",
+    bio: "Alexandros is a computer engineer with a master's degree in embedded systems.",
+    image: "https://www.svgrepo.com/show/508699/landscape-placeholder.svg",
+    social: {
+      linkedin: "",
+      github: "",
+      website: "",
+    },
+  },
+  {
+    id: 12,
+    name: "George Tsiaples",
+    role: "Electronics Engineer",
+    bio: "George specializes in creating innovative solutions for electronics systems and IoT.",
+    image: "https://www.svgrepo.com/show/508699/landscape-placeholder.svg",
+    social: {
+      linkedin: "",
+      github: "",
+      website: "",
+    },
+  },
+];
+
+module.exports = teamMembers;
