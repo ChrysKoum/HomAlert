@@ -1,0 +1,17 @@
+/* client/src/components/Dashboard.css */
+
+.dashboard-container {
+    padding: 20px;
+    background-color: #f5f5f5;
+  }
+  
+  .dashboard-container h1 {
+    color: #333;
+  }
+  
+  .dashboard-container p {
+    color: #666;
+  }
+  
+  /* Add more styles as needed */
+  

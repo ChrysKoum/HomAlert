@@ -9,4 +9,25 @@
      ===========================================
 -->
 <!-- Use the boilerplate layout for consistent structure it will retrieve the layout of the boilerplate file -->
-<% layout('layouts/boilerplate') %>
+<!-- views/dashboard/dashboard.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+   
+    <title><%= title %></title>
+    <!-- Include any additional head elements here -->
+    <!-- If you have specific styles for the dashboard, include them here -->
+  </head>
+  <body>
+
+    <div class="dashboard-main-content">
+
+      <!-- React Dashboard Mount Point -->
+      <div id="root"></div>
+    </div>
+
+    <!-- Include the React bundle -->
+     <script type="module" src="http://localhost:5173/src/main.jsx"></script>
+  </body>
+</html>
