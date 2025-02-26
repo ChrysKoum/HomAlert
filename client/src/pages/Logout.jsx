@@ -7,8 +7,8 @@ const Logout = () => {
   useEffect(() => {
     // Perform logout logic here
     console.log('User logged out');
-    navigate('/auth/login'); // Redirect to login page
-  }, [navigate]);
+    window.location.href = import.meta.env.VITE_APP_BACKEND_URL; // Redirect to backend URL
+  }, []);
 
   return <div>Logging out...</div>;
 };
