@@ -10,3 +10,154 @@
 -->
 <!-- Use the boilerplate layout for consistent structure it will retrieve the layout of the boilerplate file -->
 <% layout('layouts/boilerplate') %>
+
+<link rel="stylesheet" href="/stylesheets/auth.css">
+
+<div class="container">
+  <div class="row justify-content-center mt-5">
+    <div class="col-md-6 col-lg-4">
+      <div class="card shadow">
+        <div class="card-body p-5">
+          <h2 class="text-center mb-4">Sign In</h2>
+          
+          <!-- Alert for error messages -->
+          <% if (typeof error !== 'undefined') { %>
+            <div class="alert alert-danger" role="alert">
+              <%= error %>
+            </div>
+          <% } %>
+
+          <!-- Login Form -->
+          <form action="/auth/login" method="POST" id="loginForm">
+            <!-- Email Input -->
+            <div class="mb-3">
+              <label for="email" class="form-label">Email address</label>
+              <input 
+                type="email" 
+                class="form-control" 
+                id="email" 
+                name="email" 
+                required
+                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+              >
+            </div>
+
+            <!-- Password Input -->
+            <div class="mb-3">
+              <label for="password" class="form-label">Password</label>
+              <input 
+                type="password" 
+                class="form-control" 
+                id="password" 
+                name="password" 
+                required
+                minlength="6"
+              >
+            </div>
+
+            <!-- Remember Me Checkbox -->
+            <div class="mb-3 form-check">
+              <input type="checkbox" class="form-check-input" id="rememberMe" name="rememberMe">
+              <label class="form-check-label" for="rememberMe">Remember me</label>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-primary w-100">Sign In</button>
+          </form>
+
+          <!-- Additional Links -->
+          <div class="mt-3 text-center">
+            <a href="/auth/forgot-password" class="text-decoration-none">Forgot password?</a>
+          </div>
+          <div class="mt-3 text-center">
+            Don't have an account? <a href="/register" class="text-decoration-none">Sign up</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Client-side validation -->
+<script>
+     document.getElementById('loginForm').addEventListener('submit', async (e) => {
+       e.preventDefault();
+       
+       const email = document.getElementById('email').value;
+       const password = document.getElementById('password').value;
+       
+       try {
+         const response = await fetch('/auth/login', {
+           method: 'POST',
+           headers: {
+             'Content-Type': 'application/json',
+           },
+           body: JSON.stringify({ email, password })
+         });
+     
+         if (response.ok) {
+           window.location.href = '/dashboard';
+         } else {
+           const data = await response.json();
+           // Show error message
+           const errorDiv = document.createElement('div');
+           errorDiv.className = 'alert alert-danger alert-dismissible fade show';
+           errorDiv.role = 'alert';
+           errorDiv.innerHTML = `
+             ${data.message || 'An error occurred during login.'}
+             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+           `;
+           
+           // Remove any existing error messages
+           const existingError = document.querySelector('.alert');
+           if (existingError) {
+             existingError.remove();
+           }
+           
+           // Insert the error message at the top of the form
+           const form = document.getElementById('loginForm');
+           form.insertAdjacentElement('beforebegin', errorDiv);
+         }
+       } catch (error) {
+         console.error('Login error:', error);
+         // Show network error message
+         const errorDiv = document.createElement('div');
+         errorDiv.className = 'alert alert-danger alert-dismissible fade show';
+         errorDiv.role = 'alert';
+         errorDiv.innerHTML = `
+           Network error. Please try again later.
+           <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+         `;
+         
+         // Remove any existing error messages
+         const existingError = document.querySelector('.alert');
+         if (existingError) {
+           existingError.remove();
+         }
+         
+         // Insert the error message at the top of the form
+         const form = document.getElementById('loginForm');
+         form.insertAdjacentElement('beforebegin', errorDiv);
+       }
+     });
+     
+     // Add password visibility toggle
+     document.addEventListener('DOMContentLoaded', function() {
+       const passwordInput = document.getElementById('password');
+       const togglePassword = document.createElement('button');
+       togglePassword.type = 'button';
+       togglePassword.className = 'btn btn-outline-secondary position-absolute end-0 bottom-0';
+       togglePassword.innerHTML = '<i class="fas fa-eye"></i>';
+       togglePassword.style.right = '10px';
+       togglePassword.style.zIndex = '10';
+       
+       passwordInput.parentElement.style.position = 'relative';
+       passwordInput.parentElement.appendChild(togglePassword);
+       
+       togglePassword.addEventListener('click', function() {
+         const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+         passwordInput.setAttribute('type', type);
+         this.innerHTML = type === 'password' ? '<i class="fas fa-eye"></i>' : '<i class="fas fa-eye-slash"></i>';
+       });
+     });
+</script>

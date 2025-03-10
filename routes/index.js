@@ -7,6 +7,7 @@ const authRoutes = require("./authRoutes");
 const userRoutes = require("./userRoutes");
 const deviceRoutes = require("./deviceRoutes");
 const dashboardRoutes = require("./dashboardRoutes");
+const apiRoutes = require("./apiRoutes");
 const testRoutes = require("./testRoutes");
 
 // Use the routes in the main router
@@ -16,5 +17,6 @@ router.use("/user", userRoutes); // User management routes
 router.use("/device", deviceRoutes); // Device-related routes
 router.use("/dashboard", dashboardRoutes); // Dashboard-related routes
 router.use("/test", testRoutes); // Test routes
+router.use("/api", apiRoutes); // Test routes
 
 module.exports = router;

@@ -67,9 +67,9 @@
   
   .footer {
     padding: 20px 0;
-    background-color: #f8f9fa; /* Light gray background color */
-    border-top: 1px solid #e7e7e7; /* Slight border at the top */
-    border-bottom: 1px solid #e0e0e0; /* Adjust color and thickness as needed */
+    background-color: var(--primary-color); /* Light gray background color */
+    border-top: 1px solid var(--primary-color); /* Slight border at the top */
+    border-bottom: 1px solid var(--primary-color); /* Adjust color and thickness as needed */
   }
   
   /* Flexbox container adjustments */
@@ -89,14 +89,14 @@
   
   /* Hyperlink Styling */
   .footer a {
-    color: #007bff; /* Bootstrap primary blue color */
+    color: var(--accent-color); /* Bootstrap primary blue color */
     text-decoration: none;
     font-size: 16px;
     margin-right: 15px; /* Space between links */
   }
   
   .footer a:hover {
-    color: #0056b3; /* Darker blue on hover */
+    color: var(--accent-color); /* Darker blue on hover */
     text-decoration: underline;
   }
   
@@ -123,11 +123,47 @@
         margin: 10px 5px;
     }
   }
-  
-  
-  
-  
-  
-  
-  
+
+  /* FAQ */
+
+    .faq {
+      width: 100%;
+      border-top: 1px solid var(--secondary-color);
+  }
+  .faq-item {
+      border-bottom: 1px solid var(--secondary-color);
+      padding: 20px 0;
+  }
+  .faq-question {
+      cursor: pointer;
+      font-weight: bold;
+      margin: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: var(--secondary-color); /* Initially grey */
+      transition: color 0.3s ease; /* Smooth color transition */
+  }
+  .faq-question:hover {
+      color: var(--accent-color); /* Turn blue on hover */
+  }
+  .faq-question.active {
+      color: var(--accent-color); /* Stay blue when selected */
+  }
+  .faq-answer {
+      max-height: 0; /* Initially hidden */
+      overflow: hidden; /* Hide content overflow */
+      padding: 0 10px; /* Padding for aesthetics */
+      transition: max-height 0.4s ease, padding 0.4s ease; /* Smooth transition for height and padding */
+  }
+  .faq-answer.open {
+      max-height: 1000px; /* Large value to accommodate large answers */
+      padding: 20px 10px; /* Add padding when open */
+  }
+  .faq-icon i {
+      transition: transform 0.4s ease; /* Smooth transition for rotation */
+  }
+  .faq-icon.rotate i {
+      transform: rotate(180deg); /* Rotate the icon when open */
+  }
   
