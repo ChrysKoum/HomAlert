@@ -14,7 +14,7 @@ body {
   position: absolute;
   left: 28%;
   top: 18%;
-  transform: (-60%, -10%);
+  transform: (-50%, -10%);
 }
 
 #humidity-sensor img {
