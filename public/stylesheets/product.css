@@ -1,0 +1,184 @@
+/* General Styling */
+body {
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+}
+
+.icon img {
+  transition: transform 0.3s ease-in-out;
+}
+
+#seismograph img {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  left: 28%;
+  top: 18%;
+  transform: (-60%, -10%);
+}
+
+#humidity-sensor img {
+  width: 40px;
+  height: 40px;
+  transform: (-50%, -50%);
+}
+
+#fire-sensor img {
+  width: 40px;
+  height: 40px;
+  transform: (-50%, -50%);
+}
+
+#gas-sensor img {
+  width: 40px;
+  height: 40px;
+  transform: (-50%, -50%);
+}
+
+#motion-sensor img {
+  width: 40px;
+  height: 40px;
+  transform: (-50%, -50%);
+}
+
+#centerhub img {
+  width: 70px;
+  height: 70px;
+  transform: (-50%, -50%);
+}
+
+#database img,
+#database1 img {
+  width: 60px;
+  height: 60px;
+  transform: (-50%, -50%);
+}
+
+#data-report img {
+  width: 50px;
+  height: 50px;
+  transform: (-50%, -50%);
+}
+
+/* Connection Lines */
+.line {
+  position: absolute;
+  width: 2px;
+  background: transparent;
+  border: 1px dashed #5271ff;
+}
+
+/* Lines from CenterHub to Left Sensors */
+.line-fire {
+  left: 30%;
+  top: 45%;
+  width: 20%;
+  height: 1px;
+  border-top: 1px dashed #5271ff;
+}
+
+.line-humidity {
+  left: 30%;
+  top: 45%;
+  width: 20%;
+  height: 1px;
+  border-top: 1px dashed #5271ff;
+}
+
+.line-gas {
+  left: 30%;
+  top: 45%;
+  width: 20%;
+  height: 1px;
+  border-top: 1px dashed #5271ff;
+}
+
+.line-motion {
+  left: 30%;
+  top: 45%;
+  width: 20%;
+  height: 1px;
+  border-top: 1px dashed #5271ff;
+}
+
+.line-seismograph {
+  left: 30%;
+  top: 45%;
+  width: 20%;
+  height: 1px;
+  border-top: 1px dashed #5271ff;
+}
+
+/* Lines from CenterHub to Right Sensors */
+.line-database {
+  left: 30%;
+  top: 45%;
+  width: 20%;
+  height: 1px;
+  border-top: 1px dashed #5271ff;
+}
+
+.line-database1 {
+  left: 30%;
+  top: 45%;
+  width: 20%;
+  height: 1px;
+  border-top: 1px dashed #5271ff;
+}
+
+.line-data-report {
+  left: 30%;
+  top: 45%;
+  width: 20%;
+  height: 1px;
+  border-top: 1px dashed #5271ff;
+}
+
+.icon:hover img {
+  transform: scale(1.2);
+}
+
+/* Description Box */
+.description {
+  max-width: 400px;
+  text-align: left;
+}
+
+/* Hide all descriptions by default */
+.desc {
+  display: none;
+}
+
+/* CSS Trick to Show Description on Hover or Click */
+.icon:hover ~ .description #centerhub-description,
+.icon:focus ~ .description #centerhub-description {
+  display: none;
+}
+
+/* Using :target to switch description on click */
+#centerhub-description:target,
+#seismograph-description:target,
+#fire-description:target,
+#gas-description:target,
+#humidity-description:target,
+#motion-description:target,
+#connection-description:target,
+#database-description:target,
+#database1-description:target,
+#data-report-description:target {
+  display: block;
+}
+
+/* Ensure all other descriptions remain hidden when a new one is targeted */
+#centerhub-description:target ~ .desc,
+#seismograph-description:target ~ .desc,
+#fire-description:target ~ .desc,
+#gas-description:target ~ .desc,
+#humidity-description:target ~ .desc,
+#motion-description:target ~ .desc,
+#connection-description:target ~ .desc,
+#database-description:target ~ .desc,
+#database1-description:target ~ .desc,
+#data-report-description:target ~ .desc {
+  display: none;
+}
