@@ -1,184 +1,190 @@
-/* General Styling */
-body {
-  font-family: "Roboto", sans-serif;
-  text-align: center;
+/* Sensor Diagram */
+.sensor-diagram {
+  position: relative;
+  width: 450px;
+  height: 450px;
 }
 
-.icon img {
-  transition: transform 0.3s ease-in-out;
-}
-
-#seismograph img {
-  width: 40px;
-  height: 40px;
+/* Sensor Icons */
+.sensor-icon img {
   position: absolute;
-  left: 28%;
-  top: 18%;
-  transform: (-50%, -10%);
-}
-
-#humidity-sensor img {
-  width: 40px;
-  height: 40px;
-  transform: (-50%, -50%);
-}
-
-#fire-sensor img {
-  width: 40px;
-  height: 40px;
-  transform: (-50%, -50%);
-}
-
-#gas-sensor img {
-  width: 40px;
-  height: 40px;
-  transform: (-50%, -50%);
-}
-
-#motion-sensor img {
-  width: 40px;
-  height: 40px;
-  transform: (-50%, -50%);
-}
-
-#centerhub img {
-  width: 70px;
-  height: 70px;
-  transform: (-50%, -50%);
-}
-
-#database img,
-#database1 img {
-  width: 60px;
-  height: 60px;
-  transform: (-50%, -50%);
-}
-
-#data-report img {
   width: 50px;
   height: 50px;
-  transform: (-50%, -50%);
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
 }
 
-/* Connection Lines */
-.line {
-  position: absolute;
-  width: 2px;
-  background: transparent;
-  border: 1px dashed #5271ff;
-}
-
-/* Lines from CenterHub to Left Sensors */
-.line-fire {
-  left: 30%;
-  top: 45%;
-  width: 20%;
-  height: 1px;
-  border-top: 1px dashed #5271ff;
-}
-
-.line-humidity {
-  left: 30%;
-  top: 45%;
-  width: 20%;
-  height: 1px;
-  border-top: 1px dashed #5271ff;
-}
-
-.line-gas {
-  left: 30%;
-  top: 45%;
-  width: 20%;
-  height: 1px;
-  border-top: 1px dashed #5271ff;
-}
-
-.line-motion {
-  left: 30%;
-  top: 45%;
-  width: 20%;
-  height: 1px;
-  border-top: 1px dashed #5271ff;
-}
-
-.line-seismograph {
-  left: 30%;
-  top: 45%;
-  width: 20%;
-  height: 1px;
-  border-top: 1px dashed #5271ff;
-}
-
-/* Lines from CenterHub to Right Sensors */
-.line-database {
-  left: 30%;
-  top: 45%;
-  width: 20%;
-  height: 1px;
-  border-top: 1px dashed #5271ff;
-}
-
-.line-database1 {
-  left: 30%;
-  top: 45%;
-  width: 20%;
-  height: 1px;
-  border-top: 1px dashed #5271ff;
-}
-
-.line-data-report {
-  left: 30%;
-  top: 45%;
-  width: 20%;
-  height: 1px;
-  border-top: 1px dashed #5271ff;
-}
-
-.icon:hover img {
+/* Hover Animation */
+.sensor-icon img:hover {
   transform: scale(1.2);
 }
 
-/* Description Box */
-.description {
-  max-width: 400px;
+/* Positioning Icons */
+#sensor-0 img {
+  left: 32.5%;
+  top: 7.5%;
+} /* Seismograph */
+
+#sensor-1 img {
+  left: 12.5%;
+  top: 22.5%;
+} /* Humidity */
+
+#sensor-2 img {
+  left: 0%;
+  top: 45%;
+} /* Fire */
+
+#sensor-3 img {
+  left: 12.5%;
+  top: 67.5%;
+} /* Gas */
+
+#sensor-4 img {
+  left: 32.5%;
+  top: 85%;
+} /* Motion */
+
+#sensor-5 img {
+  width: 70px;
+  height: 70px;
+  left: 30%;
+  top: 42.5%;
+} /* CenterHub */
+
+#sensor-6 img {
+  width: 70px;
+  height: 70px;
+  left: 60%;
+  top: 42.5%;
+} /* Database */
+
+#sensor-7 img {
+  width: 70px;
+  height: 70px;
+  left: 90%;
+  top: 42.5%;
+} /* Database 1 */
+
+#sensor-8 img {
+  width: 70px;
+  height: 70px;
+  left: 90%;
+  top: 7.5%;
+} /* Data Report */
+
+/* Sensor Description */
+.technology-right {
+  width: 50%;
   text-align: left;
+  padding: 20px;
 }
 
-/* Hide all descriptions by default */
+.sensor-description h4 {
+  font-weight: bold;
+}
+
+/* Hide all descriptions initially */
 .desc {
   display: none;
 }
 
-/* CSS Trick to Show Description on Hover or Click */
-.icon:hover ~ .description #centerhub-description,
-.icon:focus ~ .description #centerhub-description {
-  display: none;
-}
-
-/* Using :target to switch description on click */
-#centerhub-description:target,
-#seismograph-description:target,
-#fire-description:target,
-#gas-description:target,
-#humidity-description:target,
-#motion-description:target,
-#connection-description:target,
-#database-description:target,
-#database1-description:target,
-#data-report-description:target {
+/* Show only the (Center Hub) description */
+.desc.default {
   display: block;
 }
 
-/* Ensure all other descriptions remain hidden when a new one is targeted */
-#centerhub-description:target ~ .desc,
-#seismograph-description:target ~ .desc,
-#fire-description:target ~ .desc,
-#gas-description:target ~ .desc,
-#humidity-description:target ~ .desc,
-#motion-description:target ~ .desc,
-#connection-description:target ~ .desc,
-#database-description:target ~ .desc,
-#database1-description:target ~ .desc,
-#data-report-description:target ~ .desc {
+/* One description is shown at a time */
+.desc.active {
+  display: block;
+}
+
+/* When another sensor is clicked, the default disappears */
+.desc:not(.active) {
   display: none;
+}
+
+/* Dashed Line Styling */
+.sensor-diagram::before,
+.sensor-diagram::after,
+.line {
+  content: "";
+  position: absolute;
+  background-color: transparent;
+  z-index: -1; /* lines behind icons */
+}
+
+/* Connection: CenterHub to Database */
+.line-centerhub-database {
+  top: 50.5%;
+  left: 45%;
+  width: 15%;
+  height: 0;
+  border-top: 1.5px dashed #4a7cc7;
+}
+
+/* Connection: Database to Database 1 */
+.line-database-database1 {
+  top: 50.5%;
+  left: 75%;
+  width: 15%;
+  height: 0;
+  border-top: 1.5px dashed #4a7cc7;
+}
+
+/* Connection: Database 1 to Data Report */
+.line-database1-datareport {
+  top: 10%;
+  left: 97.5%;
+  width: 0;
+  height: 40%;
+  border-left: 1.5px dashed #4a7cc7;
+}
+
+/* Connection: CenterHub to Motion */
+.line-centerhub-motion {
+  top: 55%;
+  left: 37.5%;
+  width: 0;
+  height: 30%;
+  border-left: 1.5px dashed #4a7cc7;
+}
+
+/* Connection: CenterHub to Gas */
+.line-centerhub-gas {
+  top: 52.5%;
+  left: 27.5%;
+  width: 0;
+  height: 20%;
+  border-left: 1.5px dashed #4a7cc7;
+  transform: rotate(45deg);
+}
+
+/* Connection: CenterHub to Fire */
+.line-centerhub-fire {
+  top: 40.5%;
+  left: 20%;
+  width: 0;
+  height: 20%;
+  border-left: 1.5px dashed #4a7cc7;
+  transform: rotate(90deg);
+}
+
+/* Connection: CenterHub to Humidity */
+.line-centerhub-humidity {
+  top: 27.5%;
+  left: 27.5%;
+  width: 0;
+  height: 20%;
+  border-left: 1.5px dashed #4a7cc7;
+  transform: rotate(-45deg);
+}
+
+/* Connection: CenterHub to Seismograph */
+.line-centerhub-seismograph {
+  top: 15%;
+  left: 37.5%;
+  width: 0;
+  height: 30%;
+  border-left: 1.5px dashed #4a7cc7;
 }
