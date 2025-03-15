@@ -1,3 +1,45 @@
+/* Sensor Description */
+.technology-right {
+  width: 50%;
+  text-align: center;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.sensor-description h4 {
+  font-weight: bold;
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+.sensor-description p {
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+/* Hide all descriptions initially */
+.desc {
+  display: none;
+}
+
+/* Show only the (Center Hub) description */
+.desc.default {
+  display: block;
+}
+
+/* One description is shown at a time */
+.desc.active {
+  display: block;
+}
+
+/* When another sensor is clicked, the default disappears */
+.desc:not(.active) {
+  display: none;
+}
+
 /* Sensor Diagram */
 .sensor-diagram {
   position: relative;
@@ -12,10 +54,12 @@
   height: 50px;
   transition: transform 0.3s ease-in-out;
   cursor: pointer;
+  border-radius: 50%;
 }
 
 /* Hover Animation */
 .sensor-icon img:hover {
+  box-shadow: 0px 0px 15px rgba(49, 112, 253, 0.5); 
   transform: scale(1.2);
 }
 
@@ -73,36 +117,6 @@
   top: 7.5%;
 } /* Data Report */
 
-/* Sensor Description */
-.technology-right {
-  width: 50%;
-  text-align: left;
-  padding: 20px;
-}
-
-.sensor-description h4 {
-  font-weight: bold;
-}
-
-/* Hide all descriptions initially */
-.desc {
-  display: none;
-}
-
-/* Show only the (Center Hub) description */
-.desc.default {
-  display: block;
-}
-
-/* One description is shown at a time */
-.desc.active {
-  display: block;
-}
-
-/* When another sensor is clicked, the default disappears */
-.desc:not(.active) {
-  display: none;
-}
 
 /* Dashed Line Styling */
 .sensor-diagram::before,

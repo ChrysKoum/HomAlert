@@ -1,29 +1,29 @@
 const sensors = [
   {
-    title: "Seismograph:",
+    title: "Vibration Detector:",
     description:
-      "The seismograph is a device that measures the movement of the earth's surface. It is used to detect earthquakes and other natural disasters.",
+      "A sensor designed to detect unusual vibrations or movements, potentially indicating events such as earthquakes, forced entry attempts, or structural failures. It sends real-time data to the CenterHub for immediate evaluation.",
     image: "/assets/icons/product/seismograph.png",
   },
 
   {
-    title: "Humidity Sensor:",
+    title: "Water Sensor:",
     description:
-      "The humidity sensor measures moisture levels in the air to help regulate indoor climate control, ensuring comfort and preventing mold growth.",
+      "This sensor monitors water levels and detects leaks or flooding. It provides early warnings to prevent water damage by alerting the CenterHub to any abnormal water presence.",
     image: "/assets/icons/product/humidity.png",
   },
 
   {
     title: "Fire Sensor:",
     description:
-      "The fire sensor is a safety device designed to detect the presence of fire, smoke, or abnormal heat in its environment. It is used in fire alarm systems for safety.",
+      "Equipped to detect smoke or fire, this sensor plays a crucial role in early fire detection and prevention. It sends instant alerts to the CenterHub when smoke or fire is detected, triggering appropriate emergency responses.",
     image: "/assets/icons/product/fire.png",
   },
 
   {
     title: "Gas Sensor:",
     description:
-      "The gas sensor is a device that detects the presence of gases in its environment. It is used in gas leak detection systems for safety.",
+      "Designed to identify hazardous gas leaks, such as carbon monoxide or natural gas, this sensor ensures air quality and safety. It continuously monitors the air for dangerous gases and alerts the CenterHub if any are detected.",
     image: "/assets/icons/product/gas.png",
   },
 
@@ -44,21 +44,21 @@ const sensors = [
   {
     title: "Database:",
     description:
-      "The database stores and organizes data collected from various sensors for analysis, reporting, and future reference.",
+      " A robust storage solution where all sensor data is securely kept. It supports data retrieval and analysis, helping in maintaining historical records for future reference and improving the system's decision-making capabilities.",
     image: "/assets/icons/product/database.png",
   },
 
   {
-    title: "Database 1:",
+    title: "Server:",
     description:
-      "The database 1 sensor is a secondary storage unit that provides additional backup and redundancy for critical data, ensuring data integrity and security.",
+      "The server handles the processing and storage of data received from the CenterHub. It performs advanced data analysis, manages communication between different system components, and ensures that alerts are sent to users promptly.",
     image: "/assets/icons/product/database1.png",
   },
 
   {
-    title: "Data Report:",
+    title: "Dashboard:",
     description:
-      "The data report system generates insights based on collected data, helping users make informed decisions.",
+      "A user interface that displays real-time data and alerts from the sensors, allowing homeowners to monitor their home's status. It provides an accessible way to view and manage system information, ensuring users can respond swiftly to any issues.",
     image: "/assets/icons/product/datareport.png",
   },
 ];
