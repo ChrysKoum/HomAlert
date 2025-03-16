@@ -1,43 +1,43 @@
 /* Sensor Description */
-.technology-right {
-  width: 50%;
-  text-align: center;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+.sensor-description {
+position: relative;
+text-align: center;
 }
 
 .sensor-description h4 {
-  font-weight: bold;
-  font-size: 1.8rem;
-  text-align: center;
+font-weight: bold;
+font-size: 1.8rem;
 }
 
 .sensor-description p {
-  font-size: 1.2rem;
-  text-align: center;
+font-size: 1.2rem;
 }
 
 /* Hide all descriptions initially */
 .desc {
-  display: none;
+opacity: 0;
+transform: translateX(50px); 
+transition: transform 1s ease-in-out 0.2s, opacity 1s ease-in-out 0.2s;
+display: none;
+position: absolute;
 }
 
 /* Show only the (Center Hub) description */
 .desc.default {
-  display: block;
+display: block;
 }
 
 /* One description is shown at a time */
 .desc.active {
-  display: block;
+display: block;
+opacity: 1;
+transform: translateX(0);
+position: relative;
 }
 
 /* When another sensor is clicked, the default disappears */
 .desc:not(.active) {
-  display: none;
+display: none;
 }
 
 /* Sensor Diagram */
