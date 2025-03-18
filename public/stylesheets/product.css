@@ -17,7 +17,7 @@ font-size: 1.2rem;
 .desc {
 opacity: 0;
 transform: translateX(50px); 
-transition: transform 1s ease-in-out 0.2s, opacity 1s ease-in-out 0.2s;
+transition: transform 0.5s ease-in-out 0.1s, opacity 0.5s ease-in-out 0.1s;
 display: none;
 position: absolute;
 }
@@ -61,6 +61,12 @@ display: none;
 .sensor-icon img:hover {
   box-shadow: 0px 0px 15px rgba(49, 112, 253, 0.5); 
   transform: scale(1.2);
+}
+
+/* Active state - Always show shadow on the selected icon */
+.sensor-icon.active img {
+  box-shadow: 0px 0px 15px rgba(49, 114, 253, 0.93); /* Light blue shadow */
+  transform: scale(1.2); /* Slightly enlarges the selected icon */
 }
 
 /* Positioning Icons */
