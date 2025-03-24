@@ -3,7 +3,9 @@ const router = express.Router();
 const logger = require("../middleware/logger");
 const teamMembers = require("../data/team/members");
 const testimonials = require("../data/reviews/testimonials");
+const sensors = require("../data/product/sensors");
 const faqItems = require("../data/faq/questions");
+const centerHub = sensors.find(sensor => sensor.title === "Center Hub:");
 
 // Home route
 router.get("/", (req, res) => {
@@ -32,7 +34,7 @@ router.get("/faq", (req, res) => {
 // Product Route
 router.get("/product", (req, res) => {
   logger.info("Product route accessed");
-  res.render("product.ejs", { testimonials });
+  res.render("product.ejs", { sensors, centerHub, testimonials });
 });
 
 // Login Route
