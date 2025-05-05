@@ -11,7 +11,9 @@ module.exports = {
   theme: {
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    require('tailwind-scrollbar'), 
+  ],
   server: {
     port: 5173, // Default dev server port
   },
