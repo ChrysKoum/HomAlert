@@ -14,6 +14,8 @@ const {
   signOut,
   sendPasswordResetEmail,
   onAuthStateChanged,
+  sendEmailVerification, // Add sendEmailVerification
+  applyActionCode, // For handling email verification links if needed, though usually automatic
 } = require("firebase/auth");
 const { auth } = require("./firebaseSetup"); // Use the singleton
 const logger = require("../middleware/logger");
@@ -26,6 +28,8 @@ const signUpUser = async (email, password) => {
       email,
       password
     );
+    // Optionally send verification email immediately after sign up
+    // await sendVerificationEmail(userCredential.user);
     logger.info(`User signed up: ${email}`);
     return userCredential.user;
   } catch (error) {
@@ -62,12 +66,27 @@ const signOutUser = async () => {
 };
 
 // Asynchronously send a password reset email
-const resetPassword = async (email) => {
+const requestPasswordReset = async (email) => {
   try {
     await sendPasswordResetEmail(auth, email);
     logger.info(`Password reset email sent to: ${email}`);
   } catch (error) {
     logger.error(`Error sending password reset email: ${error.message}`);
+    throw error;
+  }
+};
+
+// Send email verification to the currently signed-in user or a provided user
+const sendUserEmailVerification = async (user) => {
+  if (!user) {
+    logger.warn("sendUserEmailVerification called without a user object.");
+    throw new Error("User object is required to send verification email.");
+  }
+  try {
+    await sendEmailVerification(user);
+    logger.info(`Verification email sent to: ${user.email}`);
+  } catch (error) {
+    logger.error(`Error sending verification email: ${error.message}`);
     throw error;
   }
 };
@@ -81,6 +100,7 @@ module.exports = {
   signUpUser,
   signInUser,
   signOutUser,
-  resetPassword,
+  requestPasswordReset, // Updated name
   onAuthStateChangedListener,
+  sendUserEmailVerification, // Export new function
 };
