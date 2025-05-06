@@ -15,6 +15,7 @@ const {
   sendUserEmailVerification, // Ensure this is imported
 } = require("../Firebase/firebaseAuth");
 const { validateEmail, validatePassword } = require("../utils/validation");
+const logger = require("../middleware/logger"); // Import the logger
 
 const authController = {
   // Handles user registration
@@ -77,10 +78,18 @@ const authController = {
       logger.info(`User logged in: ${user.email}`);
       return res.redirect("/dashboard"); // Redirect to React dashboard
     } catch (error) {
-      logger.error(`Login error: ${error.message}`);
+      logger.error(`Login error: ${error.code} - ${error.message}`); // Log the error code and message
+      let errorMessage = "An unexpected error occurred. Please try again.";
+      if (error.code === "auth/invalid-credential" || error.code === "auth/user-not-found" || error.code === "auth/wrong-password") {
+        errorMessage = "Invalid username or password. Please try again.";
+      } else if (error.code === "auth/too-many-requests") {
+        errorMessage = "Too many login attempts. Please try again later.";
+      }
+      // Add other specific Firebase error codes as needed
+
       return res.status(401).render("auth/sign-in", {
         title: "Login",
-        error: "Invalid email or password. Please try again.",
+        error: errorMessage,
         email: email,
       });
     }
