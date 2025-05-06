@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import TopNavBar from '../components/TopNavBar';
 import SensorOverview from '../components/SensorOverview';
 import EventsStatistics from '../components/EventsStatistics';
 import WeatherWidget from '../components/WeatherWidget';
@@ -10,7 +9,6 @@ const Bathroom = () => {
   const [roomData, setRoomData] = useState(null);
   const [sensors, setSensors] = useState({});
   const [activities, setActivities] = useState([]);
-  const [userName, setUserName] = useState('User');
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -22,7 +20,6 @@ const Bathroom = () => {
         setRoomData(response.data);
         setSensors(response.data.sensors || {});
         setActivities(response.data.activities || []);
-        setUserName(response.data.user?.name || 'User');
         setError(null);
       })
       .catch((err) => {
@@ -42,7 +39,6 @@ const Bathroom = () => {
 
   return (
     <>
-      <TopNavBar userName={userName} />
       <div className="p-6 space-y-6">
         <h1 className="text-2xl font-semibold text-gray-800">{roomData.room} Overview</h1>
         <SensorOverview sensors={sensors} />

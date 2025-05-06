@@ -1,11 +1,9 @@
 // filepath: client/src/pages/Information.jsx
 import React from 'react';
-import TopNavBar from '../components/TopNavBar';
 
 const Information = () => {
   return (
     <>
-      <TopNavBar userName="User" />
       <div className="p-6">
         <h1 className="text-2xl font-semibold mb-4 text-gray-800">Information</h1>
         <p className="mb-6 text-gray-600">General information about the HomAlert system.</p>

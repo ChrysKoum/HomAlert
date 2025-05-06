@@ -1,5 +1,4 @@
 import React from 'react';
-import TopNavBar from '../components/TopNavBar'; // Assuming you want the navbar here too
 
 const Sensors = () => {
   // Placeholder data - replace with actual sensor data fetching
@@ -12,7 +11,6 @@ const Sensors = () => {
 
   return (
     <>
-      <TopNavBar userName="User" /> {/* Pass appropriate user name */}
       <div className="p-6">
         <h1 className="text-2xl font-semibold mb-4 text-gray-800">Sensors Management</h1>
         <p className="mb-6 text-gray-600">View and manage your connected sensors.</p>

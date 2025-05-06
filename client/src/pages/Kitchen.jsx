@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import TopNavBar from '../components/TopNavBar';
 import SensorOverview from '../components/SensorOverview';
 import EventsStatistics from '../components/EventsStatistics'; // Assuming general stats for now
 import WeatherWidget from '../components/WeatherWidget';     // Assuming general weather for now
@@ -10,7 +9,6 @@ const Kitchen = () => {
   const [roomData, setRoomData] = useState(null);
   const [sensors, setSensors] = useState({});
   const [activities, setActivities] = useState([]);
-  const [userName, setUserName] = useState('User');
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -22,7 +20,6 @@ const Kitchen = () => {
         setRoomData(response.data);
         setSensors(response.data.sensors || {});
         setActivities(response.data.activities || []);
-        setUserName(response.data.user?.name || 'User');
         setError(null);
       })
       .catch((err) => {
@@ -43,8 +40,6 @@ const Kitchen = () => {
 
   return (
     <>
-      {/* Top Navigation Bar */}
-      <TopNavBar userName={userName} />
 
       {/* Kitchen Content */}
       <div className="p-6 space-y-6">

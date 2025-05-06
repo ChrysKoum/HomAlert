@@ -1,10 +1,8 @@
 import React from 'react';
-import TopNavBar from '../components/TopNavBar';
 
 const Settings = () => {
   return (
     <>
-      <TopNavBar userName="User" />
       <div className="p-6">
         <h1 className="text-2xl font-semibold mb-4 text-gray-800">Settings</h1>
         <p className="mb-6 text-gray-600">Configure your application and device settings.</p>

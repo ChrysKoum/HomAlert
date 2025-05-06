@@ -1,5 +1,4 @@
 import React from 'react';
-import TopNavBar from '../components/TopNavBar';
 import { FaBell, FaExclamationTriangle, FaInfoCircle } from 'react-icons/fa';
 
 const Notifications = () => {
@@ -13,7 +12,6 @@ const Notifications = () => {
 
   return (
     <>
-      <TopNavBar userName="User" />
       <div className="p-6">
         <h1 className="text-2xl font-semibold mb-4 text-gray-800">Notifications</h1>
         <p className="mb-6 text-gray-600">Recent alerts and system messages.</p>

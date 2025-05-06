@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import TopNavBar from '../components/TopNavBar';
 import { FaMoon } from 'react-icons/fa';
 
 const NightMode = () => {
@@ -13,7 +12,6 @@ const NightMode = () => {
 
   return (
     <>
-      <TopNavBar userName="User" />
       <div className="p-6 flex flex-col items-center justify-center text-center">
         <FaMoon className={`h-16 w-16 mb-4 ${isNightModeActive ? 'text-indigo-500' : 'text-gray-400'}`} />
         <h1 className="text-2xl font-semibold mb-2 text-gray-800">Night Mode</h1>
