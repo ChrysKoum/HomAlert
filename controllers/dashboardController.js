@@ -16,9 +16,9 @@ const dashboardController = {
   showDashboard: async (req, res) => {
     try {
       // Asynchronously fetch sensor data
-      const data = await getSensorData();
+      // const data = await getSensorData();
       // Render the dashboard view with the fetched data
-      res.render("dashboard", { title: "Dashboard", data });
+      res.render("dashboard/dashboard", { title: "Dashboard" });
     } catch (error) {
       // Handle any errors that occur during data fetching
       res.status(500).send("Error fetching sensor data");

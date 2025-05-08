@@ -4,8 +4,11 @@
   "description": "A Smart Home Emergency Alert System",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js"
+    "start": "node server.js",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "nodemon server.js",
+    "client": "npm --prefix client run dev",
+    "build": "npm --prefix client run build"
   },
   "repository": {
     "type": "git",
@@ -34,12 +37,14 @@
     "firebase-admin": "^12.5.0",
     "fix": "^0.0.3",
     "helmet": "^7.0.0",
+    "http-proxy-middleware": "^3.0.3",
     "jquery": "^3.7.0",
     "method-override": "^3.0.0",
     "nodemailer": "^6.9.11",
     "winston": "^3.13.1"
   },
   "devDependencies": {
+    "concurrently": "^9.1.1",
     "nodemon": "^3.0.1"
   },
   "bugs": {

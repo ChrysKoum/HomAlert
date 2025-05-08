@@ -4,7 +4,6 @@
   color: var(--secondary-color);
   border: 2px solid var(--secondary-color);
   border-radius: 30px;
-  padding: 10px 20px;
   font-size: 16px;
   cursor: pointer;
 }

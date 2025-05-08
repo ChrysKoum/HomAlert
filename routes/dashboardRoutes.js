@@ -5,7 +5,7 @@ const authMiddleware = require("../middleware/auth");
 const logger = require("../middleware/logger");
 
 // Dashboard route (protected)
-router.get("/", authMiddleware, (req, res, next) => {
+router.get("/", (req, res, next) => {
   logger.info("Dashboard route accessed");
   dashboardController
     .showDashboard(req, res, next)
