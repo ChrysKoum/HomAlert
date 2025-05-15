@@ -25,6 +25,15 @@ router.get("/contact", (req, res) => {
   res.render("contact-us.ejs", { testimonials });
 });
 
+// ===========================================
+// POST Route for Contact Us Form Submission
+// ===========================================
+// This route will handle the form submission from the contact-us.ejs page.
+// It should call a controller function to process the email sending.
+router.post("/contact", contactController.handleContactForm);
+// ===========================================
+
+
 // FAQ Route
 router.get("/faq", (req, res) => {
   logger.info("FAQ route accessed");
