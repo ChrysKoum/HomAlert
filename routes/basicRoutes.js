@@ -2,14 +2,27 @@ const express = require("express");
 const router = express.Router();
 const logger = require("../middleware/logger");
 const teamMembers = require("../data/team/members");
-const testimonials = require("../data/reviews/testimonials");
 const faqItems = require("../data/faq/questions");
-
+//
+const hero = require('../data/contents/hero.json');
+const features = require('../data/contents/features.json');
+const whyChooseUs = require('../data/contents/whyChooseUs');
+const testimonials = require('../data/contents/testimonials.json');
 // Home route
-router.get("/", (req, res) => {
-  logger.info("Home route accessed");
-  res.render("home", { title: "Home", testimonials });
+router.get("/", (req, res, next) => {
+  try {
+    res.render("home", { 
+      hero,
+      features,
+      whyChooseUs,
+      testimonials 
+    });
+  } catch (error) {
+    logger.error(`Error in home route: ${error.message}`);
+    next(error);
+  }
 });
+
 
 // About Us Route
 router.get("/about", (req, res) => {

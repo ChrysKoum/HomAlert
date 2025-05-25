@@ -1,0 +1,38 @@
+{
+    "header": {
+      "title": "Customer Testimonials",
+      "subtitle": "Your satisfaction is our success. See why our clients choose us."
+    },
+    "reviews": [
+      {
+        "rating": 5,
+        "text": "This service has completely exceeded my expectations! The team was professional, and the results were fantastic. I can't recommend them enough!",
+        "author": {
+          "name": "Jane Doe",
+          "position": "Senior Manager at ABC Corp",
+          "image": "/assets/icons/user/placeholder.png",
+          "imageAlt": "Profile Picture"
+        }
+      },
+      {
+        "rating": 5,
+        "text": "The experience was seamless from start to finish. The attention to detail and quality of work were truly impressive. I'll definitely be back for more!",
+        "author": {
+          "name": "John Smith",
+          "position": "Founder of ABC Innovations",
+          "image": "/assets/icons/user/placeholder.png",
+          "imageAlt": "Profile Picture"
+        }
+      },
+      {
+        "rating": 5,
+        "text": "Exceptional service with a personal touch. They really understood what I needed and delivered beyond what I had imagined. Five stars!",
+        "author": {
+          "name": "Emily Carter",
+          "position": "CEO of ABC Creative Solutions",
+          "image": "/assets/icons/user/placeholder.png",
+          "imageAlt": "Profile Picture"
+        }
+      }
+    ]
+  }

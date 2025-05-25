@@ -1,0 +1,49 @@
+{
+  "header": {
+    "subtitle": "Our Features",
+    "title": "Our Key Benefits",
+    "description": "Tailored to meet your specific safety needs and protect your home."
+  },
+  "centerImage": {
+    "src": "/assets/logo/logo trasperant without text.png",
+    "alt": "Home Icon"
+  },
+  "features": [
+    {
+      "icon": "/assets/icons/features/24-hours-support.png",
+      "alt": "24/7 Monitoring Icon",
+      "title": "24/7 Monitoring",
+      "description": "Constant surveillance for complete protection"
+    },
+    {
+      "icon": "/assets/icons/features/theft.png",
+      "alt": "Intrusion Detection Icon",
+      "title": "Intrusion Detection",
+      "description": "Monitors unauthorized entries for enhanced security"
+    },
+    {
+      "icon": "/assets/icons/features/leak.png",
+      "alt": "Gas Leak Detection Icon",
+      "title": "Gas Leak Detection",
+      "description": "Detects harmful gas leaks to ensure safety"
+    },
+    {
+      "icon": "/assets/icons/features/phone-ringing.png",
+      "alt": "Instant Alerts Notifications Icon",
+      "title": "Instant Alert Notifications",
+      "description": "Continuous tracking of home conditions"
+    },
+    {
+      "icon": "/assets/icons/features/natural-disaster.png",
+      "alt": "Flood Detection Icon",
+      "title": "Flood Detection",
+      "description": "Immediate alerts for leaks or floods"
+    },
+    {
+      "icon": "/assets/icons/features/fire-alarm.png",
+      "alt": "Fire Detection Icon",
+      "title": "Fire Detection",
+      "description": "Swift identification of fires to prevent damage"
+    }
+  ]
+}

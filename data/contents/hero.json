@@ -1,0 +1,15 @@
+{
+    "title": {
+      "main": "Stay Safe, Stay Alert",
+      "subtitle": "Protecting What Matters Most"
+    },
+    "description": "Experience Ultimate Home Safety with HomAlert: Advanced Smart Home Emergency System for Real-Time Monitoring and Instant Alerts Against Fires, Floods, Gas Leaks, and Intrusions.",
+    "cta": {
+      "text": "Learn More",
+      "url": "/product"
+    },
+    "image": {
+      "src": "/assets/images/hero_image.png",
+      "alt": "Hero section showing smart home safety features"
+    }
+  }

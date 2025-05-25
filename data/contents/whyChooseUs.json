@@ -1,0 +1,45 @@
+{
+  "header": {
+    "subtitle": "Why Choose Us",
+    "title": "The Trusted Source",
+    "description": "Receive real-time alerts with seamless, user-friendly protection you can trust."
+  },
+  "waveImage": {
+    "src": "/assets/icons/features/wave_graph.png",
+    "alt": "Wave Graph Icon"
+  },
+  "features": [
+    {
+      "title": "Budget-Friendly",
+      "description": "Affordable security solutions for every home.",
+      "icon": "/assets/icons/whyChooseUs/hand.png",
+      "alt": "Budget-Friendly Icon",
+      "transform": "translate(30px,-75px)",
+      "order": "content-first"
+    },
+    {
+      "title": "Reliable Protection",
+      "description": "Complete protection against all dangers.",
+      "icon": "/assets/icons/whyChooseUs/security.png",
+      "alt": "Home Security Icon",
+      "transform": "translateY(-75px)",
+      "order": "content-first"
+    },
+    {
+      "title": "24/7 Support",
+      "description": "Immediate notifications for any detected danger.",
+      "icon": "/assets/icons/whyChooseUs/alarm.png",
+      "alt": "Instant Notifications Icon",
+      "transform": "translateY(35px)",
+      "order": "image-first"
+    },
+    {
+      "title": "Easy Integration",
+      "description": "Easy to use and customizable settings.",
+      "icon": "/assets/icons/whyChooseUs/check.png",
+      "alt": "User-Friendly Icon",
+      "transform": "translateY(35px)",
+      "order": "image-first"
+    }
+  ]
+}
