@@ -163,11 +163,6 @@ const authController = {
     // No specific action needed here other than showing the page
     res.render("auth/email-verified", { title: "Email Verified" });
   },
-
-  // Placeholder for resetPassword if you were to handle the oobCode yourself
-  // resetPassword: async (req, res) => {
-  //   // This would handle the link from the email if it points to your server with a code
-  // },
 };
 
 module.exports = authController;
