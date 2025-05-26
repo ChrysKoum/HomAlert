@@ -8,15 +8,18 @@ module.exports = {
     './views/**/*.ejs', // EJS templates
     './public/**/*.html', // Any other HTML files
   ],
+  darkMode: 'class', 
   theme: {
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    require('tailwind-scrollbar'), 
+  ],
   server: {
-    port: 5173, // Default dev server port
+    port: 5173, 
   },
   build: {
-    outDir: '../public/assets', // Output directory for production build
-    emptyOutDir: true,          // Clean the directory before building
+    outDir: '../public/assets', 
+    emptyOutDir: true,          
   },
 };

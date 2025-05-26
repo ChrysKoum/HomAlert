@@ -1,22 +1,34 @@
 import React from 'react';
 import Dashboard from './pages/Dashboard';
-import Sensors from './pages/Sensors';
+import Kitchen from './pages/Kitchen';
+import Bathroom from './pages/Bathroom';
+import LivingRoom from './pages/LivingRoom';
 import Utilities from './pages/Utilities';
 import Settings from './pages/Settings';
+import Alerts from './pages/Alerts';
 import Notifications from './pages/Notifications';
-import NightMode from './pages/NightMode';
+import Information from './pages/Information';
 import Logout from './pages/Logout';
-import ErrorPage from './pages/ErrorPage'; // For handling 404 errors
+import ErrorPage from './pages/ErrorPage';
+import SensorDetailPage from './pages/SensorDetailPage'; 
 
 const routes = [
+  { path: '/', element: <Dashboard /> }, 
   { path: '/dashboard', element: <Dashboard /> },
-  { path: '/dashboard/sensors', element: <Sensors /> },
+  { path: '/dashboard/kitchen', element: <Kitchen /> },
+  { path: '/dashboard/kitchen/:sensorId', element: <SensorDetailPage /> },
+  { path: '/dashboard/bathroom', element: <Bathroom /> },
+  { path: '/dashboard/bathroom/:sensorId', element: <SensorDetailPage /> },
+  { path: '/dashboard/living', element: <LivingRoom /> },
+  { path: '/dashboard/living/:sensorId', element: <SensorDetailPage /> },
   { path: '/dashboard/utilities', element: <Utilities /> },
+  { path: '/dashboard/utilities/:sensorId', element: <SensorDetailPage /> },
   { path: '/dashboard/settings', element: <Settings /> },
+  { path: '/dashboard/alerts', element: <Alerts /> },
   { path: '/dashboard/notifications', element: <Notifications /> },
-  { path: '/dashboard/night-mode', element: <NightMode /> },
+  { path: '/dashboard/information', element: <Information /> },
   { path: '/auth/logout', element: <Logout /> },
-  { path: '*', element: <ErrorPage /> }, // Fallback for undefined routes
+  { path: '*', element: <ErrorPage /> },
 ];
 
 export default routes;
