@@ -1,52 +1,66 @@
-import React, { useState, useEffect } from 'react'; // Import useState and useEffect
-import { Routes, Route } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import Sidebar from './components/Sidebar';
-import TopNavBar from './components/TopNavBar'; // Import TopNavBar
+import TopNavBar from './components/TopNavBar';
 import routes from './routes';
+import { UserProvider } from './context/UserContext'; // Import the UserProvider
 import './index.css';
-// import axios from 'axios'; // Uncomment if you fetch user data here
 
 const App = () => {
   const [isSidebarExpanded, setIsSidebarExpanded] = useState(false);
-  const [userName, setUserName] = useState('User'); // Add state for userName
+  const [isDarkMode, setIsDarkMode] = useState(() => {
+    const savedMode = localStorage.getItem('darkMode');
+    if (savedMode) {
+      return savedMode === 'true';
+    }
+    return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  });
+  const location = useLocation();
 
-  // Optional: Fetch user data once when App mounts
-  // useEffect(() => {
-  //   axios.get('/api/user-profile') // Example endpoint
-  //     .then(response => {
-  //       setUserName(response.data.name || 'User');
-  //     })
-  //     .catch(error => {
-  //       console.error("Error fetching user data:", error);
-  //       // Handle error, maybe redirect to login if unauthorized
-  //     });
-  // }, []);
+  useEffect(() => {
+    if (isDarkMode) {
+      document.documentElement.classList.add('dark');
+      localStorage.setItem('darkMode', 'true');
+    } else {
+      document.documentElement.classList.remove('dark');
+      localStorage.setItem('darkMode', 'false');
+    }
+  }, [isDarkMode]);
 
   return (
-    <div className="flex min-h-screen bg-gray-100">
-      <Sidebar
-        isExpanded={isSidebarExpanded}
-        setIsExpanded={setIsSidebarExpanded}
-      />
-      <main
-        className={`flex-1 transition-all duration-300 ease-out ${ // Changed ease-in-out to ease-out
-          isSidebarExpanded ? 'pl-64' : 'pl-20'
-        }`}
-      >
-        {/* Render TopNavBar here, it will persist across routes */}
-        <TopNavBar userName={userName} />
-        
-        {/* Routes will be rendered inside this padded area, below TopNavBar */}
-        {/* Add padding to the content area of routes if TopNavBar is fixed, or adjust layout */}
-        <div className="p-4 md:p-6"> {/* Wrapper for page content with padding */}
+    <UserProvider> {/* Wrap the app with UserProvider */}
+      <div className="flex min-h-screen bg-gray-100 dark:bg-gray-900">
+        {!location.pathname.startsWith('/auth/logout') && (
+          <>
+            <Sidebar
+              isExpanded={isSidebarExpanded}
+              setIsExpanded={setIsSidebarExpanded}
+            />
+            <main
+              className={`flex-1 transition-all duration-300 ease-out ${
+                isSidebarExpanded ? 'pl-64' : 'pl-20'
+              } flex flex-col`}
+            >
+              <TopNavBar isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
+              <div className="flex-grow p-4 md:p-6 overflow-y-auto">
+                <Routes>
+                  {routes.map((route, index) => (
+                    <Route key={index} path={route.path} element={route.element} />
+                  ))}
+                </Routes>
+              </div>
+            </main>
+          </>
+        )}
+        {location.pathname.startsWith('/auth/logout') && (
           <Routes>
-            {routes.map((route, index) => (
+            {routes.filter(r => r.path.startsWith('/auth/logout')).map((route, index) => (
               <Route key={index} path={route.path} element={route.element} />
             ))}
           </Routes>
-        </div>
-      </main>
-    </div>
+        )}
+      </div>
+    </UserProvider>
   );
 };
 

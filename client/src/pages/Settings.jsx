@@ -1,45 +1,57 @@
-import React from 'react';
+import React, { useState } from 'react';
+import ProfileSettings from '../components/settings/ProfileSettings';
+import SecuritySettings from '../components/settings/SecuritySettings';
+import NotificationSettings from '../components/settings/NotificationSettings';
+import EmergencyContactsSettings from '../components/settings/EmergencyContactsSettings';
 
 const Settings = () => {
+  const [activeTab, setActiveTab] = useState('Profile');
+  const settingsTabs = ['Profile', 'Security', 'Notifications', 'Emergency Contacts'];
+
+  const renderTabContent = () => {
+    switch (activeTab) {
+      case 'Profile':
+        return <ProfileSettings />;
+      case 'Security':
+        return <SecuritySettings />;
+      case 'Notifications':
+        return <NotificationSettings />;
+      case 'Emergency Contacts':
+        return <EmergencyContactsSettings />;
+      default:
+        return <ProfileSettings />;
+    }
+  };
+
   return (
-    <>
-      <div className="p-6">
-        <h1 className="text-2xl font-semibold mb-4 text-gray-800">Settings</h1>
-        <p className="mb-6 text-gray-600">Configure your application and device settings.</p>
-
-        {/* Example Settings Section */}
-        <div className="bg-white shadow rounded-lg p-6 mb-6">
-          <h2 className="text-xl font-medium mb-4 text-gray-700">Profile Settings</h2>
-          {/* Add form fields for profile settings */}
-          <div className="space-y-4">
-            <div>
-              <label htmlFor="username" className="block text-sm font-medium text-gray-700">Username</label>
-              <input type="text" id="username" defaultValue="Kostantine" className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" />
-            </div>
-            <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email</label>
-              <input type="email" id="email" defaultValue="kostantine@example.com" className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" />
-            </div>
-            <button className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">Save Profile</button>
-          </div>
+    <div className="min-h-screen bg-gray-100 p-4 sm:p-6 lg:p-8">
+      {/* Top Navigation Tabs */}
+      <div className="mb-6 sm:mb-8 max-w-5xl mx-auto">
+        <div className="border-b border-gray-300">
+          <nav className="-mb-px flex justify-center space-x-4 sm:space-x-8 overflow-x-auto" aria-label="Tabs">
+            {settingsTabs.map((tab) => (
+              <button
+                key={tab}
+                onClick={() => setActiveTab(tab)}
+                className={`whitespace-nowrap py-3 px-2 sm:px-4 border-b-2 font-medium text-sm transition-colors focus:outline-none
+                  ${activeTab === tab
+                    ? 'border-blue-500 text-blue-600'
+                    : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+                  }
+                `}
+              >
+                {tab}
+              </button>
+            ))}
+          </nav>
         </div>
-
-        <div className="bg-white shadow rounded-lg p-6">
-          <h2 className="text-xl font-medium mb-4 text-gray-700">Notification Settings</h2>
-          {/* Add toggles/options for notification preferences */}
-          <div className="space-y-2">
-             <div className="flex items-center justify-between">
-               <span className="text-sm text-gray-600">Email Notifications</span>
-               <button className="w-10 h-5 bg-gray-300 rounded-full p-0.5 flex items-center focus:outline-none">
-                 <span className="w-4 h-4 bg-white rounded-full shadow-md transform translate-x-0 transition-transform duration-200 ease-in-out"></span>
-               </button>
-             </div>
-             {/* Add more notification toggles */}
-          </div>
-        </div>
-        {/* Add more settings sections (e.g., Security, Devices) */}
       </div>
-    </>
+
+      {/* Main Content Area - Rendered based on activeTab */}
+      <div className="mt-6">
+        {renderTabContent()}
+      </div>
+    </div>
   );
 };
 

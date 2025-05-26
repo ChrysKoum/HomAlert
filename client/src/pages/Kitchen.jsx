@@ -4,6 +4,7 @@ import SensorOverview from '../components/SensorOverview';
 import EventsStatistics from '../components/EventsStatistics'; // Assuming general stats for now
 import WeatherWidget from '../components/WeatherWidget';     // Assuming general weather for now
 import ActivityTable from '../components/ActivityTable';
+import LoadingSpinner from '../components/common/LoadingSpinner';
 
 const Kitchen = () => {
   const [roomData, setRoomData] = useState(null);
@@ -33,7 +34,7 @@ const Kitchen = () => {
       });
   }, []);
 
-  if (isLoading) return <div className="p-6">Loading Kitchen Overview...</div>;
+  if (isLoading) return <LoadingSpinner message="Loading Kitchen Overview..." />;
   if (error) return <div className="p-6 text-red-600">{error}</div>;
   if (!roomData) return <div className="p-6">No data available for Kitchen.</div>;
 

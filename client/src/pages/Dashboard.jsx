@@ -6,6 +6,7 @@ import SensorOverview from '../components/SensorOverview';
 import EventsStatistics from '../components/EventsStatistics';
 import WeatherWidget from '../components/WeatherWidget';
 import ActivityTable from '../components/ActivityTable';
+import LoadingSpinner from '../components/common/LoadingSpinner';
 
 const Dashboard = () => {
   const [dashboardData, setDashboardData] = useState(null);
@@ -42,8 +43,8 @@ const Dashboard = () => {
   }, []); // Empty dependency array ensures this runs once on mount
 
   // Display loading or error states
-  if (isLoading) return <div className="p-4 md:p-6">Loading Dashboard...</div>; // Adjusted padding
-  if (error) return <div className="p-4 md:p-6 text-red-600">{error}</div>; // Adjusted padding
+  if (isLoading) return <LoadingSpinner message="Loading Dashboard..." />; // Use the spinner
+  if (error) return <div className="p-4 md:p-6 text-red-600 dark:text-red-400">{error}</div>; // Adjusted padding
   if (!dashboardData) return <div className="p-4 md:p-6">No dashboard data available.</div>; // Adjusted padding
 
   return (

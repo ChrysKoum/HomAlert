@@ -63,20 +63,37 @@ const authController = {
     const { email, password } = req.body;
     try {
       const user = await signInUser(email, password);
+      
       if (!user.emailVerified) {
-        // Optionally resend verification if login attempt with unverified email
-        // await sendUserEmailVerification(user);
         return res.status(401).render("auth/sign-in", {
           title: "Login",
           error: "Please verify your email address before logging in. Check your inbox.",
           email: email,
         });
       }
-      // Successful login
-      // Here, you would typically set up a session or token
-      // For EJS app, often session-based: req.session.user = user;
+
+      // Create a user object with essential information
+      const userData = {
+        uid: user.uid,
+        email: user.email,
+        displayName: user.displayName || email.split('@')[0],
+        photoURL: user.photoURL || '/assets/default-avatar.png',
+        emailVerified: user.emailVerified
+      };
+
+      // Create a script to inject into the dashboard page
+      const userScript = `
+        <script>
+          localStorage.setItem('homalert_user', JSON.stringify(${JSON.stringify(userData)}));
+          localStorage.setItem('authToken', '${user.uid}'); // Set auth token for session tracking
+        </script>
+      `;
+
+      // Add userScript to res.locals to be included in the dashboard template
+      res.locals.userScript = userScript;
+      
       logger.info(`User logged in: ${user.email}`);
-      return res.redirect("/dashboard"); // Redirect to React dashboard
+      return res.redirect("/dashboard");
     } catch (error) {
       logger.error(`Login error: ${error.code} - ${error.message}`); // Log the error code and message
       let errorMessage = "An unexpected error occurred. Please try again.";

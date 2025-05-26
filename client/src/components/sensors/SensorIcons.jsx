@@ -20,7 +20,7 @@ export const getSensorIcon = (sensorType) => {
     case 'motion': return FaRunning;
     case 'smoke': return FaSmog;
     case 'temperature': return FaTemperatureHigh;
-    case 'humidity': return FaWater; // Placeholder
+    case 'humidity': return FaWater; 
     case 'door': return FaDoorOpen;
     case 'window': return FaWindowMaximize;
     default: return FaSignal;

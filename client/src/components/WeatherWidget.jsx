@@ -9,6 +9,8 @@ import {
   FaWind,
   FaArrowUp,
 } from 'react-icons/fa'; // Using react-icons/fa as an example
+import LoadingSpinner from './common/LoadingSpinner';
+
 
 const WeatherWidget = () => {
   const [weather, setWeather] = useState(null);
@@ -77,7 +79,11 @@ const WeatherWidget = () => {
     }
   };
 
-  if (loading) return <div className="bg-white shadow rounded-lg p-4 text-center text-gray-500">Loading Weather...</div>;
+  if (loading) return (
+    <div className="bg-white dark:bg-gray-800 shadow rounded-lg p-4 h-full">
+      <LoadingSpinner size="sm" message="Loading Weather..." />
+    </div>
+  );
   if (error) return <div className="bg-white shadow rounded-lg p-4 text-center text-red-500">{error}</div>;
   if (!weather) return null; // Should not happen if loading/error handled
 

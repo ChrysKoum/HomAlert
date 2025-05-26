@@ -30,7 +30,7 @@ router.get("/contact", (req, res) => {
 // ===========================================
 // This route will handle the form submission from the contact-us.ejs page.
 // It should call a controller function to process the email sending.
-router.post("/contact", contactController.handleContactForm);
+// router.post("/contact", contactController.handleContactForm);
 // ===========================================
 
 
