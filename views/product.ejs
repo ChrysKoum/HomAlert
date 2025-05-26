@@ -9,4 +9,82 @@
      ===========================================
 -->
 <!-- Use the boilerplate layout for consistent structure it will retrieve the layout of the boilerplate file -->
+<link rel="stylesheet" href="stylesheets/product.css" />
+<script src="/javascripts/sensor-description-handler.js"></script>
+
+<!-- Title Section -->
+<section class="title-section text-center py-5 mb-5">
+  <div class="container">
+    <h2 class="text-primary fw-bold">Our Technologies</h2>
+    <p class="text-muted">
+      Cutting Edge Components with High Performance Software
+    </p>
+  </div>
+</section>
+
+<!-- Technology Diagram & Description Section -->
+<section class="technology-section py-5 mb-5">
+  <div class="container">
+    <div class="row align-items-center">
+
+      <!-- Left Side: Sensor Diagram -->
+      <div class="col-12 col-xl-6 d-flex justify-content-center">
+        <div class="sensor-diagram position-relative mx-auto">
+          <% sensors.forEach((sensor, index) => { %>
+          <a
+            href="#"
+            class="sensor-icon"
+            id="sensor-<%= index %>"
+            data-index="<%= index %>">
+            <img src="<%= sensor.image %>" alt="<%= sensor.title %>" />
+          </a>
+          <% }); %>
+
+          <!-- Dashed Lines -->
+          <div class="line line-centerhub-database"></div>
+          <div class="line line-database-database1"></div>
+          <div class="line line-database1-datareport"></div>
+          <div class="line line-centerhub-motion"></div>
+          <div class="line line-centerhub-gas"></div>
+          <div class="line line-centerhub-fire"></div>
+          <div class="line line-centerhub-humidity"></div>
+          <div class="line line-centerhub-seismograph"></div>
+        </div>
+      </div>
+
+      <!-- Right Side: Sensor Descriptions -->
+      <div class="col-12 col-xl-6 text-center text-md-start">
+        <div class="sensor-description">
+          <!-- Default Center Hub description (Visible by default) -->
+          <div class="desc default active" id="default-desc">
+            <h4>Center Hub:</h4>
+            <p class="text-muted">
+              The central unit responsible for collecting and processing data
+              from
+              various sensors placed throughout the home. It acts as the main
+              communication hub, ensuring all sensor data is accurately received
+              and
+              transmitted to other system components for further analysis and
+              action.
+            </p>
+          </div>
+
+          <!-- Other Sensor Descriptions (Initially Hidden) -->
+          <% sensors.forEach((sensor, index) => { %>
+          <% if (sensor.title !== "Center Hub") { %>
+          <div class="desc" id="sensor-desc-<%= index %>">
+            <h4><%= sensor.title %></h4>
+            <p class="text-muted"><%= sensor.description %></p>
+          </div>
+          <% } %>
+          <% }); %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--Join us-->
+<%- include('partials/join-us') %>
+
 <% layout('layouts/boilerplate') %>
