@@ -181,7 +181,8 @@
 <!-- I want this to be on the partials like a testimonials.js and then imported like below -->
 <!-- Some things that are not dynamic(Array of values) -->
  <!-- like the title and subtitle theres not neccesary pass them as variables(Extra Load in general) but keep them as it is to be more organize i like it -->
-<section class="Customer-Testimonials text-center py-5">
+<!-- Take a look on the faq page, (Customer-Testimonials better practice to be all lowercase customer-testimonials)-->
+ <section class="Customer-Testimonials text-center py-5">
   <div class="container">
     <h3 class="mb-4" style="font-size: 30px;"><%= testimonials.header.title %></h3>
     <p class="lead mb-5"><%= testimonials.header.subtitle %></p>
@@ -254,7 +255,7 @@
   }
 </script>
 
-<!-- This is not usued and not needed for the styling of the button -->
+<!-- This is not usued and not needed for the styling of the button if i am not mistaken as i dont see a class with "n1"-->
   <script>
     "use strict"
     const signUpButton = document.querySelector('.n1');
