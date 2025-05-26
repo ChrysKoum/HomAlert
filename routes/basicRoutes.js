@@ -6,7 +6,9 @@ const testimonials = require("../data/reviews/testimonials");
 const sensors = require("../data/product/sensors");
 const faqItems = require("../data/faq/questions");
 const centerHub = sensors.find(sensor => sensor.title === "Center Hub:");
-//
+// Here becarefull here you deleted the old testimonials and didn't match with the new structure and getting error on the faq page
+// const testimonials = require("../data/reviews/testimonials.json");
+// You will remove this and replace all the logic on other pages with your new partials/testimonials to match your new data structure
 const hero = require('../data/contents/hero.json');
 const features = require('../data/contents/features.json');
 const whyChooseUs = require('../data/contents/whyChooseUs');
@@ -36,8 +38,9 @@ router.get("/about", (req, res) => {
 // Contact Us Route
 router.get("/contact", (req, res) => {
   logger.info("Contact Us route accessed");
-  res.render("contact-us.ejs", { testimonials });
+  res.render("contact-us.ejs");
 });
+
 
 // FAQ Route
 router.get("/faq", (req, res) => {
