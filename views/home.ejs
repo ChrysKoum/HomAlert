@@ -1,7 +1,8 @@
 <!-- Use the boilerplate layout for consistent structure it will retrieve the layout of the boilerplate file -->
 <% layout('layouts/boilerplate') %>
 
-<section class="hero-section d-flex align-items-center">
+<!-- Here if you use vh-100 that is where you tell to take 100% of the height screen it will be more center vertically -->
+<section class="hero-section d-flex align-items-center"> <!-- vh-100 -->
   <div class="container">
     <div class="row align-items-center justify-content-center">
 
@@ -177,6 +178,9 @@
   </div>
 </section>
 
+<!-- I want this to be on the partials like a testimonials.js and then imported like below -->
+<!-- Some things that are not dynamic(Array of values) -->
+ <!-- like the title and subtitle theres not neccesary pass them as variables(Extra Load in general) but keep them as it is to be more organize i like it -->
 <section class="Customer-Testimonials text-center py-5">
   <div class="container">
     <h3 class="mb-4" style="font-size: 30px;"><%= testimonials.header.title %></h3>
@@ -223,10 +227,10 @@
       Become a valued customer, partner with us, or follow our journey on social media.
     </p>
     <div class="d-flex flex-column flex-md-row justify-content-center align-items-center gap-3">
-      <a href="/register" class="btn btn-primary btn-lg px-5 py-3 rounded-pill shadow-sm">
+      <a href="/register" class="btn btn-primary btn-md px-5 py-3 rounded-pill shadow-sm">
         <i class="fas fa-user-plus me-2"></i> Sign Up
       </a>
-      <a href="/product" class="btn btn-outline-primary btn-lg px-5 py-3 rounded-pill shadow-sm" 
+      <a href="/product" class="btn btn-outline-primary btn-md px-5 py-3 rounded-pill shadow-sm" 
          onmouseenter="changeColor(this)" 
          onmouseleave="resetColor(this)">
         <i class="fas fa-info-circle me-2"></i> Learn More
@@ -234,7 +238,7 @@
     </div>
   </div>
 </section>
-
+<!-- Scripts must be made to the public/home.js and then import it here -->
 <script>
   "use strict";
   function changeColor(button) {
@@ -250,6 +254,7 @@
   }
 </script>
 
+<!-- This is not usued and not needed for the styling of the button -->
   <script>
     "use strict"
     const signUpButton = document.querySelector('.n1');
@@ -267,6 +272,7 @@
     }
   </script>
 
+<!-- Like Scripts it will be more clean to be on the public/style/home.css and then import it here -->
   <style>
     /* (extra small screens, e.g., below 576px) */
     /* Extra small screens (below 576px) */
