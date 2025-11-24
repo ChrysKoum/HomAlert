@@ -1,34 +1,38 @@
+<section class="Customer-Testimonials text-center py-5">
+  <div class="container">
+    <h3 class="mb-4" style="font-size: 30px;"><%= testimonials.header.title %></h3>
+    <p class="lead mb-5"><%= testimonials.header.subtitle %></p>
 
-<!-- So here you want to replace the below with your code -->
-
-<div class="container text-center py-5">
-  <h2 class="display-4">Customer testimonials</h2>
-  <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-
-  <div class="row">
-    <% testimonials.forEach(function(testimonial) { %>
-    <div class="col-md-4 mb-3">
-      <div class="card p-3">
-        <div class="card-body">
-          <p class="star-rating">
-            <% for (let i = 0; i < testimonial.stars; i++) { %> &#9733; <% } %>
-          </p>
-          <p class="card-text">"<%= testimonial.review %>"</p>
-          <div class="d-flex align-items-center">
-            <img
-              src="/assets/icons/user/user.png"
-              alt="User image"
-              class="rounded-circle me-3"
-              style="width: 40px; height: 40px"
-            />
-            <div>
-              <p class="mb-0 font-weight-bold"><%= testimonial.name %></p>
-              <small class="text-muted"><%= testimonial.position %></small>
+    <div class="row g-4">
+      <% testimonials.reviews.forEach(review => { %>
+        <div class="col-md-4 d-flex">
+          <div class="card py-3 px-4 shadow-sm h-100 d-flex flex-column">
+            <!-- Star Rating -->
+            <div class="text-dark mb-3 py-2 text-center" role="img" aria-label="<%= review.rating %>-star rating">
+              <% for(let i = 0; i < review.rating; i++) { %>
+                <i class="fas fa-star text-warning"></i>
+              <% } %>
             </div>
+
+            <!-- Testimonial Text -->
+            <blockquote class="blockquote text-center px-3 flex-grow-1">
+              <p class="lead fs-6 fs-md-5"><%= review.text %></p>
+            </blockquote>
+
+            <!-- Footer -->
+            <footer class="d-flex align-items-center justify-content-center mt-3">
+              <img src="<%= review.author.image %>" 
+                   alt="<%= review.author.imageAlt %>" 
+                   class="rounded-circle me-3"
+                   style="width: 50px; height: 50px;">
+              <div class="text-start">
+                <strong class="fs-6"><%= review.author.name %></strong><br>
+                <span class="text-muted small"><%= review.author.position %></span>
+              </div>
+            </footer>
           </div>
         </div>
-      </div>
+      <% }) %>
     </div>
-    <% }) %>
   </div>
-</div>
+</section>

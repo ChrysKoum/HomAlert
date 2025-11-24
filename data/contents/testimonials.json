@@ -1,37 +1,37 @@
 {
     "header": {
-      "title": "Customer Testimonials",
-      "subtitle": "Your satisfaction is our success. See why our clients choose us."
+      "title": "What Our Customers Say",
+      "subtitle": "Join thousands of homeowners who trust HomAlert for their safety."
     },
     "reviews": [
       {
         "rating": 5,
-        "text": "This service has completely exceeded my expectations! The team was professional, and the results were fantastic. I can't recommend them enough!",
+        "text": "HomAlert gives me such peace of mind when I'm traveling. The app is incredibly intuitive, and I love being able to check on my home from anywhere. The installation was a breeze!",
         "author": {
-          "name": "Jane Doe",
-          "position": "Senior Manager at ABC Corp",
+          "name": "Sarah Jenkins",
+          "position": "Homeowner, Seattle",
           "image": "/assets/icons/user/placeholder.png",
-          "imageAlt": "Profile Picture"
+          "imageAlt": "Sarah Jenkins Profile"
         }
       },
       {
         "rating": 5,
-        "text": "The experience was seamless from start to finish. The attention to detail and quality of work were truly impressive. I'll definitely be back for more!",
+        "text": "As a father of two, safety is my top priority. The instant notifications and reliable sensors mean I never have to worry about whether I locked the back door. It's a game-changer for our family.",
         "author": {
-          "name": "John Smith",
-          "position": "Founder of ABC Innovations",
+          "name": "David Chen",
+          "position": "Father of two, Austin",
           "image": "/assets/icons/user/placeholder.png",
-          "imageAlt": "Profile Picture"
+          "imageAlt": "David Chen Profile"
         }
       },
       {
         "rating": 5,
-        "text": "Exceptional service with a personal touch. They really understood what I needed and delivered beyond what I had imagined. Five stars!",
+        "text": "I've tried several security systems, but HomAlert stands out for its seamless integration and robust features. The dashboard provides excellent insights, and the support team is top-notch.",
         "author": {
-          "name": "Emily Carter",
-          "position": "CEO of ABC Creative Solutions",
+          "name": "Elena Rodriguez",
+          "position": "Small Business Owner, Miami",
           "image": "/assets/icons/user/placeholder.png",
-          "imageAlt": "Profile Picture"
+          "imageAlt": "Elena Rodriguez Profile"
         }
       }
     ]

@@ -2,7 +2,7 @@
 <% layout('layouts/boilerplate') %>
 
 <!-- Here if you use vh-100 that is where you tell to take 100% of the height screen it will be more center vertically -->
-<section class="hero-section d-flex align-items-center"> <!-- vh-100 -->
+<div class="hero-section d-flex align-items-center"> <!-- vh-100 -->
   <div class="container">
     <div class="row align-items-center justify-content-center">
 
@@ -28,7 +28,7 @@
 
     </div>
   </div>
-</section>
+</div>
 
 <section class="our-key-benefits-section text-center py-5">
   <div class="container">
@@ -178,82 +178,9 @@
   </div>
 </section>
 
-<!-- I want this to be on the partials like a testimonials.js and then imported like below -->
-<!-- Some things that are not dynamic(Array of values) -->
- <!-- like the title and subtitle theres not neccesary pass them as variables(Extra Load in general) but keep them as it is to be more organize i like it -->
-<!-- Take a look on the faq page, (Customer-Testimonials better practice to be all lowercase customer-testimonials)-->
- <section class="Customer-Testimonials text-center py-5">
-  <div class="container">
-    <h3 class="mb-4" style="font-size: 30px;"><%= testimonials.header.title %></h3>
-    <p class="lead mb-5"><%= testimonials.header.subtitle %></p>
+<%- include('partials/testimonials') %>
 
-    <div class="row g-4">
-      <% testimonials.reviews.forEach(review => { %>
-        <div class="col-md-4 d-flex">
-          <div class="card py-3 px-4 shadow-sm h-100 d-flex flex-column">
-            <!-- Star Rating -->
-            <div class="text-dark mb-3 py-2 text-center" role="img" aria-label="<%= review.rating %>-star rating">
-              <% for(let i = 0; i < review.rating; i++) { %>
-                <i class="fas fa-star text-warning"></i>
-              <% } %>
-            </div>
-
-            <!-- Testimonial Text -->
-            <blockquote class="blockquote text-center px-3 flex-grow-1">
-              <p class="lead fs-6 fs-md-5"><%= review.text %></p>
-            </blockquote>
-
-            <!-- Footer -->
-            <footer class="d-flex align-items-center justify-content-center mt-3">
-              <img src="<%= review.author.image %>" 
-                   alt="<%= review.author.imageAlt %>" 
-                   class="rounded-circle me-3"
-                   style="width: 50px; height: 50px;">
-              <div class="text-start">
-                <strong class="fs-6"><%= review.author.name %></strong><br>
-                <span class="text-muted small"><%= review.author.position %></span>
-              </div>
-            </footer>
-          </div>
-        </div>
-      <% }) %>
-    </div>
-  </div>
-</section>
-
-<section class="mission-section text-center py-5">
-  <div class="container">
-    <h2 class="mb-3 fw-bold text-primary">Join Our Mission for Safety</h2>
-    <p class="lead text-muted mb-4">
-      Become a valued customer, partner with us, or follow our journey on social media.
-    </p>
-    <div class="d-flex flex-column flex-md-row justify-content-center align-items-center gap-3">
-      <a href="/register" class="btn btn-primary btn-md px-5 py-3 rounded-pill shadow-sm">
-        <i class="fas fa-user-plus me-2"></i> Sign Up
-      </a>
-      <a href="/product" class="btn btn-outline-primary btn-md px-5 py-3 rounded-pill shadow-sm" 
-         onmouseenter="changeColor(this)" 
-         onmouseleave="resetColor(this)">
-        <i class="fas fa-info-circle me-2"></i> Learn More
-      </a>
-    </div>
-  </div>
-</section>
-<!-- Scripts must be made to the public/home.js and then import it here -->
-<script>
-  "use strict";
-  function changeColor(button) {
-    button.style.backgroundColor = "#0d6efd";
-    button.style.color = "white";
-  }
-
-  function resetColor(button) {
-    setTimeout(() => {
-      button.style.backgroundColor = "transparent";
-      button.style.color = "#0d6efd";
-    }, 50);
-  }
-</script>
+<%- include('partials/join-us') %>
 
 <!-- This is not usued and not needed for the styling of the button if i am not mistaken as i dont see a class with "n1"-->
   <script>
