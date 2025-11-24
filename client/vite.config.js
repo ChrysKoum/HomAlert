@@ -18,7 +18,7 @@ export default defineConfig({
   },
   server: {
     proxy: {
-      '/api': 'http://localhost:3005', // Proxy API requests to Express server
+      '/api': 'https://homealert-8f1622ece14d.herokuapp.com/', // Proxy API requests to Express server
     },
   },
 });
