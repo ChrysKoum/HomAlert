@@ -12,16 +12,84 @@
 <link rel="stylesheet" href="stylesheets/product.css" />
 <script src="/javascripts/sensor-description-handler.js"></script>
 
-<!-- Title Section -->
-<section class="title-section text-center py-5 mb-5">
-  <div class="container">
-    <h2 class="text-primary fw-bold">Our Technologies</h2>
-    <p class="text-muted">
-      Cutting Edge Components with High Performance Software
-    </p>
+<!-- Hero Section -->
+<section class="product-hero position-relative w-100 overflow-hidden mb-5">
+  <div class="hero-bg-container">
+    <img src="/assets/images/kitchen_showcase.png" alt="Smart Kitchen" class="hero-bg-img w-100">
+    <div class="hero-overlay"></div>
   </div>
+
+  <!-- Center Hub -->
+  <div class="hub-marker" style="top: 18%; left: 50%;">
+    <div class="hub-label">Center Hub</div>
+    <div class="hub-signal-receiver"></div>
+  </div>
+
+  <!-- Sensors -->
+  
+  <!-- Fire Sensor -->
+  <div class="sensor-marker" style="top: 43%; left: 62%;" data-target="hub">
+    <div class="sensor-icon-circle">
+      <img src="/assets/icons/product/fire.png" alt="Fire Sensor">
+    </div>
+    <div class="sensor-callout left-side">
+      <div class="callout-line"></div>
+      <div class="callout-dot"></div>
+      <span class="callout-text">Fire Sensor</span>
+    </div>
+    <div class="comm-waves" style="--angle: -130deg;">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+
+  <!-- Gas Sensor -->
+  <div class="sensor-marker" style="top: 43%; left: 72%;" data-target="hub">
+    <div class="sensor-icon-circle">
+      <img src="/assets/icons/product/gas.png" alt="Gas Sensor">
+    </div>
+    <div class="sensor-callout">
+      <div class="callout-line"></div>
+      <div class="callout-dot"></div>
+      <span class="callout-text">Gas Sensor</span>
+    </div>
+    <div class="comm-waves" style="--angle: -140deg;">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+
+  <!-- Water Sensor -->
+  <div class="sensor-marker" style="top: 58%; left: 38%;" data-target="hub">
+    <div class="sensor-icon-circle">
+      <img src="/assets/icons/product/humidity.png" alt="Water Sensor">
+    </div>
+    <div class="sensor-callout">
+      <div class="callout-line"></div>
+      <div class="callout-dot"></div>
+      <span class="callout-text">Water Sensor</span>
+    </div>
+    <div class="comm-waves" style="--angle: -70deg;">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+
+  <!-- Vibration/Earthquake Sensor -->
+  <div class="sensor-marker" style="top: 28%; left: 5%;" data-target="hub">
+    <div class="sensor-icon-circle">
+      <img src="/assets/icons/product/seismograph.png" alt="Vibration Sensor">
+    </div>
+    <div class="sensor-callout">
+      <div class="callout-line"></div>
+      <div class="callout-dot"></div>
+      <span class="callout-text">Vibration Detector</span>
+    </div>
+    <div class="comm-waves" style="--angle: -5deg;">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+
 </section>
 
+<!-- Technology Description Section (Simplified) -->
 <!-- Technology Diagram & Description Section -->
 <section class="technology-section py-5 mb-5">
   <div class="container">

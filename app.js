@@ -2,6 +2,7 @@ const express = require("express");
 const path = require("path");
 const cookieParser = require("cookie-parser");
 const session = require("express-session");
+const cors = require("cors"); // Import cors
 const dotenv = require("dotenv");
 const ejsMate = require("ejs-mate");
 const indexRouter = require("./routes/index");
@@ -15,6 +16,12 @@ const app = express();
 app.engine("ejs", ejsMate);
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
+
+// CORS Configuration
+app.use(cors({
+  origin: process.env.FRONTEND_URL || "*", // Allow Vercel frontend
+  credentials: true // Allow cookies/sessions
+}));
 
 app.use((req, res, next) => {
   logger.info(`${req.method} ${req.url}`);
