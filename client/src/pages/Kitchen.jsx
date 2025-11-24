@@ -44,7 +44,7 @@ const Kitchen = () => {
 
       {/* Kitchen Content */}
       <div className="p-6 space-y-6">
-        <h1 className="text-2xl font-semibold text-gray-800">{roomData.room} Overview</h1>
+        <h1 className="text-2xl font-semibold text-gray-800 dark:text-white">{roomData.room} Overview</h1>
 
         {/* Sensor Overview Cards - Pass kitchen sensors */}
         <SensorOverview sensors={sensors} />

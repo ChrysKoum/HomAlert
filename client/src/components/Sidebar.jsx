@@ -15,8 +15,9 @@ import {
   FaAngleDoubleRight,
 } from 'react-icons/fa';
 import logoImage from '../assets/logo/logo_trasperant_without_text.png';
+import logoImageWhite from '../assets/logo/logo_trasperant_without_text_white.png';
 
-const Sidebar = ({ isExpanded, setIsExpanded }) => {
+const Sidebar = ({ isExpanded, setIsExpanded, isDarkMode }) => {
   const topMenuItems = [
     { name: 'Dashboard', icon: FaThLarge, route: '/dashboard' },
     { name: 'Kitchen', icon: FaUtensils, route: '/dashboard/kitchen' },
@@ -46,33 +47,48 @@ const Sidebar = ({ isExpanded, setIsExpanded }) => {
     setIsExpanded(!isExpanded);
   };
 
+  const handleLinkClick = () => {
+    if (window.innerWidth < 768) {
+      setIsExpanded(false);
+    }
+  };
+
   return (
     <aside
       className={
-        `bg-white dark:bg-gray-800 h-screen flex flex-col shadow-md fixed top-0 left-0 z-10 overflow-y-auto overflow-x-hidden \
-        transition-all duration-700 ease-out \
-        ${isExpanded ? 'w-64' : 'w-20'}`
+        `bg-white dark:bg-gray-800 h-screen flex flex-col shadow-md fixed top-0 left-0 z-40 overflow-y-auto overflow-x-hidden \
+        transition-all duration-300 ease-out \
+        ${isExpanded ? 'translate-x-0 w-64' : '-translate-x-full md:translate-x-0 md:w-20 w-64'}`
       }
     >
-      <Link
-        to="/dashboard"
-        className="flex items-center h-20 border-b border-gray-100 dark:border-gray-700 focus:outline-none px-4"
-      >
-        <div
-          className={`flex items-center h-16 w-full ${isExpanded ? 'justify-start' : 'justify-center'}`}
+      <div className="flex items-center justify-between h-20 border-b border-gray-100 dark:border-gray-700 px-4">
+        <Link
+          to="/dashboard"
+          className="flex items-center focus:outline-none"
         >
-          <img src={logoImage} alt="Logo" className="h-10 w-10 object-contain flex-shrink-0" />
-          <span
-            className={`text-xl font-semibold text-gray-700 dark:text-gray-200 overflow-hidden whitespace-nowrap transition-all duration-300 ease-out ${
-              isExpanded
-                ? 'opacity-100 ml-2 max-w-[150px] delay-300'
-                : 'opacity-0 ml-0 max-w-0'
-            }`}
+          <div
+            className={`flex items-center h-16 w-full ${isExpanded ? 'justify-start' : 'justify-center'}`}
           >
-            HomAlert
-          </span>
-        </div>
-      </Link>
+            <img src={isDarkMode ? logoImageWhite : logoImage} alt="Logo" className="h-10 w-10 object-contain flex-shrink-0" />
+            <span
+              className={`text-xl font-semibold text-gray-700 dark:text-gray-200 overflow-hidden whitespace-nowrap transition-all duration-300 ease-out ${
+                isExpanded
+                  ? 'opacity-100 ml-2 max-w-[150px] delay-300'
+                  : 'opacity-0 ml-0 max-w-0 hidden md:block'
+              }`}
+            >
+              HomAlert
+            </span>
+          </div>
+        </Link>
+        {/* Desktop Toggle Button */}
+        <button 
+          onClick={toggleSidebar}
+          className={`hidden md:flex items-center justify-center text-gray-500 hover:text-blue-600 focus:outline-none transition-transform duration-300 ${!isExpanded ? 'rotate-180' : ''}`}
+        >
+           <FaAngleDoubleLeft size={20} />
+        </button>
+      </div>
 
       {/* Top Menu Items */}
       <nav className="flex-grow px-3 py-4 space-y-2">
@@ -80,6 +96,7 @@ const Sidebar = ({ isExpanded, setIsExpanded }) => {
           <NavLink
             key={item.name}
             to={item.route}
+            onClick={handleLinkClick}
             end={item.route === '/dashboard'}
             className={({ isActive }) =>
               `${linkClasses} ${isActive ? activeLinkClasses : ''}`
@@ -104,6 +121,7 @@ const Sidebar = ({ isExpanded, setIsExpanded }) => {
           <NavLink
             key={item.name}
             to={item.route}
+            onClick={handleLinkClick}
             className={({ isActive }) =>
               `${linkClasses} ${isActive ? activeLinkClasses : ''}`
             }

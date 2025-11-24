@@ -12,7 +12,7 @@ const Sensors = () => {
   return (
     <>
       <div className="p-6">
-        <h1 className="text-2xl font-semibold mb-4 text-gray-800">Sensors Management</h1>
+        <h1 className="text-2xl font-semibold mb-4 text-gray-800 dark:text-white">Sensors Management</h1>
         <p className="mb-6 text-gray-600">View and manage your connected sensors.</p>
         <div className="bg-white shadow rounded-lg overflow-hidden">
           <table className="min-w-full divide-y divide-gray-200">

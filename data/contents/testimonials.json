@@ -1,0 +1,38 @@
+{
+    "header": {
+      "title": "What Our Customers Say",
+      "subtitle": "Join thousands of homeowners who trust HomAlert for their safety."
+    },
+    "reviews": [
+      {
+        "rating": 5,
+        "text": "HomAlert gives me such peace of mind when I'm traveling. The app is incredibly intuitive, and I love being able to check on my home from anywhere. The installation was a breeze!",
+        "author": {
+          "name": "Sarah Jenkins",
+          "position": "Homeowner, Seattle",
+          "image": "/assets/icons/user/placeholder.png",
+          "imageAlt": "Sarah Jenkins Profile"
+        }
+      },
+      {
+        "rating": 5,
+        "text": "As a father of two, safety is my top priority. The instant notifications and reliable sensors mean I never have to worry about whether I locked the back door. It's a game-changer for our family.",
+        "author": {
+          "name": "David Chen",
+          "position": "Father of two, Austin",
+          "image": "/assets/icons/user/placeholder.png",
+          "imageAlt": "David Chen Profile"
+        }
+      },
+      {
+        "rating": 5,
+        "text": "I've tried several security systems, but HomAlert stands out for its seamless integration and robust features. The dashboard provides excellent insights, and the support team is top-notch.",
+        "author": {
+          "name": "Elena Rodriguez",
+          "position": "Small Business Owner, Miami",
+          "image": "/assets/icons/user/placeholder.png",
+          "imageAlt": "Elena Rodriguez Profile"
+        }
+      }
+    ]
+  }

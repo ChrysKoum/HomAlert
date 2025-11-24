@@ -29,28 +29,16 @@
             </div>
 
             <!-- Dynamic Buttons on the Right -->
-            <ul class="navbar-nav">
-                <% if (typeof user !== 'undefined' && user) { %>
-                    <!-- Dashboard Button -->
-                    <li class="nav-item">
-                        <a class="nav-link btn btn-primary d-flex align-items-center" href="/dashboard">
-                            <img src="assets/icons/dashboard-icon.png" alt="Dashboard Icon" class="mr-2" style="width: 20px; height: 20px;">
-                            Dashboard
-                        </a>
-                    </li>
-                    <!-- Additional User Links -->
-                    <li class="nav-item"><a class="nav-link" href="/settings">Settings</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/profile">Profile</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/logout">Logout</a></li>
-                <% } else { %>
-                    <!-- Sign In and Sign Up Buttons -->
-                    <li class="nav-item">
-                        <a class="nav-link btn btn-outline-primary mr-2" href="/login">Sign In</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link btn btn-primary" href="/register">Sign Up</a>
-                    </li>
-                <% } %>
+            <ul class="navbar-nav align-items-center">
+                <!-- Always show Dashboard Button for now -->
+                <li class="nav-item">
+                    <a class="btn btn-primary rounded-pill d-flex align-items-center ps-3 pe-1 py-1 gap-2 " href="/dashboard" style="background-color: #3170FD; border: none; padding-right: 5px !important;">
+                        <span class="text-white fw-bold">Dashboard</span>
+                        <div class="bg-white rounded-circle d-flex align-items-center justify-content-center" style="width: 32px; height: 32px;">
+                            <i class="fas fa-user" style="color: #3170FD;"></i>
+                        </div>
+                    </a>
+                </li>
             </ul>
         </div>
     </div>

@@ -208,3 +208,305 @@ display: none;
   height: 30%;
   border-left: 1.5px dashed #4a7cc7;
 }
+
+/* =========================================
+   New Product Hero Section
+   ========================================= */
+.product-hero {
+    width: 100%;
+    min-height: 600px;
+    background-color: #111;
+    overflow: hidden;
+}
+
+.hero-bg-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.hero-bg-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    min-height: 600px;
+    object-fit: cover;
+    filter: brightness(0.8);
+}
+
+/* Center Hub */
+.hub-marker {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hub-label {
+    background-color: #2563eb; /* Blue-600 */
+    color: white;
+    padding: 10px 25px;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    box-shadow: 0 0 20px rgba(37, 99, 235, 0.5);
+    position: relative;
+}
+
+.hub-label::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 8px 8px 0;
+    border-style: solid;
+    border-color: #2563eb transparent transparent transparent;
+}
+
+/* Sensor Markers */
+.sensor-marker {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+    cursor: pointer;
+}
+
+/* Pulse Animation Background */
+.sensor-marker::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background-color: rgba(37, 99, 235, 0.5);
+    border-radius: 50%;
+    z-index: 1;
+    animation: pulse-spread 2s infinite;
+}
+
+@keyframes pulse-spread {
+    0% {
+        width: 100%;
+        height: 100%;
+        opacity: 0.8;
+    }
+    100% {
+        width: 250%;
+        height: 250%;
+        opacity: 0;
+    }
+}
+
+.sensor-icon-circle {
+    width: 50px;
+    height: 50px;
+    background-color: rgba(37, 99, 235, 0.9); /* Blue */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 15px rgba(37, 99, 235, 0.6);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    position: relative;
+    z-index: 2;
+}
+
+.sensor-icon-circle img {
+    width: 36px;
+    height: 36px;
+    /* filter: brightness(0) invert(1); Removed to show original icon colors */
+}
+
+/* Hover Effects: Change to Purple */
+.sensor-marker:hover .sensor-icon-circle {
+    transform: scale(1.1);
+    background-color: #9333ea; /* Purple */
+    box-shadow: 0 0 25px rgba(147, 51, 234, 0.8);
+}
+
+.sensor-marker:hover::before {
+    background-color: rgba(147, 51, 234, 0.5); /* Purple Pulse */
+}
+
+/* Hub Color Change on Sensor Hover */
+.product-hero:has(.sensor-marker:hover) .hub-label {
+    background-color: #9333ea;
+    box-shadow: 0 0 20px rgba(147, 51, 234, 0.5);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-hero:has(.sensor-marker:hover) .hub-label::after {
+    border-color: #9333ea transparent transparent transparent;
+    transition: border-color 0.3s ease;
+}
+
+/* Callout Line & Text */
+.sensor-callout {
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    margin-left: 15px;
+    width: max-content;
+}
+
+/* Left Side Callout */
+.sensor-callout.left-side {
+    left: auto;
+    right: 100%;
+    margin-left: 0;
+    margin-right: 15px;
+    flex-direction: row-reverse;
+}
+
+.sensor-callout.left-side .callout-line {
+    margin-right: 0;
+    margin-left: 10px;
+}
+
+.sensor-callout.left-side .callout-dot {
+    left: auto;
+    right: -3px;
+}
+
+.sensor-marker:hover .sensor-callout {
+    opacity: 1;
+    transform: translateY(-50%) translateX(5px);
+}
+
+.sensor-marker:hover .sensor-callout.left-side {
+    transform: translateY(-50%) translateX(-5px);
+}
+
+.callout-line {
+    width: 40px;
+    height: 2px;
+    background-color: #2563eb;
+    margin-right: 10px;
+    position: relative;
+    transition: background-color 0.3s ease;
+}
+
+.sensor-marker:hover .callout-line {
+    background-color: #9333ea;
+}
+
+.callout-dot {
+    width: 6px;
+    height: 6px;
+    background-color: #2563eb;
+    border-radius: 50%;
+    position: absolute;
+    left: -3px; /* Half of dot width */
+    top: 50%;
+    transform: translateY(-50%);
+    transition: background-color 0.3s ease;
+}
+
+.sensor-marker:hover .callout-dot {
+    background-color: #9333ea;
+}
+
+.callout-text {
+    color: white;
+    font-weight: 600;
+    font-size: 1rem;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+    background: rgba(0,0,0,0.6);
+    padding: 4px 10px;
+    border-radius: 4px;
+}
+
+/* Communication Waves */
+.comm-waves {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300px; /* Distance to animate */
+    height: 60px;
+    pointer-events: none;
+    transform-origin: left center;
+    transform: translateY(-50%) rotate(var(--angle));
+    overflow: hidden;
+    opacity: 0;
+    transition: opacity 0.3s;
+    z-index: 1;
+}
+
+.sensor-marker:hover .comm-waves {
+    opacity: 1;
+}
+
+.comm-waves span {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 20px;
+    height: 40px;
+    border-right: 3px solid rgba(255, 255, 255, 0.8);
+    border-radius: 0 100% 100% 0 / 0 50% 50% 0; /* Arc shape */
+    transform: translateY(-50%);
+    opacity: 0;
+}
+
+/* Animation for waves */
+@keyframes wave-travel {
+    0% {
+        left: 0;
+        opacity: 0;
+        transform: translateY(-50%) scale(0.5);
+    }
+    20% {
+        opacity: 1;
+    }
+    100% {
+        left: 100%;
+        opacity: 0;
+        transform: translateY(-50%) scale(1.2);
+    }
+}
+
+.sensor-marker:hover .comm-waves span:nth-child(1) {
+    animation: wave-travel 1.5s infinite linear;
+    animation-delay: 0s;
+}
+.sensor-marker:hover .comm-waves span:nth-child(2) {
+    animation: wave-travel 1.5s infinite linear;
+    animation-delay: 0.5s;
+}
+.sensor-marker:hover .comm-waves span:nth-child(3) {
+    animation: wave-travel 1.5s infinite linear;
+    animation-delay: 1s;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .product-hero {
+        min-height: 400px;
+    }
+    .sensor-icon-circle {
+        width: 35px;
+        height: 35px;
+    }
+    .sensor-icon-circle img {
+        width: 18px;
+        height: 18px;
+    }
+    .hub-label {
+        font-size: 0.9rem;
+        padding: 6px 15px;
+    }
+    .callout-text {
+        font-size: 0.8rem;
+    }
+}

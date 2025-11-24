@@ -2,16 +2,31 @@ const express = require("express");
 const router = express.Router();
 const logger = require("../middleware/logger");
 const teamMembers = require("../data/team/members");
-const testimonials = require("../data/reviews/testimonials");
 const sensors = require("../data/product/sensors");
 const faqItems = require("../data/faq/questions");
 const centerHub = sensors.find(sensor => sensor.title === "Center Hub:");
-
+// Here becarefull here you deleted the old testimonials and didn't match with the new structure and getting error on the faq page
+// const testimonials = require("../data/reviews/testimonials.json");
+// You will remove this and replace all the logic on other pages with your new partials/testimonials to match your new data structure
+const hero = require('../data/contents/hero.json');
+const features = require('../data/contents/features.json');
+const whyChooseUs = require('../data/contents/whyChooseUs');
+const testimonials = require('../data/contents/testimonials.json');
 // Home route
-router.get("/", (req, res) => {
-  logger.info("Home route accessed");
-  res.render("home", { title: "Home", testimonials });
+router.get("/", (req, res, next) => {
+  try {
+    res.render("home", { 
+      hero,
+      features,
+      whyChooseUs,
+      testimonials 
+    });
+  } catch (error) {
+    logger.error(`Error in home route: ${error.message}`);
+    next(error);
+  }
 });
+
 
 // About Us Route
 router.get("/about", (req, res) => {
@@ -22,7 +37,7 @@ router.get("/about", (req, res) => {
 // Contact Us Route
 router.get("/contact", (req, res) => {
   logger.info("Contact Us route accessed");
-  res.render("contact-us.ejs", { testimonials });
+  res.render("contact-us.ejs");
 });
 
 // ===========================================

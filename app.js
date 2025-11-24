@@ -1,6 +1,8 @@
 const express = require("express");
 const path = require("path");
 const cookieParser = require("cookie-parser");
+const session = require("express-session");
+const cors = require("cors"); // Import cors
 const dotenv = require("dotenv");
 const ejsMate = require("ejs-mate");
 const indexRouter = require("./routes/index");
@@ -15,6 +17,12 @@ app.engine("ejs", ejsMate);
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
+// CORS Configuration
+app.use(cors({
+  origin: process.env.FRONTEND_URL || "*", // Allow Vercel frontend
+  credentials: true // Allow cookies/sessions
+}));
+
 app.use((req, res, next) => {
   logger.info(`${req.method} ${req.url}`);
   next();
@@ -24,6 +32,27 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
+
+// Session Configuration
+app.use(
+  session({
+    secret: process.env.SESSION_SECRET || "thisshouldbeabettersecret",
+    resave: false,
+    saveUninitialized: false,
+    cookie: {
+      httpOnly: true,
+      // secure: true, // Uncomment if using HTTPS
+      expires: Date.now() + 1000 * 60 * 60 * 24 * 7, // 1 week
+      maxAge: 1000 * 60 * 60 * 24 * 7,
+    },
+  })
+);
+
+// Middleware to make user available to all templates
+app.use((req, res, next) => {
+  res.locals.currentUser = req.session.user;
+  next();
+});
 
 app.get('/dashboard', (req, res) => {
   // Redirect to Vite development server

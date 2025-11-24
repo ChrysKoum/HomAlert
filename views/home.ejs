@@ -1,76 +1,289 @@
-<!-- ===========================================
-     Home View
-     ===========================================
-     This file serves as the home page of the web dashboard.
-     Key actions:
-     1. Include the necessary layout and partials.
-     2. Display real-time data and user interactions.
-     3. Ensure the page is styled consistently with the overall design.
-     ===========================================
--->
 <!-- Use the boilerplate layout for consistent structure it will retrieve the layout of the boilerplate file -->
 <% layout('layouts/boilerplate') %>
 
-     <section class="vh-100 d-flex align-items-center">
-          <div class="container text-center">
-               <h1 class="display-4">Stay Safe, Stay Alert</h1>
-               <p class="lead">Protecting What Matters Most</p>
-               <a href="#" class="btn btn-primary btn-lg">Learn More</a>
-          </div>
-     </section>
+<!-- Here if you use vh-100 that is where you tell to take 100% of the height screen it will be more center vertically -->
+<div class="hero-section d-flex align-items-center"> <!-- vh-100 -->
+  <div class="container">
+    <div class="row align-items-center justify-content-center">
 
-     <section class="py-5">
-          <div class="container text-center">
-               <h2 class="mb-4">Our Key Benefits</h2>
-               <div class="row">
-                    <div class="col-md-4">
-                         <div class="p-3">
-                              <img src="path/to/your/image1.png" class="img-fluid mb-3" alt="Feature 1">
-                              <h3>Feature 1</h3>
-                              <p>Details about feature 1.</p>
-                         </div>
-                    </div>
-                    <div class="col-md-4">
-                         <div class="p-3">
-                              <img src="path/to/your/image2.png" class="img-fluid mb-3" alt="Feature 2">
-                              <h3>Feature 2</h3>
-                              <p>Details about feature 2.</p>
-                         </div>
-                    </div>
-                    <div class="col-md-4">
-                         <div class="p-3">
-                              <img src="path/to/your/image3.png" class="img-fluid mb-3" alt="Feature 3">
-                              <h3>Feature 3</h3>
-                              <p>Details about feature 3.</p>
-                         </div>
-                    </div>
-               </div>
-          </div>
-     </section>
+      <!-- Text Content Section -->
+      <div class="col-12 col-md-6 order-2 order-md-1 ">
+        <h1 class="fw-bold text-center header-text">
+          <% const [firstPart, secondPart] = hero.title.main.split(',') %>
+          <%= firstPart %> <span class="text-primary"><%= secondPart.trim() %></span>
+          <br><%= hero.title.subtitle %>
+        </h1>
+        <p class="lead mt-3 text-secondary fw-normal fs-5 text-center text-md-start paragraph-text">
+          <%= hero.description %>
+        </p>
+        <a href="<%= hero.cta.url %>" class="btn btn-primary btn-lg mt-3 rounded-5 px-4 d-block d-md-inline-block mx-auto mx-md-0">
+          <%= hero.cta.text %>
+        </a>
+      </div>
 
-     <section class="py-5 bg-light">
-          <div class="container text-center">
-               <h2 class="mb-4">Customer Testimonials</h2>
-               <div class="row">
-                    <div class="col-md-6">
-                         <blockquote class="blockquote">
-                              <p class="mb-0">Testimonial 1.</p>
-                              <footer class="blockquote-footer">Customer 1</footer>
-                         </blockquote>
-                    </div>
-                    <div class="col-md-6">
-                         <blockquote class="blockquote">
-                              <p class="mb-0">Testimonial 2.</p>
-                              <footer class="blockquote-footer">Customer 2</footer>
-                         </blockquote>
-                    </div>
-               </div>
-          </div>
-     </section>
+      <!-- Image Section -->
+      <div class="col-12 col-md-6 order-1 order-md-2 ">
+        <img src="<%= hero.image.src %>" alt="<%= hero.image.alt %>" class="img-fluid w-100">
+      </div>
 
-     <section class="py-5">
-          <div class="container text-center">
-               <h2 class="mb-4">Join our mission for safety</h2>
-               <a href="#" class="btn btn-primary btn-lg">Get Started</a>
+    </div>
+  </div>
+</div>
+
+<section class="our-key-benefits-section text-center py-5">
+  <div class="container">
+    <h3 class="mb-0 fs-3"><%= features.header.subtitle %></h3>
+    <svg width="212" height="12" viewBox="0 0 212 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0.226497 5.99963L5.99963 11.7735L11.7735 6.00037L6.00037 0.226497L0.226497 5.99963ZM211.773 6.01313L206 0.239255L200.227 6.01239L206 11.7863L211.773 6.01313ZM5.99994 7L206 7.01276L206 5.01276L6.00006 5L5.99994 7Z" fill="#2A61E2" />
+    </svg>
+    <h2 class="text-primary fs-1 mt-3"><%= features.header.title %></h2>
+    <p class="fs-5 mt-3"><%= features.header.description %></p>
+  </div>
+
+  <!-- Circular Layout for Large Screens -->
+  <div class="position-relative d-none d-xxl-block mt-5 " style="height: 600px;">
+    <!-- Center Circle -->
+    <div class="position-absolute start-50 top-50 translate-middle d-flex align-items-center justify-content-center bg-white rounded-circle" style="width: 200px; height: 200px; border: 0.5px dashed #3A70EF;">
+      <img src="<%= features.centerImage.src %>" alt="<%= features.centerImage.alt %>" style="width: 100px; transform: translate(6%,0%);">
+    </div>
+
+    <!-- Features with connecting lines -->
+    <!-- Top Feature -->
+    <div class="position-absolute start-50" style="width: 1px; height: 120px; background: none; border-left: 0.5px dashed #3A70EF; top: 22%; transform: translateX(-50%);">
+    </div>
+    <div class="position-absolute start-50" style="transform: translateX(-50%); top: 0; text-align: center;">
+      <img src="<%= features.features[0].icon %>" alt="<%= features.features[0].alt %>" style="width: 60px;">
+      <h4 class="mt-1" style="color:#3A70EF; font-size: 1.25rem;"><%= features.features[0].title %></h4>
+      <p><%= features.features[0].description %></p>
+    </div>
+
+    <!-- Top Left Feature -->
+    <div class="position-absolute" style="transform: translateX(-15%); top: 20%; left: 5%; text-align: center;">
+      <img src="<%= features.features[1].icon %>" alt="<%= features.features[1].alt %>" style="width: 60px;">
+      <h4 class="mt-1" style="color: #3A70EF; font-size: 1.25rem;"><%= features.features[1].title %></h4>
+      <p><%= features.features[1].description %></p>
+    </div>
+    <div class="position-absolute" style="width: 180px; height: 1px; background: none; border-top: 0.5px dashed #3A70EF; top: 43%; left: 33.1%; transform: rotate(13deg);">
+    </div>
+
+    <!-- Top Right Feature -->
+    <div class="position-absolute" style="top: 20%; right: 5%; text-align: center;">
+      <img src="<%= features.features[2].icon %>" alt="<%= features.features[2].alt %>" style="width: 60px;">
+      <h4 class="mt-1" style="color: #3A70EF; font-size: 1.25rem;"><%= features.features[2].title %></h4>
+      <p><%= features.features[2].description %></p>
+    </div>
+    <div class="position-absolute" style="width: 180px; height: 1px; background: none; border-top: 0.5px dashed #3A70EF; top: 43%; left: 53%; transform: rotate(-13deg);">
+    </div>
+
+    <!-- Bottom Feature -->
+    <div class="position-absolute start-50" style="width: 1px; height: 100px; background: none; border-left: 0.5px dashed #3A70EF; top: 60%; transform: translateX(-50%);">
+    </div>
+    <div class="position-absolute start-50" style="transform: translate(-50%,10%); bottom: 0; text-align: center;">
+      <img src="<%= features.features[3].icon %>" alt="<%= features.features[3].alt %>" style="width: 60px;">
+      <h4 class="mt-1" style="color: #3A70EF; font-size: 1.25rem;"><%= features.features[3].title %></h4>
+      <p><%= features.features[3].description %></p>
+    </div>
+
+    <!-- Bottom Left Feature -->
+    <div class="position-absolute" style="bottom: 10%; left: 5%; text-align: center;">
+      <img src="<%= features.features[4].icon %>" alt="<%= features.features[4].alt %>" style="width: 60px;">
+      <h4 class="mt-1" style="color: #3A70EF; font-size: 1.25rem;"><%= features.features[4].title %></h4>
+      <p><%= features.features[4].description %></p>
+    </div>
+    <div class="position-absolute" style="width: 205px; height: 1px; background: none; border-top: 0.5px dashed #3A70EF; top: 65%; left: 32.5%; transform: rotate(-210deg);">
+    </div>
+
+    <!-- Bottom Right Feature -->
+    <div class="position-absolute" style="transform: translateX(5%); bottom: 10%; right: 5%; text-align: center;">
+      <img src="<%= features.features[5].icon %>" alt="<%= features.features[5].alt %>" style="width: 60px;">
+      <h4 class="mt-1" style="color: #3A70EF; font-size: 1.25rem;"><%= features.features[5].title %></h4>
+      <p><%= features.features[5].description %></p>
+    </div>
+    <div class="position-absolute" style="width: 205px; height: 1px; background: none; border-top: 0.5px dashed #3A70EF; top: 64.5%; right: 32%; transform: rotate(210deg);">
+    </div>
+  </div>
+
+  <!-- Column Layout for Small Screens -->
+  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 d-xxl-none mt-5">
+    <% features.features.forEach(feature => { %>
+      <div class="col text-center">
+        <img src="<%= feature.icon %>" alt="<%= feature.alt %>" style="width: 60px;">
+        <h4 class="mt-1" style="color: #3A70EF; font-size: 1.25rem;"><%= feature.title %></h4>
+        <p><%= feature.description %></p>
+      </div>
+    <% }) %>
+  </div>
+</section>
+
+<section class="Why-Choose-Us-Section text-center py-5">
+  <div class="container" id="responsive-container">
+    <h3 class="mb-0 fs-3"><%= whyChooseUs.header.subtitle %></h3>
+
+    <!-- Decorative SVG -->
+    <svg width="212" height="12" viewBox="0 0 212 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0.226497 5.99963L5.99963 11.7735L11.7735 6.00037L6.00037 0.226497L0.226497 5.99963ZM211.773 6.01313L206 0.239255L200.227 6.01239L206 11.7863L211.773 6.01313ZM5.99994 7L206 7.01276L206 5.01276L6.00006 5L5.99994 7Z" fill="#2A61E2" />
+    </svg>
+
+    <h2 class="text-primary fs-1 mt-3"><%= whyChooseUs.header.title %></h2>
+    <p class="fs-5 mt-3"><%= whyChooseUs.header.description %></p>
+
+    <!-- Wave Image (visible only on medium and larger screens) -->
+    <div class="position-relative mt-4">
+      <img src="<%= whyChooseUs.waveImage.src %>" 
+           alt="<%= whyChooseUs.waveImage.alt %>" 
+           class="d-none d-md-block w-100">
+
+      <!-- Features Row -->
+      <div class="row justify-content-center d-none d-md-flex align-items-stretch position-absolute top-50 start-50 translate-middle w-100">
+        <% whyChooseUs.features.forEach(feature => { %>
+          <div class="col-md-3 text-center" style="transform: <%= feature.transform %>;">
+            <div class="feature-item d-flex flex-column align-items-center justify-content-between">
+              <% if (feature.order === 'content-first') { %>
+                <div class="mt-3 py-2">
+                  <h4 class="text-primary fs-5 mb-2"><%= feature.title %></h4>
+                  <p class="fs-6 mb-0"><%= feature.description %></p>
+                </div>
+                <img src="<%= feature.icon %>" 
+                     alt="<%= feature.alt %>" 
+                     class="img-fluid shadow rounded-3 p-2" 
+                     style="width: 80px; height: 80px; background: white;">
+              <% } else { %>
+                <img src="<%= feature.icon %>" 
+                     alt="<%= feature.alt %>" 
+                     class="img-fluid shadow rounded-3 p-2" 
+                     style="width: 80px; height: 80px; background: white;">
+                <div class="mt-3 py-2">
+                  <h4 class="text-primary fs-5 mb-2"><%= feature.title %></h4>
+                  <p class="fs-6 mb-0"><%= feature.description %></p>
+                </div>
+              <% } %>
+            </div>
           </div>
-     </section>
+        <% }) %>
+      </div>
+
+      <!-- Features for Small Screens -->
+      <div class="row row-cols-1 row-cols-md-2 g-4 d-md-none mt-3 mt-md-5">
+        <% whyChooseUs.features.forEach(feature => { %>
+          <div class="col text-center mb-4">
+            <img src="<%= feature.icon %>" 
+                 alt="<%= feature.alt %>"
+                 style="width: 80px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); border-radius: 15px; background: white; padding: 10px;">
+            <h4 style="color: #3A70EF; font-size: 20px; margin-top: 1rem;"><%= feature.title %></h4>
+            <p style="font-size: 15px;"><%= feature.description %></p>
+          </div>
+        <% }) %>
+      </div>
+    </div>
+  </div>
+</section>
+
+<%- include('partials/testimonials') %>
+
+<%- include('partials/join-us') %>
+
+<!-- This is not usued and not needed for the styling of the button if i am not mistaken as i dont see a class with "n1"-->
+  <script>
+    "use strict"
+    const signUpButton = document.querySelector('.n1');
+
+    function changeColor(button) {
+      button.style.backgroundColor = '#0d6efd';
+      button.style.color = 'white';
+    }
+
+    function resetColor(button) {
+      setTimeout(() => {
+        button.style.backgroundColor = 'white';
+        button.style.color = 'black';
+      }, 50);
+    }
+  </script>
+
+<!-- Like Scripts it will be more clean to be on the public/style/home.css and then import it here -->
+  <style>
+    /* (extra small screens, e.g., below 576px) */
+    /* Extra small screens (below 576px) */
+    .header-text {
+      font-size: 1.6rem;
+      text-align: center;
+      max-width: 100%;
+    }
+
+    @media (max-width:575px) {
+      .paragraph-text {
+        font-size: 1rem !important;
+      }
+    }
+
+    /* Small screens (576px and up) */
+    @media (min-width: 576px) and (max-width: 750.98px) {
+      .header-text {
+        font-size: 1.8rem;
+        text-align: center;
+      }
+
+      .paragraph-text {
+        font-size: 1rem !important;
+      }
+      
+    }
+
+
+    @media (max-width :985px){
+      .feature-item img {
+        width: 50px !important;
+        height: 50px !important;
+      }
+
+      #responsive-container > div > div.row.justify-content-center.d-none.d-md-flex.align-items-stretch.position-absolute.top-50.start-50.translate-middle.w-100 > div:nth-child(1) > div{
+        transform: translateY(0px);
+      }
+      #responsive-container > div > div.row.justify-content-center.d-none.d-md-flex.align-items-stretch.position-absolute.top-50.start-50.translate-middle.w-100 > div:nth-child(1) > div > div > h4{
+        font-size: 1rem !important;
+      }
+      #responsive-container > div > div.row.justify-content-center.d-none.d-md-flex.align-items-stretch.position-absolute.top-50.start-50.translate-middle.w-100 > div:nth-child(1) > div > div > p{
+        font-size: smaller !important;
+      }
+
+      #responsive-container > div > div.row.justify-content-center.d-none.d-md-flex.align-items-stretch.position-absolute.top-50.start-50.translate-middle.w-100 > div:nth-child(2) > div{
+        transform: translateY(0px);
+      }
+      #responsive-container > div > div.row.justify-content-center.d-none.d-md-flex.align-items-stretch.position-absolute.top-50.start-50.translate-middle.w-100 > div:nth-child(2) > div > div > h4{
+        font-size: 1rem !important;
+      }
+      #responsive-container > div > div.row.justify-content-center.d-none.d-md-flex.align-items-stretch.position-absolute.top-50.start-50.translate-middle.w-100 > div:nth-child(2) > div > div > p{
+        font-size: smaller !important;
+      }
+
+      #responsive-container > div > div.row.justify-content-center.d-none.d-md-flex.align-items-stretch.position-absolute.top-50.start-50.translate-middle.w-100 > div:nth-child(3) > div{
+        transform: translateY(15px);
+      }
+      #responsive-container > div > div.row.justify-content-center.d-none.d-md-flex.align-items-stretch.position-absolute.top-50.start-50.translate-middle.w-100 > div:nth-child(3) > div > div > h4{
+        font-size: 1rem !important;
+      }
+
+      #responsive-container > div > div.row.justify-content-center.d-none.d-md-flex.align-items-stretch.position-absolute.top-50.start-50.translate-middle.w-100 > div:nth-child(3) > div > div > p{
+        font-size: smaller !important;
+      }
+
+      #responsive-container > div > div.row.justify-content-center.d-none.d-md-flex.align-items-stretch.position-absolute.top-50.start-50.translate-middle.w-100 > div:nth-child(4) > div{
+        transform: translateY(15px);
+      }
+      #responsive-container > div > div.row.justify-content-center.d-none.d-md-flex.align-items-stretch.position-absolute.top-50.start-50.translate-middle.w-100 > div:nth-child(4) > div > div > h4{
+        font-size: 1rem !important;
+      }
+      #responsive-container > div > div.row.justify-content-center.d-none.d-md-flex.align-items-stretch.position-absolute.top-50.start-50.translate-middle.w-100 > div:nth-child(4) > div > div > p{
+        font-size: smaller !important;
+      }
+    }
+    /* Large screens (1300px and up) */
+    @media (min-width: 1300px) {
+      .header-text {
+        text-align: left !important;
+        max-width: 560px;
+        font-size: 3.1rem;
+      }
+
+    }
+  </style>

@@ -12,8 +12,8 @@ const Alerts = () => {
   return (
     <>
       <div className="p-6">
-        <h1 className="text-2xl font-semibold mb-4 text-gray-800">Active System Alerts</h1>
-        <p className="mb-6 text-gray-600">Critical and ongoing alerts requiring attention.</p>
+        <h1 className="text-2xl font-semibold mb-4 text-gray-800 dark:text-white">Active System Alerts</h1>
+        <p className="mb-6 text-gray-600 dark:text-white">Critical and ongoing alerts requiring attention.</p>
         <div className="space-y-4">
           {activeAlerts.length > 0 ? (
             activeAlerts.map((alert) => (

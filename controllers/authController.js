@@ -78,14 +78,19 @@ const authController = {
         email: user.email,
         displayName: user.displayName || email.split('@')[0],
         photoURL: user.photoURL || '/assets/default-avatar.png',
-        emailVerified: user.emailVerified
+        emailVerified: user.emailVerified,
+        createdAt: user.metadata?.creationTime || new Date().toISOString()
       };
+
+      // Store user data in session
+      req.session.user = userData;
 
       // Create a script to inject into the dashboard page
       const userScript = `
         <script>
           localStorage.setItem('homalert_user', JSON.stringify(${JSON.stringify(userData)}));
-          localStorage.setItem('authToken', '${user.uid}'); // Set auth token for session tracking
+          localStorage.setItem('authToken', '${user.uid}');
+          console.log('User data loaded:', ${JSON.stringify(userData)});
         </script>
       `;
 
@@ -93,20 +98,16 @@ const authController = {
       res.locals.userScript = userScript;
       
       logger.info(`User logged in: ${user.email}`);
-      return res.redirect("/dashboard");
+      
+      // Save session before redirecting to ensure data is persisted
+      req.session.save(() => {
+        return res.redirect("/dashboard");
+      });
     } catch (error) {
-      logger.error(`Login error: ${error.code} - ${error.message}`); // Log the error code and message
-      let errorMessage = "An unexpected error occurred. Please try again.";
-      if (error.code === "auth/invalid-credential" || error.code === "auth/user-not-found" || error.code === "auth/wrong-password") {
-        errorMessage = "Invalid username or password. Please try again.";
-      } else if (error.code === "auth/too-many-requests") {
-        errorMessage = "Too many login attempts. Please try again later.";
-      }
-      // Add other specific Firebase error codes as needed
-
+      logger.error(`Login error: ${error.message}`);
       return res.status(401).render("auth/sign-in", {
         title: "Login",
-        error: errorMessage,
+        error: "Invalid email or password. Please try again.",
         email: email,
       });
     }
@@ -116,9 +117,20 @@ const authController = {
   logout: async (req, res, next) => {
     try {
       await signOutUser();
-      // For session-based auth: req.session.destroy();
-      logger.info("User logged out successfully");
-      res.redirect("/login");
+      
+      // Destroy the session
+      req.session.destroy((err) => {
+        if (err) {
+          logger.error(`Session destruction error: ${err.message}`);
+          return next(err);
+        }
+        
+        // Clear the session cookie
+        res.clearCookie('connect.sid'); // Default name is connect.sid
+        
+        logger.info("User logged out successfully");
+        res.redirect("/login");
+      });
     } catch (error) {
       logger.error(`Logout error: ${error.message}`);
       next(error); // Pass to global error handler
