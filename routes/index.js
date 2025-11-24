@@ -17,6 +17,6 @@ router.use("/user", userRoutes); // User management routes
 router.use("/device", deviceRoutes); // Device-related routes
 router.use("/dashboard", dashboardRoutes); // Dashboard-related routes
 router.use("/test", testRoutes); // Test routes
-router.use("/api", apiRoutes); // Test routes
+router.use("/api", apiRoutes); // API routes
 
 module.exports = router;

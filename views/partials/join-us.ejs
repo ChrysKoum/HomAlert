@@ -1,14 +1,34 @@
-<!--join our mission-->
-<section class="d-flex align-items-center">
-    <div class="container text-center">
-         <h2>Join our mission for safety</h2>
-         <p class="py-2">Become a customer, partner, or follow our journey on social media</p>
-         <div class="col">
-              <a href="/" class="btn btn-primary btn-lg rounded-pill" aria-label="Sign up for our services">Sing Up</a>
-              <a href="/" class="btn btn-accent btn-lg rounded-pill" aria-label="Lenn more about our services">Learn More</a>
-         </div>
-         
+<section class="mission-section text-center py-5">
+  <div class="container">
+    <h2 class="mb-3 fw-bold text-primary">Join Our Mission for Safety</h2>
+    <p class="lead text-muted mb-4">
+      Become a valued customer, partner with us, or follow our journey on social media.
+    </p>
+    <div class="d-flex flex-column flex-md-row justify-content-center align-items-center gap-3">
+      <a href="/register" class="btn btn-primary btn-md px-5 py-3 rounded-pill shadow-sm">
+        <i class="fas fa-user-plus me-2"></i> Sign Up
+      </a>
+      <a href="/product" class="btn btn-outline-primary btn-md px-5 py-3 rounded-pill shadow-sm" 
+         onmouseenter="changeColor(this)" 
+         onmouseleave="resetColor(this)">
+        <i class="fas fa-info-circle me-2"></i> Learn More
+      </a>
     </div>
+  </div>
 </section>
+<script>
+  "use strict";
+  function changeColor(button) {
+    button.style.backgroundColor = "#0d6efd";
+    button.style.color = "white";
+  }
+
+  function resetColor(button) {
+    setTimeout(() => {
+      button.style.backgroundColor = "transparent";
+      button.style.color = "#0d6efd";
+    }, 50);
+  }
+</script>
 
 
