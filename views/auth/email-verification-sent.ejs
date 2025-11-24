@@ -1,0 +1,22 @@
+<!-- filepath: views/auth/email-verification-sent.ejs -->
+<%- layout('layouts/boilerplate') %>
+
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8 col-lg-6">
+      <div class="card shadow-sm">
+        <div class="card-body p-4 p-md-5 text-center">
+          <h2 class="card-title mb-4">Verify Your Email</h2>
+          <p class="mb-3">
+            A verification email has been sent to <strong><%= email %></strong>.
+          </p>
+          <p class="mb-4">
+            Please check your inbox (and spam folder) and click the link provided to complete your registration.
+          </p>
+          <a href="/login" class="btn btn-primary">Back to Login</a>
+          <!-- Optional: Add a resend button if needed, linking to a resend endpoint -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

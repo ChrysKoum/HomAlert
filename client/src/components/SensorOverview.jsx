@@ -1,49 +1,76 @@
-// client/src/components/SensorOverview.jsx
-
 import React from 'react';
-import { FaTint, FaGasPump, FaFireAlt, FaSignal } from 'react-icons/fa';
+import LargeSensorCard from './sensors/LargeSensorCard';
+import SmallSensorCard from './sensors/SmallSensorCard';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
-const SensorCard = ({ sensor, data }) => {
-  let IconComponent;
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/navigation'; // Ensure navigation CSS is imported
 
-  // Determine which icon to use based on sensor type
-  switch (sensor) {
-    case 'water':
-      IconComponent = FaTint;
-      break;
-    case 'gas':
-      IconComponent = FaGasPump;
-      break;
-    case 'fire':
-      IconComponent = FaFireAlt;
-      break;
-    default:
-      IconComponent = FaSignal;
-  }
-
-  return (
-    <div className="bg-white shadow rounded-lg p-4 flex items-center space-x-4">
-      <IconComponent className="h-8 w-8 text-blue-500" />
-      <div>
-        <h3 className="text-lg font-semibold">{sensor.charAt(0).toUpperCase() + sensor.slice(1)} Sensor</h3>
-        <p className="text-sm text-gray-600">{data.moistureLevel || data.ppm}</p>
-        <div className="flex items-center">
-          <span className={`text-${data.indicator.includes('+') ? 'green' : 'red'}-500`}>
-            {data.indicator.includes('+') ? '▲' : '▼'} {data.indicator}
-          </span>
-          <span className="text-xs text-gray-500 ml-2">Avg: {data.average || 'N/A'}</span>
-        </div>
-      </div>
-    </div>
-  );
-};
+// Import Navigation module
+import { Navigation } from 'swiper/modules';
 
 const SensorOverview = ({ sensors }) => {
+  const getCardType = (sensorKey) => {
+    // ... existing getCardType logic ...
+    switch (sensorKey?.toLowerCase()) {
+      case 'water':
+      case 'gas':
+      case 'temperature':
+      case 'humidity':
+        return 'large';
+      case 'fire':
+      case 'motion':
+      case 'smoke':
+      case 'door':
+      case 'window':
+      case 'earthquake':
+        return 'small';
+      default:
+        if (sensors[sensorKey]?.value || sensors[sensorKey]?.moistureLevel || sensors[sensorKey]?.ppm) {
+            return 'large';
+        }
+        return 'small';
+    }
+  };
+
+  const sensorKeys = Object.keys(sensors);
+
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-      {Object.keys(sensors).map((sensor) => (
-        <SensorCard key={sensor} sensor={sensor} data={sensors[sensor]} />
-      ))}
+    // Added w-full for robustness, ensuring it takes available width
+    <div className="overflow-hidden max-w-screen-xl relative group">
+      <Swiper
+        modules={[Navigation]} // Add the Navigation module
+        spaceBetween={16}
+        slidesPerView={'auto'}
+        navigation // Enable navigation arrows
+        className="py-2"
+        // Optional: Add custom class names for arrows if needed for styling
+        // navigation={{
+        //   nextEl: '.swiper-button-next',
+        //   prevEl: '.swiper-button-prev',
+        // }}
+      >
+        {sensorKeys.map((sensorKey) => {
+          const cardType = getCardType(sensorKey);
+          const sensorData = sensors[sensorKey];
+
+          return (
+            <SwiperSlide key={sensorKey} style={{ width: 'auto' }}>
+              {cardType === 'large' ? (
+                <LargeSensorCard sensorType={sensorKey} data={sensorData} />
+              ) : (
+                <SmallSensorCard sensorType={sensorKey} data={sensorData} />
+              )}
+            </SwiperSlide>
+          );
+        })}
+        {/* Swiper automatically adds divs for navigation buttons when 'navigation' is true */}
+        {/* You can add custom styled buttons and link them via navigation prop options */}
+        {/* Example for custom buttons (requires more setup): */}
+        {/* <div className="swiper-button-prev absolute top-1/2 left-2 transform -translate-y-1/2 z-10 cursor-pointer p-2 bg-white rounded-full shadow opacity-0 group-hover:opacity-100 transition-opacity">Prev</div> */}
+        {/* <div className="swiper-button-next absolute top-1/2 right-2 transform -translate-y-1/2 z-10 cursor-pointer p-2 bg-white rounded-full shadow opacity-0 group-hover:opacity-100 transition-opacity">Next</div> */}
+      </Swiper>
     </div>
   );
 };
