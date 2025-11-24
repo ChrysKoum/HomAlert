@@ -73,8 +73,10 @@ app.use((req, res, next) => {
 });
 
 app.get('/dashboard', (req, res) => {
-  // Redirect to Vite development server
-  res.redirect('http://localhost:5173/dashboard');
+  // Redirect to frontend app. Use FRONTEND_URL if set (works for Vercel),
+  // otherwise fall back to local dev URL. Strip trailing slash to avoid double slashes.
+  const frontendUrl = (process.env.FRONTEND_URL || 'http://localhost:5173').replace(/\/$/, '');
+  res.redirect(`${frontendUrl}/dashboard`);
 });
 
 app.use("/", indexRouter);
