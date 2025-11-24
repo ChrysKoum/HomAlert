@@ -13,7 +13,8 @@ const App = () => {
     if (savedMode) {
       return savedMode === 'true';
     }
-    return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    // Default to light mode (false) if no preference is saved
+    return false; 
   });
   const location = useLocation();
 
@@ -35,19 +36,36 @@ const App = () => {
             <Sidebar
               isExpanded={isSidebarExpanded}
               setIsExpanded={setIsSidebarExpanded}
+              isDarkMode={isDarkMode}
             />
+            
+            {/* Mobile Overlay */}
+            {isSidebarExpanded && (
+              <div 
+                className="fixed inset-0 bg-black bg-opacity-50 z-30 md:hidden"
+                onClick={() => setIsSidebarExpanded(false)}
+              />
+            )}
+
             <main
               className={`flex-1 transition-all duration-300 ease-out ${
-                isSidebarExpanded ? 'pl-64' : 'pl-20'
-              } flex flex-col`}
+                isSidebarExpanded ? 'md:pl-64' : 'md:pl-20'
+              } flex flex-col w-full`}
             >
-              <TopNavBar isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
-              <div className="flex-grow p-4 md:p-6 overflow-y-auto">
+              <TopNavBar 
+                isDarkMode={isDarkMode} 
+                setIsDarkMode={setIsDarkMode} 
+                toggleSidebar={() => setIsSidebarExpanded(!isSidebarExpanded)}
+              />
+              <div className="flex-grow p-4 md:p-6 overflow-y-auto overflow-x-hidden">
                 <Routes>
                   {routes.map((route, index) => (
                     <Route key={index} path={route.path} element={route.element} />
                   ))}
                 </Routes>
+                <footer className="mt-8 text-center text-xs text-gray-500 dark:text-gray-400">
+                  <p>This is a university project. All data displayed is for educational purposes only.</p>
+                </footer>
               </div>
             </main>
           </>

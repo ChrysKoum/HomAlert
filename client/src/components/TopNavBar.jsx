@@ -1,9 +1,9 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { FaBell, FaUserCircle, FaSun, FaMoon, FaCog, FaSignOutAlt, FaUser } from 'react-icons/fa';
+import { FaBell, FaUserCircle, FaSun, FaMoon, FaCog, FaSignOutAlt, FaUser, FaBars } from 'react-icons/fa';
 import { useUser } from '../context/UserContext';
 
-const TopNavBar = ({ isDarkMode, setIsDarkMode }) => {
+const TopNavBar = ({ isDarkMode, setIsDarkMode, toggleSidebar }) => {
   const { user } = useUser();
   const [notificationCount, setNotificationCount] = useState(3);
   const [isProfileDropdownOpen, setIsProfileDropdownOpen] = useState(false);
@@ -35,11 +35,17 @@ const TopNavBar = ({ isDarkMode, setIsDarkMode }) => {
   const displayName = user?.displayName || (user?.email ? user.email.split('@')[0] : 'User');
 
   return (
-    <nav className="flex items-center justify-between bg-white dark:bg-gray-800 px-6 py-4 border-b border-gray-200 dark:border-gray-700">
-      {/* Left Side: Welcome Message */}
-      <div className="flex items-center">
-        <span className="text-gray-700 dark:text-gray-200 text-lg font-medium">
-          Welcome Back, {displayName} 👋
+    <nav className="flex items-center justify-between bg-white dark:bg-gray-800 px-4 md:px-6 py-4 border-b border-gray-200 dark:border-gray-700 sticky top-0 z-20">
+      {/* Left Side: Hamburger & Welcome Message */}
+      <div className="flex items-center gap-3">
+        <button
+          onClick={toggleSidebar}
+          className="md:hidden text-gray-600 dark:text-gray-300 hover:text-blue-600 focus:outline-none"
+        >
+          <FaBars className="h-6 w-6" />
+        </button>
+        <span className="text-gray-700 dark:text-gray-200 text-lg font-medium truncate max-w-[200px] sm:max-w-none">
+          Welcome Back, <span className="hidden sm:inline">{displayName}</span><span className="sm:hidden">{displayName.split(' ')[0]}</span> 👋
         </span>
       </div>
 

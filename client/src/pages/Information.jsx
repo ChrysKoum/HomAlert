@@ -5,8 +5,8 @@ const Information = () => {
   return (
     <>
       <div className="p-6">
-        <h1 className="text-2xl font-semibold mb-4 text-gray-800">Information</h1>
-        <p className="mb-6 text-gray-600">General information about the HomAlert system.</p>
+        <h1 className="text-2xl font-semibold mb-4 text-gray-800 dark:text-white">Information</h1>
+        <p className="mb-6 text-gray-600 dark:text-white">General information about the HomAlert system.</p>
         <div className="bg-white shadow rounded-lg p-6 space-y-4">
           <section>
             <h2 className="text-xl font-medium text-gray-700 mb-2">About HomAlert</h2>

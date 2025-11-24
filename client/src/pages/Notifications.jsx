@@ -13,8 +13,8 @@ const Notifications = () => {
   return (
     <>
       <div className="p-6">
-        <h1 className="text-2xl font-semibold mb-4 text-gray-800">Notifications</h1>
-        <p className="mb-6 text-gray-600">Recent alerts and system messages.</p>
+        <h1 className="text-2xl font-semibold mb-4 text-gray-800 dark:text-white">Notifications</h1>
+        <p className="mb-6 text-gray-600 dark:text-white">Recent alerts and system messages.</p>
         <div className="bg-white shadow rounded-lg">
           <ul className="divide-y divide-gray-200">
             {notifications.map((notification) => (
