@@ -8,8 +8,9 @@ import path from 'path';
 export default defineConfig({
   plugins: [react()],
   build: {
-    outDir: path.resolve(__dirname, '../public'), // Output to Express's public directory
-    emptyOutDir: false, // Prevent Vite from deleting existing files in public
+    // If deploying to Vercel, output to 'dist'. Otherwise, output to Express 'public' for local dev.
+    outDir: process.env.VERCEL ? 'dist' : path.resolve(__dirname, '../public'),
+    emptyOutDir: !!process.env.VERCEL, // Clear output dir on Vercel
     manifest: true, // Generate manifest.json for asset mapping
   },
   css: {
