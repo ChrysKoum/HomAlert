@@ -3,7 +3,7 @@ import { Routes, Route, useLocation } from 'react-router-dom';
 import Sidebar from './components/Sidebar';
 import TopNavBar from './components/TopNavBar';
 import routes from './routes';
-import { UserProvider } from './context/UserContext'; // Import the UserProvider
+import { UserProvider } from './context/UserContext';
 import './index.css';
 
 const App = () => {

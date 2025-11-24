@@ -76,6 +76,27 @@ const ProfileSettings = () => {
   const [formData, setFormData] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [message, setMessage] = useState({ type: '', text: '' });
+    // Separate state for the main profile editing form
+  const [profileForm, setProfileForm] = useState({
+    displayName: user?.displayName || '',
+    email: user?.email || '',
+    photoURL: user?.photoURL || '',
+    phone: '',
+    bio: ''
+  });
+
+  // Initialize profile form with user data when user context loads
+  useEffect(() => {
+    if (user) {
+      setProfileForm({
+        displayName: user.displayName || '',
+        email: user.email || '',
+        photoURL: user.photoURL || '',
+        phone: '', // You might want to get this from user profile in Firebase
+        bio: '' // You might want to get this from user profile in Firebase
+      });
+    }
+  }, [user]);
 
   // --- Firebase Interaction Comments ---
   // useEffect(() => {
@@ -100,10 +121,80 @@ const ProfileSettings = () => {
     setCurrentItem(null);
     setFormData({});
   };
-
   const handleInputChange = (e) => {
     const { name, value, type, checked } = e.target;
     setFormData(prev => ({ ...prev, [name]: type === 'checkbox' ? checked : value }));
+  };
+
+  // Handler for the main profile form
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setProfileForm(prev => ({ ...prev, [name]: value }));
+  };
+  // Handler for photo upload
+  const handlePhotoUpload = async (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+
+    // File size limit: 5MB
+    const maxSize = 5 * 1024 * 1024; // 5MB in bytes
+    if (file.size > maxSize) {
+      setMessage({ type: 'error', text: 'File size must be less than 5MB' });
+      return;
+    }
+
+    // File type validation
+    const allowedTypes = ['image/jpeg', 'image/png', 'image/gif', 'image/webp'];
+    if (!allowedTypes.includes(file.type)) {
+      setMessage({ type: 'error', text: 'Please upload a valid image file (JPG, PNG, GIF, or WebP)' });
+      return;
+    }
+
+    try {
+      setIsSubmitting(true);
+      
+      // Create a preview URL
+      const previewURL = URL.createObjectURL(file);
+      setProfileForm(prev => ({ ...prev, photoURL: previewURL }));
+      
+      // TODO: Upload to Firebase Storage
+      // const storageRef = firebase.storage().ref(`profile-photos/${user.uid}/${file.name}`);
+      // const snapshot = await storageRef.put(file);
+      // const downloadURL = await snapshot.ref.getDownloadURL();
+      // setProfileForm(prev => ({ ...prev, photoURL: downloadURL }));
+      
+      setMessage({ type: 'success', text: 'Photo uploaded successfully!' });
+    } catch (error) {
+      console.error('Error uploading photo:', error);
+      setMessage({ type: 'error', text: 'Failed to upload photo. Please try again.' });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  // Handler for the main profile form submission
+  const handleProfileSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    
+    try {
+      // TODO: Update user profile in Firebase
+      // await updateUserProfile(user.uid, profileForm);
+      
+      // Update local user context
+      updateUser({
+        ...user,
+        displayName: profileForm.displayName,
+        photoURL: profileForm.photoURL
+      });
+      
+      setMessage({ type: 'success', text: 'Profile updated successfully!' });
+    } catch (error) {
+      console.error('Error updating profile:', error);
+      setMessage({ type: 'error', text: 'Failed to update profile. Please try again.' });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleSubmit = async () => {
@@ -288,41 +379,142 @@ const ProfileSettings = () => {
 
   return (
     <>
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
-        {/* Left Column: Profile Card */}
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">        {/* Left Column: Profile Card */}
         <div className="lg:col-span-1">
-          <div className="bg-white rounded-xl shadow-lg overflow-hidden">
-            <div className="bg-blue-600 h-32 p-6">
-              <h1 className="text-2xl font-semibold text-white">Profile</h1>
+          <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden">
+            <div className="bg-blue-600 p-6">
+              <h1 className="text-2xl font-semibold text-white">Profile Information</h1>
             </div>
+            
+            {message.text && (
+              <div className={`p-4 mx-6 mt-4 rounded-md ${
+                message.type === 'success' ? 'bg-green-50 text-green-800 dark:bg-green-900 dark:text-green-300' : 
+                'bg-red-50 text-red-800 dark:bg-red-900 dark:text-red-300'
+              }`}>
+                {message.text}
+              </div>
+            )}
+            
             <div className="p-6 relative">
-              <div className="absolute -top-16 left-1/2 transform -translate-x-1/2 sm:left-6 sm:transform-none">
-                <div className="relative">
-                  {userProfile.avatarUrl ? (
-                    <img className="h-24 w-24 rounded-full ring-4 ring-white object-cover" src={userProfile.avatarUrl} alt="User Avatar" />
-                  ) : (
-                    <FaUserCircle className="h-24 w-24 rounded-full ring-4 ring-white text-gray-300 bg-gray-100" />
-                  )}
+              <form onSubmit={handleProfileSubmit} className="space-y-6">                {/* Profile Photo */}
+                <div className="flex flex-col items-center mb-6">
+                  <div className="relative">
+                    <div className="h-24 w-24 rounded-full overflow-hidden bg-gray-300 dark:bg-gray-600 flex items-center justify-center ring-4 ring-white shadow-lg">
+                      {profileForm.photoURL ? (
+                        <img src={profileForm.photoURL} alt="Profile" className="h-full w-full object-cover" />
+                      ) : (
+                        <FaUserCircle className="h-20 w-20 text-gray-400 dark:text-gray-500" />
+                      )}
+                    </div>
+                    <label htmlFor="photoUpload" className="absolute bottom-0 right-0 bg-blue-500 text-white p-2 rounded-full cursor-pointer hover:bg-blue-600 transition-colors shadow-lg">
+                      <FaCamera className="h-4 w-4" />
+                      <input 
+                        id="photoUpload" 
+                        type="file" 
+                        accept="image/*"
+                        onChange={handlePhotoUpload}
+                        className="hidden" 
+                      />
+                    </label>
+                  </div>
+                  <div className="mt-3 text-center">
+                    <p className="text-sm text-gray-600 dark:text-gray-400">
+                      Click the camera icon to upload
+                    </p>
+                    <p className="text-xs text-gray-500 dark:text-gray-500">
+                      Max 5MB • JPG, PNG, GIF, WebP
+                    </p>
+                  </div>
+                </div>
+                
+                {/* Basic Info */}
+                <div>
+                  <label htmlFor="displayName" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                    Display Name
+                  </label>
+                  <input
+                    type="text"
+                    id="displayName"
+                    name="displayName"
+                    value={profileForm.displayName}
+                    onChange={handleChange}
+                    className="block w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white text-sm"
+                    placeholder="Your name"
+                  />
+                </div>
+                
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                    Email Address
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value={profileForm.email}
+                    onChange={handleChange}
+                    disabled={true}
+                    className="block w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm placeholder-gray-400 bg-gray-50 dark:bg-gray-600 text-gray-500 dark:text-gray-400 text-sm"
+                    placeholder="you@example.com"
+                  />
+                  <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
+                    Contact administrator to change your email address.
+                  </p>
+                </div>
+
+                <div>
+                  <label htmlFor="phone" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                    Phone Number
+                  </label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    value={profileForm.phone}
+                    onChange={handleChange}
+                    className="block w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white text-sm"
+                    placeholder="Your phone number"
+                  />
+                </div>
+                
+                <div>
+                  <label htmlFor="bio" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                    Bio
+                  </label>
+                  <textarea
+                    id="bio"
+                    name="bio"
+                    rows={3}
+                    value={profileForm.bio}
+                    onChange={handleChange}
+                    className="block w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white text-sm"
+                    placeholder="A short bio about yourself"
+                  />
+                </div>
+                
+                <div className="flex justify-end pt-4">
                   <button
-                    onClick={handleEditAvatar}
-                    className="absolute bottom-0 right-0 bg-white p-1.5 rounded-full shadow-md hover:bg-gray-100 transition-colors"
-                    aria-label="Edit profile picture"
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50 transition-colors"
                   >
-                    <FaPencilAlt className="h-3 w-3 text-blue-600" />
+                    {isSubmitting ? (
+                      <>
+                        <svg className="animate-spin -ml-1 mr-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                        </svg>
+                        Saving...
+                      </>
+                    ) : (
+                      <>
+                        <FaSave className="mr-2 -ml-1 h-4 w-4" />
+                        Save Changes
+                      </>
+                    )}
                   </button>
                 </div>
-              </div>
-              <div className="mt-10 sm:mt-0 sm:pt-16">
-                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-end">
-                  <h2 className="text-xl font-bold text-gray-800">{userProfile.name}</h2>
-                  <button
-                    onClick={handleChangeName}
-                    className="text-sm text-blue-600 hover:text-blue-700 font-medium mt-1 sm:mt-0"
-                  >
-                    Change Name
-                  </button>
-                </div>
-              </div>
+              </form>
             </div>
           </div>
         </div>
@@ -381,139 +573,7 @@ const ProfileSettings = () => {
         }
         footer={renderModalFooter()}
       >
-        {renderModalContent()}
-      </Modal>
-
-      <div className="bg-white dark:bg-gray-800 shadow rounded-lg p-6 mt-8">
-        <h2 className="text-lg font-medium text-gray-900 dark:text-gray-100 mb-4">Profile Information</h2>
-        
-        {message.text && (
-          <div className={`p-4 mb-4 rounded-md ${
-            message.type === 'success' ? 'bg-green-50 text-green-800 dark:bg-green-900 dark:text-green-300' : 
-            'bg-red-50 text-red-800 dark:bg-red-900 dark:text-red-300'
-          }`}>
-            {message.text}
-          </div>
-        )}
-        
-        <form onSubmit={handleSubmit} className="space-y-6">
-          {/* Profile Photo */}
-          <div className="flex flex-col items-center mb-6">
-            <div className="relative">
-              <div className="h-24 w-24 rounded-full overflow-hidden bg-gray-300 dark:bg-gray-600 flex items-center justify-center">
-                {formData.photoURL ? (
-                  <img src={formData.photoURL} alt="Profile" className="h-full w-full object-cover" />
-                ) : (
-                  <FaUserCircle className="h-20 w-20 text-gray-400 dark:text-gray-500" />
-                )}
-              </div>
-              <label htmlFor="photoUpload" className="absolute bottom-0 right-0 bg-blue-500 text-white p-1 rounded-full cursor-pointer">
-                <FaCamera className="h-4 w-4" />
-                <input id="photoUpload" type="file" className="hidden" />
-              </label>
-            </div>
-            <div className="mt-2">
-              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">Photo URL</label>
-              <input
-                type="text"
-                name="photoURL"
-                value={formData.photoURL}
-                onChange={handleChange}
-                className="mt-1 block w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white"
-                placeholder="https://example.com/photo.jpg"
-              />
-            </div>
-          </div>
-          
-          {/* Basic Info */}
-          <div>
-            <label htmlFor="displayName" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
-              Name
-            </label>
-            <input
-              type="text"
-              id="displayName"
-              name="displayName"
-              value={formData.displayName}
-              onChange={handleChange}
-              className="mt-1 block w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white"
-              placeholder="Your name"
-            />
-          </div>
-          
-          <div>
-            <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
-              Email
-            </label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              disabled={true} // Email should not be editable directly
-              className="mt-1 block w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm placeholder-gray-400 bg-gray-50 dark:bg-gray-600 text-gray-500 dark:text-gray-400"
-              placeholder="you@example.com"
-            />
-            <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
-              Contact administrator to change your email address.
-            </p>
-          </div>
-
-          <div>
-            <label htmlFor="phone" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
-              Phone Number
-            </label>
-            <input
-              type="tel"
-              id="phone"
-              name="phone"
-              value={formData.phone}
-              onChange={handleChange}
-              className="mt-1 block w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white"
-              placeholder="Your phone number"
-            />
-          </div>
-          
-          <div>
-            <label htmlFor="bio" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
-              Bio
-            </label>
-            <textarea
-              id="bio"
-              name="bio"
-              rows={3}
-              value={formData.bio}
-              onChange={handleChange}
-              className="mt-1 block w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white"
-              placeholder="A short bio about yourself"
-            />
-          </div>
-          
-          <div className="flex justify-end pt-5">
-            <button
-              type="submit"
-              disabled={isSubmitting}
-              className="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50"
-            >
-              {isSubmitting ? (
-                <>
-                  <svg className="animate-spin -ml-1 mr-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                  </svg>
-                  Saving...
-                </>
-              ) : (
-                <>
-                  <FaSave className="mr-2 -ml-1 h-4 w-4" />
-                  Save Changes
-                </>
-              )}
-            </button>
-          </div>
-        </form>
-      </div>
+        {renderModalContent()}      </Modal>
     </>
   );
 };
