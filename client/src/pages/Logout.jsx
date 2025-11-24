@@ -8,9 +8,11 @@ const Logout = () => {
     // Clear user data from context and localStorage
     clearUser();
     
-    // Redirect to the backend URL (likely the EJS app's home/login page)
-    const backendUrl = import.meta.env.VITE_APP_BACKEND_URL || '/';
+    // Redirect to the backend URL. Prefer the VITE_API_URL (set for production),
+    // fall back to VITE_APP_BACKEND_URL (older variable), then to '/'.
+    const backendUrl = import.meta.env.VITE_API_URL || import.meta.env.VITE_APP_BACKEND_URL || '/';
     console.log(`Redirecting to ${backendUrl}...`);
+    // Ensure we redirect to the absolute URL when provided by env vars
     window.location.href = backendUrl;
   }, [clearUser]);
 
