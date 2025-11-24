@@ -19,7 +19,25 @@ app.set("view engine", "ejs");
 
 // CORS Configuration
 app.use(cors({
-  origin: process.env.FRONTEND_URL || "*", // Allow Vercel frontend
+  origin: function (origin, callback) {
+    const allowedOrigins = [
+      process.env.FRONTEND_URL,
+      "http://localhost:5173",
+      "http://localhost:3005"
+    ];
+    
+    // Allow requests with no origin (like mobile apps or curl requests)
+    if (!origin) return callback(null, true);
+    
+    // Allow Vercel deployments (main and preview) and local development
+    if (allowedOrigins.includes(origin) || origin.endsWith(".vercel.app")) {
+      return callback(null, true);
+    }
+    
+    // Optional: Log blocked origins for debugging
+    console.log("Blocked by CORS:", origin);
+    return callback(new Error('Not allowed by CORS'));
+  },
   credentials: true // Allow cookies/sessions
 }));
 
