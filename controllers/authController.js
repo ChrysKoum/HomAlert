@@ -82,6 +82,9 @@ const authController = {
         createdAt: user.metadata?.creationTime || new Date().toISOString()
       };
 
+      // Store user data in session
+      req.session.user = userData;
+
       // Create a script to inject into the dashboard page
       const userScript = `
         <script>
@@ -95,7 +98,11 @@ const authController = {
       res.locals.userScript = userScript;
       
       logger.info(`User logged in: ${user.email}`);
-      return res.redirect("/dashboard");
+      
+      // Save session before redirecting to ensure data is persisted
+      req.session.save(() => {
+        return res.redirect("/dashboard");
+      });
     } catch (error) {
       logger.error(`Login error: ${error.message}`);
       return res.status(401).render("auth/sign-in", {
@@ -110,9 +117,20 @@ const authController = {
   logout: async (req, res, next) => {
     try {
       await signOutUser();
-      // For session-based auth: req.session.destroy();
-      logger.info("User logged out successfully");
-      res.redirect("/login");
+      
+      // Destroy the session
+      req.session.destroy((err) => {
+        if (err) {
+          logger.error(`Session destruction error: ${err.message}`);
+          return next(err);
+        }
+        
+        // Clear the session cookie
+        res.clearCookie('connect.sid'); // Default name is connect.sid
+        
+        logger.info("User logged out successfully");
+        res.redirect("/login");
+      });
     } catch (error) {
       logger.error(`Logout error: ${error.message}`);
       next(error); // Pass to global error handler
